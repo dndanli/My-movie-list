@@ -10,6 +10,7 @@ const StyledCard = styled(Card)`
   max-height: 18rem;
   padding-inline: 0.5rem;
   border-radius: 10px;
+  position: relative;
   .image {
     max-width: 170px;
     max-height: 225px;
@@ -18,6 +19,9 @@ const StyledCard = styled(Card)`
   .title {
     margin-bottom: 0;
     margin-top: 5px;
+    display: flex;
+    justify-content: flex-start;
+    width: 100%;
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 700;
@@ -28,7 +32,7 @@ const StyledCard = styled(Card)`
     max-width: 9rem;
     max-height: 2rem;
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     align-items: center;
     width: 100%;
     .rating-score {
@@ -37,13 +41,16 @@ const StyledCard = styled(Card)`
       justify-content: center;
       align-items: center;
       margin-right: auto;
+      position: absolute;
+      bottom: 2rem;
+      left: 1rem;
       min-width: 2rem;
       max-width: 2rem;
       min-height: 2rem;
       max-height: 2rem;
       border-radius: 50%;
-      background-color: rgba(255, 211, 105, 0.8);
-      color: rgba(16, 16, 16, 0.9);
+      background-color: rgb(255, 211, 105);
+      color: rgba(255, 255, 255, 1);
     }
     .extra-info {
       color: rgba(16, 16, 16, 0.8);
