@@ -34,9 +34,11 @@ const StyledHome = styled(Home)`
   }
 
   .content-wrapper {
-    min-height: 20rem;
+    min-height: 25rem;
     display: flex;
-    overflow: auto;
+    overflow-x: auto;
+    overflow-y: hidden;
+    padding-top: 1rem;
     .card {
       margin-right: 1.5rem;
     }
@@ -53,6 +55,7 @@ const StyledHome = styled(Home)`
 
   #trending-heading {
     color: rgba(16, 16, 16, 0.8);
+    margin-bottom: 0.5rem;
   }
 
   .player-wrapper {
