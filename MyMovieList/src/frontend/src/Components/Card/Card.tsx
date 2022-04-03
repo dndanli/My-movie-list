@@ -5,7 +5,7 @@ type CardProps = {
   rating: number;
   seasons?: number;
   //TODO:make it a number and convert to appropriate format
-  duration?: string;
+  date: string;
 };
 
 const Card = ({
@@ -14,16 +14,22 @@ const Card = ({
   title,
   rating,
   seasons,
-  duration,
+  date,
 }: CardProps) => {
   return (
     <div className={className}>
-      <img className="image" src={imagePath} alt={title} />
-      <p className="title">{title}</p>
+      <img
+        className="image"
+        src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
+        alt={title}
+      />
+      <div className="title">
+        <p>{title}</p>
+      </div>
       <div className="metadata">
         <p className="rating-score">{rating}</p>
         {seasons ? <p className="extra-info">{seasons} seasons</p> : null}
-        {duration ? <p className="extra-info">{duration}</p> : null}
+        <p className="extra-info">{date}</p>
       </div>
     </div>
   );
