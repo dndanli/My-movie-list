@@ -2,20 +2,30 @@ import StyledSearchBar from "../Components/SearchBar/SearchBar.style";
 import StyledCard from "../Components/Card/Card.style";
 import StyledPlay from "../Components/Play/Play.style";
 import ReactPlayer from "react-player/lazy";
+import { useEffect, useState } from "react";
 
 import testImg from "../Assets/akira.jpg";
 import { IoIosClose } from "react-icons/io";
 
-import { useState } from "react";
+import { getPopularMovies } from "../Functions/GetPopularMovieData";
+
 type Homeprops = {
   className: string;
 };
 
 const Home = ({ className }: Homeprops) => {
   const [videoPlaying, setVideoPlaying] = useState(false);
+  const [responseData, setResponseData] = useState([]);
 
   const displayPlayer = () => setVideoPlaying(!videoPlaying);
 
+  useEffect(() => {
+    const fetchData = async () => {
+      const response = await getPopularMovies();
+      setResponseData(response.results);
+    };
+    fetchData();
+  }, []);
   return (
     <div className={className}>
       <div className="hero">
@@ -28,27 +38,18 @@ const Home = ({ className }: Homeprops) => {
       <StyledSearchBar className="searchbar" />
       <h1 id="trending-heading">Trending</h1>
       <div className="content-wrapper">
-        <StyledCard
-          className="card"
-          imagePath={testImg}
-          title="Akira"
-          rating={8.3}
-          duration="2h 4m"
-        />
-        <StyledCard
-          className="card"
-          imagePath={testImg}
-          title="Akira"
-          rating={8.3}
-          duration="2h 4m"
-        />
-        <StyledCard
-          className="card"
-          imagePath={testImg}
-          title="Akira"
-          rating={8.3}
-          duration="2h 4m"
-        />
+        {responseData.map((data: any, index) => {
+          return (
+            <StyledCard
+              className="card"
+              imagePath={data.poster_path}
+              title={data.original_title}
+              rating={data.vote_average}
+              date={data.release_date}
+              key={index}
+            />
+          );
+        })}
       </div>
       <h1 id="trending-heading">Trailers</h1>
       <div className="trailers-wrapper">
