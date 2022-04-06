@@ -25,6 +25,9 @@ const StyledSection = styled(Section)`
     font-weight: 700;
     font-size: 2.4rem;
   }
+  #trailers-heading {
+    color: rgba(16, 16, 16, 0.8);
+  }
 `;
 
 export default StyledSection;
