@@ -36,7 +36,7 @@ const Section = ({ className }: SectionProps) => {
 
   return (
     <div className={className}>
-      <h1 id="trending-heading">Trailers</h1>
+      <h1 id="trailers-heading">Trailers</h1>
       <div className="trailers-wrapper">
         {trendingResponse.map((data: any) => {
           return (
