@@ -2,7 +2,10 @@ import StyledSearchBar from "../Components/SearchBar/SearchBar.style";
 import StyledCard from "../Components/Card/Card.style";
 import StyledSection from "../Components/Layout/Section.style";
 
-import { getPopularMovies } from "../Functions/movieDataRequests";
+import {
+  getPopularMovies,
+  postMovieIdToDetail,
+} from "../Helpers/clientHelpers";
 import { useEffect, useState } from "react";
 
 type Homeprops = {
@@ -37,9 +40,11 @@ const Home = ({ className }: Homeprops) => {
             <StyledCard
               className="card"
               imagePath={data.poster_path}
-              title={data.original_title}
+              title={data.title}
               rating={data.vote_average}
               date={data.release_date}
+              cardId={data.id}
+              onClickHandler={postMovieIdToDetail}
               key={data.id}
             />
           );
