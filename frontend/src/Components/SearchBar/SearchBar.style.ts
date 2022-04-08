@@ -6,7 +6,7 @@ const StyledSearchBar = styled(SearchBar)`
   min-height: 2rem;
   padding-block: 0.5rem;
   border-radius: 1rem;
-  background-color: rgba(216, 227, 231, 0.8);
+  background-color: rgba(255, 255, 255, 1);
   .search-icon,
   .close-icon,
   .close-icon-vis {
@@ -34,7 +34,7 @@ const StyledSearchBar = styled(SearchBar)`
     padding-right: 10px;
   }
   input.search-field {
-    background-color: rgba(216, 227, 231, 0.1);
+    background-color: rgba(255, 255, 255, 0.9);
   }
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
