@@ -10,6 +10,7 @@ const StyledNavbar = styled(Navbar)`
   position: relative;
   border-radius: 1rem;
   margin-top: 1rem;
+  z-index: 2;
   .logo {
     margin-right: auto;
     color: rgb(255, 211, 105);
@@ -28,8 +29,8 @@ const StyledNavbar = styled(Navbar)`
     border-radius: 1rem;
     min-width: 11rem;
     position: absolute;
-    top: 4rem;
-    right: 0rem;
+    top: 2.5rem;
+    right: 1rem;
   }
 
   .nav-links-wrapper {
@@ -43,7 +44,9 @@ const StyledNavbar = styled(Navbar)`
   .nav-link-container {
     display: flex;
     color: rgba(255, 255, 255, 1);
+    align-items: center;
     .link-icon {
+      padding-block: 1rem;
       font-size: 18px;
       margin-left: 1.5rem;
       margin-right: 0.5rem;
