@@ -1,12 +1,26 @@
 import GlobalStyle from "./Global.style";
 import StyledNavbar from "./Components/Navbar/Navbar.style";
 import StyledHome from "./Pages/Home.style";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import StyledDetails from "./Pages/Details.style";
+
 function App() {
   return (
     <div className="App">
       <GlobalStyle />
       <StyledNavbar className="navbar" />
-      <StyledHome className="home-page" />
+      <BrowserRouter>
+        <Routes>
+          <Route
+            path="/"
+            element={<StyledHome className="home-page" />}
+          ></Route>
+          <Route
+            path="/:category/:id"
+            element={<StyledDetails className="detail-page" />}
+          ></Route>
+        </Routes>
+      </BrowserRouter>
     </div>
   );
 }
