@@ -8,7 +8,7 @@ import {
   getTrending,
   postMovieId,
   getTrailer,
-} from "../../Functions/movieDataRequests";
+} from "../../Helpers/clientHelpers";
 
 type SectionProps = {
   className: string;
@@ -17,8 +17,6 @@ type SectionProps = {
 const Section = ({ className }: SectionProps) => {
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [trendingResponse, setTrending] = useState([]);
-
-  //   const [trailerResponse, setTrailerResponse] = useState<any>();
   const [trailerUrl, setTrailerUrl] = useState<any>();
 
   const displayPlayer = () => {
