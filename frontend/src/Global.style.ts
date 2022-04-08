@@ -6,8 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color: rgba(255, 255, 255, 0.9);
-    /* padding-inline:1rem; */
+    background-color: #090909;
   }
 `;
 
