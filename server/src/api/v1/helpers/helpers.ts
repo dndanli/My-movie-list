@@ -40,3 +40,14 @@ export const fetchTrailer = async (id: number) => {
     console.error(err);
   }
 };
+
+export const fetchMovieData = async (movieId: number) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=credits,videos`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
