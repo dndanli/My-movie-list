@@ -36,13 +36,14 @@ const StyledDetails = styled(Details)`
   #trailers,
   #trailer-name {
     margin-top: 1rem;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.5rem;
-    color: rgba(23, 23, 23, 0.9);
+    color: rgba(255, 255, 255, 0.8);
   }
   .overview-info,
   .overview-text {
     margin-top: 1rem;
+    color: rgba(255, 255, 255, 0.9);
   }
   .genre-section {
     margin-top: 1rem;
@@ -60,7 +61,7 @@ const StyledDetails = styled(Details)`
     max-height: 1.2rem;
     white-space: nowrap;
     display: flex;
-    background-color: rgba(34, 40, 49, 0.5);
+    background-color: rgba(51, 51, 51, 0.9);
     color: rgba(255, 255, 255, 0.8);
     border-radius: 5px;
     padding-block: 0.5rem;
@@ -90,15 +91,19 @@ const StyledDetails = styled(Details)`
     font-size: 1rem;
     white-space: nowrap;
     a {
-      color: rgba(23, 23, 23, 0.9);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
   .see-more-icon {
-    color: rgba(23, 23, 23, 0.9);
+    color: rgba(255, 255, 255, 0.8);
     font-size: 2rem;
   }
   .trailer-player {
     margin-block: 1rem;
+  }
+  .divider {
+    margin-top: 1rem;
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
   }
 `;
 
