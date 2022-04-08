@@ -4,6 +4,8 @@ const StyledHome = styled(Home)`
   /* background-color: lightseagreen; */
   min-height: 100vh;
   font-family: "Inter", sans-serif;
+  padding-inline: 1rem;
+
   .hero {
     display: flex;
     flex-direction: column;
@@ -15,6 +17,7 @@ const StyledHome = styled(Home)`
     background-image: linear-gradient(45deg, #ef709b, #fa9372);
     color: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
+    margin-block: 1rem;
 
     #hero-heading {
       font-size: 2rem;
