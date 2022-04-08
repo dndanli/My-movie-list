@@ -2,14 +2,14 @@ import styled from "styled-components";
 import Card from "./Card";
 
 const StyledCard = styled(Card)`
-  background-color: white;
+  background-color: rgba(51, 51, 51, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
-  max-width: 8.8rem;
-  max-height: 18rem;
-  padding-inline: 0.5rem;
-  border-radius: 10px;
+  max-width: 9.3rem;
+  min-height: 16rem;
+  max-height: 21.4rem;
+  border-radius: 11px;
   position: relative;
   a {
     text-decoration: none;
@@ -17,7 +17,8 @@ const StyledCard = styled(Card)`
   .image {
     max-width: 170px;
     max-height: 225px;
-    border-radius: 10px;
+    border-top-left-radius: 10px;
+    border-top-right-radius: 10px;
   }
   .title {
     margin-top: 1rem;
@@ -27,9 +28,11 @@ const StyledCard = styled(Card)`
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 1);
+    color: rgba(255, 255, 255, 0.9);
+    padding-inline: 0.5rem;
   }
   .metadata {
+    padding-inline: 0.5rem;
     font-family: "Inter", sans-serif;
     font-weight: 400;
     max-width: 9rem;
@@ -45,19 +48,19 @@ const StyledCard = styled(Card)`
       align-items: center;
       margin-right: auto;
       position: absolute;
-      bottom: 3rem;
+      bottom: 6.5rem;
       left: 1rem;
       min-width: 2rem;
       max-width: 2rem;
       min-height: 2rem;
       max-height: 2rem;
       border-radius: 50%;
-      background-color: rgb(255, 211, 105);
+      background-color: #fbc7d4;
       color: rgba(255, 255, 255, 1);
     }
     .extra-info {
       margin-top: 0.5rem;
-      color: rgba(16, 16, 16, 0.8);
+      color: rgba(255, 255, 255, 1);
     }
   }
   transition: 0.5s ease;
