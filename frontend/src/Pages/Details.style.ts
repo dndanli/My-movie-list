@@ -26,13 +26,15 @@ const StyledDetails = styled(Details)`
   .overview-background {
     max-width: 100%;
     max-height: 100%;
+    border-radius: 6px;
   }
 
   .overview-title-header,
   .cast-info,
   #overview-info-header,
   #overview-crew-header,
-  #trailers {
+  #trailers,
+  #trailer-name {
     margin-top: 1rem;
     font-weight: 700;
     font-size: 1.5rem;
