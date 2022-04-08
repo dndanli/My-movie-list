@@ -93,7 +93,7 @@ const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
 
       {detailData !== undefined ? (
         <div className="trailers-wrapper">
-          <h2 id="trailers">Trailers section</h2>
+          <h2 id="trailers">Trailers</h2>
 
           {trailers.map((data: any) => {
             if (data.type !== "Trailer") {
@@ -101,6 +101,7 @@ const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
             }
             return (
               <div className="trailer-player" key={data.id}>
+                <h2 id="trailer-name">{data.name}</h2>
                 <ReactPlayer
                   controls
                   width="340px"
