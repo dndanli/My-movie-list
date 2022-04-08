@@ -5,6 +5,7 @@ const StyledSection = styled(Section)`
   .trailers-wrapper {
     display: flex;
     overflow: auto;
+    max-height: 11rem;
     .play {
       margin-right: 1.5rem;
     }
@@ -26,8 +27,10 @@ const StyledSection = styled(Section)`
     font-size: 2.4rem;
   }
   #trailers-heading {
+    font-size: 1.7rem;
+    font-weight: 500;
     margin-block: 1rem;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.9);
   }
 `;
 
