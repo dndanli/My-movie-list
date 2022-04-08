@@ -95,6 +95,8 @@ const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
         <div className="trailers-wrapper">
           <h2 id="trailers">Trailers</h2>
 
+          <hr className="divider" />
+
           {trailers.map((data: any) => {
             if (data.type !== "Trailer") {
               return null;
@@ -113,6 +115,7 @@ const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
           })}
         </div>
       ) : null}
+      <hr className="divider" />
     </div>
   );
 };
