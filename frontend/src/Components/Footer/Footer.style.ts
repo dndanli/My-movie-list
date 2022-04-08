@@ -19,7 +19,8 @@ const StyledFooter = styled(Footer)`
     margin-inline: 0.2rem;
   }
   #link a {
-    color: rgb(255, 211, 105);
+    color: #fbc7d4;
+    text-decoration: none;
   }
   .tmdb-logo {
     max-width: 10srem;
