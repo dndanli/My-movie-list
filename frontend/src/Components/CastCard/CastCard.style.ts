@@ -2,17 +2,13 @@ import styled from "styled-components";
 import CastCard from "./CastCard";
 
 const StyledCastCard = styled(CastCard)`
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(51, 51, 51, 0.9);
   min-width: 8rem;
   max-height: 18rem;
   display: flex;
   flex-direction: column;
   position: relative;
   border-radius: 8px;
-  -moz-box-shadow: 0 0 3px #ccc;
-  -webkit-box-shadow: 0 0 3px #ccc;
-  box-shadow: 0 0 3px #ccc;
-
   .profile {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
