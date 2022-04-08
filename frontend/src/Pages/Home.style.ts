@@ -1,7 +1,6 @@
 import styled from "styled-components";
 import Home from "./Home";
 const StyledHome = styled(Home)`
-  /* background-color: lightseagreen; */
   min-height: 100vh;
   font-family: "Inter", sans-serif;
   padding-inline: 1rem;
@@ -13,8 +12,18 @@ const StyledHome = styled(Home)`
     padding-inline: 1rem;
     min-height: 15rem;
     max-height: 15rem;
-    background-color: rgb(32, 32, 34);
-    background-image: linear-gradient(45deg, #ef709b, #fa9372);
+    background: #9796f0;
+    background: -webkit-linear-gradient(
+      to right,
+      #fbc7d4,
+      #9796f0
+    ); /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(
+      to right,
+      #fbc7d4,
+      #9796f0
+    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
     color: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
     margin-block: 1rem;
@@ -48,7 +57,9 @@ const StyledHome = styled(Home)`
   }
 
   #popular-heading {
-    color: rgba(16, 16, 16, 0.8);
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
     margin-bottom: 0.5rem;
   }
 `;
