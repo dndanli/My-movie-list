@@ -11,20 +11,23 @@ const StyledCard = styled(Card)`
   padding-inline: 0.5rem;
   border-radius: 10px;
   position: relative;
+  a {
+    text-decoration: none;
+  }
   .image {
     max-width: 170px;
     max-height: 225px;
     border-radius: 10px;
   }
   .title {
-    margin-bottom: 0;
-    margin-top: 5px;
+    margin-top: 1rem;
     display: flex;
     justify-content: flex-start;
     width: 100%;
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 700;
+    color: rgba(16, 16, 16, 1);
   }
   .metadata {
     font-family: "Inter", sans-serif;
@@ -42,7 +45,7 @@ const StyledCard = styled(Card)`
       align-items: center;
       margin-right: auto;
       position: absolute;
-      bottom: 2rem;
+      bottom: 3rem;
       left: 1rem;
       min-width: 2rem;
       max-width: 2rem;
@@ -53,6 +56,7 @@ const StyledCard = styled(Card)`
       color: rgba(255, 255, 255, 1);
     }
     .extra-info {
+      margin-top: 0.5rem;
       color: rgba(16, 16, 16, 0.8);
     }
   }
