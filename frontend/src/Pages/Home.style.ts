@@ -60,7 +60,13 @@ const StyledHome = styled(Home)`
     font-size: 1.7rem;
     font-weight: 500;
     color: rgba(255, 255, 255, 0.9);
-    margin-bottom: 0.5rem;
+    margin-block: 0.5rem;
+  }
+  #upcoming-heading {
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
+    margin-block: 1rem;
   }
 `;
 export default StyledHome;
