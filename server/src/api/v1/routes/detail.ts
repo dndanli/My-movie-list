@@ -5,13 +5,9 @@ const router = express.Router();
 /**
  * all routes start with /detail
  */
-let movieId: number;
-router.post("/getMovieId", async (request, response) => {
-  movieId = request.body.id;
-});
 
-router.get("/getMovieData", async (request, response) => {
-  const movieData = await fetchMovieData(movieId);
+router.get("/getMovieData/:id", async (request, response) => {
+  const movieData = await fetchMovieData(parseInt(request.params.id));
   response.send(movieData);
   response.end();
 });
