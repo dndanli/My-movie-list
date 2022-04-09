@@ -45,10 +45,10 @@ export function postMovieIdToDetail(movieId: number) {
     });
 }
 
-export async function getMovieData() {
+export async function getMovieData(movieId: any) {
   try {
     const response = await axios.get(
-      `http://localhost:8000/detail/getMovieData`
+      `http://localhost:8000/detail/getMovieData/${movieId}`
     );
     return response.data;
   } catch (err) {
