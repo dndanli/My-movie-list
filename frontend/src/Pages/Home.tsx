@@ -4,6 +4,7 @@ import StyledSection from "../Components/Layout/Section.style";
 
 import {
   getPopularMovies,
+  getUpcoming,
   postMovieIdToDetail,
 } from "../Helpers/clientHelpers";
 import { useEffect, useState } from "react";
@@ -13,12 +14,15 @@ type Homeprops = {
 };
 
 const Home = ({ className }: Homeprops) => {
-  const [popuResponse, setPopResponse] = useState([]);
+  const [popularMovies, setPopularMovies] = useState([]);
+  const [upcoming, setUpcoming] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const popularResponseData = await getPopularMovies();
-      setPopResponse(popularResponseData.results);
+      const popularMoviesResponseData = await getPopularMovies();
+      const upcomingResponseData = await getUpcoming();
+      setPopularMovies(popularMoviesResponseData.results);
+      setUpcoming(upcomingResponseData.results);
     };
     fetchData();
   }, []);
@@ -35,7 +39,7 @@ const Home = ({ className }: Homeprops) => {
       <StyledSearchBar className="searchbar" />
       <h1 id="popular-heading">Popular</h1>
       <div className="content-wrapper">
-        {popuResponse.map((data: any) => {
+        {popularMovies.map((data: any) => {
           return (
             <StyledCard
               className="card"
@@ -51,6 +55,25 @@ const Home = ({ className }: Homeprops) => {
         })}
       </div>
       <StyledSection className="section" />
+
+      <h1 id="upcoming-heading">Upcoming</h1>
+
+      <div className="content-wrapper">
+        {upcoming.map((data: any) => {
+          return (
+            <StyledCard
+              className="card"
+              imagePath={data.poster_path}
+              title={data.title}
+              rating={data.vote_average}
+              date={data.release_date}
+              cardId={data.id}
+              onClickHandler={postMovieIdToDetail}
+              key={data.id}
+            />
+          );
+        })}
+      </div>
     </div>
   );
 };
