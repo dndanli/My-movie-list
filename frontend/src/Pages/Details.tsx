@@ -91,7 +91,7 @@ const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
         </div>
       ) : null}
 
-      {detailData !== undefined ? (
+      {trailers !== undefined ? (
         <div className="trailers-wrapper">
           <h2 id="trailers">Trailers</h2>
 
