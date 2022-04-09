@@ -6,7 +6,7 @@ import { IoIosClose } from "react-icons/io";
 
 import {
   getTrending,
-  postMovieId,
+  postIdForTrailer,
   getTrailer,
 } from "../../Helpers/clientHelpers";
 
@@ -43,7 +43,7 @@ const Section = ({ className }: SectionProps) => {
               cover={data.poster_path}
               title={data.title}
               onClickAction={() => {
-                postMovieId(data.id);
+                postIdForTrailer(data.id);
                 // TODO: debug this
                 getTrailer().then((res) => {
                   setTrailerUrl(
