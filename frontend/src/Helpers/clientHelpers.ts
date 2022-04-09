@@ -55,3 +55,12 @@ export async function getMovieData() {
     console.error(err);
   }
 }
+
+export async function getUpcoming() {
+  try {
+    const response = await axios.get(`http://localhost:8000/upcoming`);
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
