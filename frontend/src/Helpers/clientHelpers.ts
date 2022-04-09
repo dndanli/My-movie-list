@@ -20,7 +20,9 @@ export async function getTrending() {
 
 export async function getTrailer() {
   try {
-    const response = await axios.get(`http://localhost:8000/getMovie/trailer`);
+    const response = await axios.get(
+      `http://localhost:8000/getIdForTrailer/trailer`
+    );
     return response.data;
   } catch (err) {
     console.error(err);
