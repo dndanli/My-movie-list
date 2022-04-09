@@ -3,7 +3,7 @@ import cors from "cors";
 
 import popularRoutes from "../routes/popular";
 import trendingRoutes from "../routes/trending";
-import trailerRoutes from "../routes/getMovie";
+import trailerRoutes from "../routes/trailer";
 import detailRoutes from "../routes/detail";
 import upcomingRoutes from "../routes/upcoming";
 
