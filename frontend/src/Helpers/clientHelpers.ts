@@ -29,10 +29,12 @@ export async function getTrailer() {
   }
 }
 
-export function postMovieId(movieId: number) {
-  axios.post(`http://localhost:8000/getMovie`, { id: movieId }).catch((e) => {
-    console.error(e);
-  });
+export function postIdForTrailer(movieId: number) {
+  axios
+    .post(`http://localhost:8000/getIdForTrailer`, { id: movieId })
+    .catch((e) => {
+      console.error(e);
+    });
 }
 
 export function postMovieIdToDetail(movieId: number) {
