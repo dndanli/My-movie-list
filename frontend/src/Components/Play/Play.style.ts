@@ -3,9 +3,12 @@ import Play from "./Play";
 
 const StyledPlay = styled(Play)`
   width: 300px;
-  position: relative;
   margin-bottom: 5rem;
-
+  .play-content-wapper {
+    position: relative;
+    display: grid;
+    place-items: center;
+  }
   .cover {
     border-radius: 8px;
     width: 300px;
@@ -17,9 +20,6 @@ const StyledPlay = styled(Play)`
     font-size: 4rem;
     color: rgb(255, 255, 255);
     position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
   }
   &:active {
     transform: scale(0.9);
