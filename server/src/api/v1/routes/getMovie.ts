@@ -4,7 +4,7 @@ import { fetchTrailer } from "../helpers/helpers";
 const router = express.Router();
 
 /**
- * all routes start with /getMovie
+ * all routes start with /getIdForTrailer
  */
 let movieId: number;
 
