@@ -2,7 +2,6 @@ import styled from "styled-components";
 import Card from "./Card";
 
 const StyledCard = styled(Card)`
-  background-color: rgba(51, 51, 51, 0.9);
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -56,7 +55,7 @@ const StyledCard = styled(Card)`
       max-height: 2rem;
       border-radius: 50%;
       background-color: #fbc7d4;
-      color: rgba(255, 255, 255, 1);
+      color: rgba(16, 16, 16, 0.8);
     }
     .extra-info {
       margin-top: 0.5rem;
