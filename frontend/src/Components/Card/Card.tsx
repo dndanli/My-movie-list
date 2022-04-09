@@ -8,7 +8,6 @@ type CardProps = {
   //TODO: convert to appropriate format
   date: string;
   cardId: number;
-  onClickHandler: any;
 };
 
 const Card = ({
@@ -18,10 +17,9 @@ const Card = ({
   rating,
   date,
   cardId,
-  onClickHandler,
 }: CardProps) => {
   return (
-    <div className={className} onClick={() => onClickHandler(cardId)}>
+    <div className={className}>
       <Link to={`/detail/${cardId}`}>
         <img
           className="image"
