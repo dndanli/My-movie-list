@@ -5,26 +5,27 @@ import StyledCardCard from "../Components/CastCard/CastCard.style";
 import ReactPlayer from "react-player/lazy";
 import { RiArrowRightSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
+import { useParams } from "react-router";
 
 type DetailsProps = {
   className: string;
-  movieId?: number;
-  tvShowId?: number;
 };
 
-const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
+const Details = ({ className }: DetailsProps) => {
+  const { id } = useParams();
   const [detailData, setDetailData] = useState<any>();
   const [trailers, setTrailers] = useState([]);
 
   // TODO: when user leaves page --> set detailData to null
   useEffect(() => {
     const fetch = async () => {
-      const movieDataResponse = await getMovieData();
+      // make get request to backend with the movie id
+      const movieDataResponse = await getMovieData(id);
       setDetailData(movieDataResponse);
       setTrailers(movieDataResponse.videos.results);
     };
     fetch();
-  }, []);
+  }, [id]);
 
   return (
     <div className={className}>
@@ -81,10 +82,10 @@ const Details = ({ className, movieId, tvShowId }: DetailsProps) => {
             );
           })}
           <div className="see-more">
-            <Link to={"/"}>
+            <Link to={`/detail/${detailData.id}/cast`}>
               <h3>see more</h3>
             </Link>
-            <Link to={"/"}>
+            <Link to={`/detail/${detailData.id}/cast`}>
               <RiArrowRightSLine className="see-more-icon" />
             </Link>
           </div>
