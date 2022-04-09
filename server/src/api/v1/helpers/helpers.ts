@@ -41,6 +41,17 @@ export const fetchTrailer = async (id: number) => {
   }
 };
 
+export const fetchUpcoming = async () => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/upcoming?api_key=${apiKey}&language=en-US&page=1`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 export const fetchMovieData = async (movieId: number) => {
   try {
     const response = await axios.get(
