@@ -2,7 +2,7 @@ import { GoPerson } from "react-icons/go";
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getMovieData } from "../Helpers/clientHelpers";
+import { getMovieData } from "../../Helpers/clientHelpers";
 
 type CastProps = {
   className: string;

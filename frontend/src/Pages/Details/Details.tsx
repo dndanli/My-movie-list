@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
-import { getMovieData } from "../Helpers/clientHelpers";
+import { getMovieData } from "../../Helpers/clientHelpers";
 
-import StyledCardCard from "../Components/CastCard/CastCard.style";
+import StyledCardCard from "../../Components/CastCard/CastCard.style";
 import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";

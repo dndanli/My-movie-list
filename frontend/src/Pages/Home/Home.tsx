@@ -1,8 +1,8 @@
-import StyledSearchBar from "../Components/SearchBar/SearchBar.style";
-import StyledCard from "../Components/Card/Card.style";
-import StyledSection from "../Components/Layout/Section.style";
+import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
+import StyledCard from "../../Components/Card/Card.style";
+import StyledSection from "../../Components/Layout/Section.style";
 
-import { getPopularMovies, getUpcoming } from "../Helpers/clientHelpers";
+import { getPopularMovies, getUpcoming } from "../../Helpers/clientHelpers";
 import { useEffect, useState } from "react";
 
 type Homeprops = {
