@@ -3,7 +3,6 @@ import { getMovieData } from "../Helpers/clientHelpers";
 
 import StyledCardCard from "../Components/CastCard/CastCard.style";
 import ReactPlayer from "react-player/lazy";
-import { RiArrowRightSLine } from "react-icons/ri";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 
@@ -82,16 +81,14 @@ const Details = ({ className }: DetailsProps) => {
               />
             );
           })}
-          <div className="see-more">
-            <Link to={`/detail/cast/${detailData.id}`}>
-              <h3>see more</h3>
-            </Link>
-            <Link to={`/detail/cast/${detailData.id}`}>
-              <RiArrowRightSLine className="see-more-icon" />
-            </Link>
-          </div>
         </div>
       ) : null}
+
+      <div className="see-more">
+        <Link to={`/detail/cast/${id}`}>
+          <h3>Full cast and crew</h3>
+        </Link>
+      </div>
 
       {trailers !== undefined ? (
         <div className="trailers-wrapper">
