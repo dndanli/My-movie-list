@@ -29,6 +29,7 @@ const Details = ({ className }: DetailsProps) => {
 
   return (
     <div className={className}>
+      {/* TODO: Fix background for null paths */}
       {detailData !== undefined ? (
         <div className="overview-images">
           <img
@@ -82,10 +83,10 @@ const Details = ({ className }: DetailsProps) => {
             );
           })}
           <div className="see-more">
-            <Link to={`/detail/${detailData.id}/cast`}>
+            <Link to={`/detail/cast/${detailData.id}`}>
               <h3>see more</h3>
             </Link>
-            <Link to={`/detail/${detailData.id}/cast`}>
+            <Link to={`/detail/cast/${detailData.id}`}>
               <RiArrowRightSLine className="see-more-icon" />
             </Link>
           </div>
