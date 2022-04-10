@@ -85,11 +85,8 @@ const StyledDetails = styled(Details)`
   }
 
   .see-more {
-    display: flex;
-    align-items: center;
-    max-height: 18rem;
+    margin-top: 1rem;
     font-size: 1rem;
-    white-space: nowrap;
     a {
       color: rgba(255, 255, 255, 0.8);
     }
