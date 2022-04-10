@@ -4,6 +4,7 @@ import StyledHome from "./Pages/Home.style";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StyledDetails from "./Pages/Details.style";
 import StyledFooter from "./Components/Footer/Footer.style";
+import StyledCast from "./Pages/Cast.style";
 
 function App() {
   return (
@@ -19,6 +20,10 @@ function App() {
           <Route
             path="/:category/:id"
             element={<StyledDetails className="detail-page" />}
+          ></Route>
+          <Route
+            path="/:category/cast/:id"
+            element={<StyledCast className="cast-page" />}
           ></Route>
         </Routes>
       </BrowserRouter>
