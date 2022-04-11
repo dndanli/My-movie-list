@@ -1,9 +1,9 @@
 import { useState, useEffect } from "react";
-import { getMovieData } from "../../Helpers/clientHelpers";
+import { getMediaDetails } from "../../Helpers/clientHelpers";
 
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 
-import StyledCardCard from "../../Components/CastCard/CastCard.style";
+import StyledCastCard from "../../Components/CastCard/CastCard.style";
 import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
@@ -13,20 +13,19 @@ type DetailsProps = {
 };
 
 const Details = ({ className }: DetailsProps) => {
-  const { id } = useParams();
+  const { mediaType, id } = useParams();
   const [detailData, setDetailData] = useState<any>();
   const [trailers, setTrailers] = useState([]);
 
-  // TODO: when user leaves page --> set detailData to null
   useEffect(() => {
     const fetch = async () => {
       // make get request to backend with the movie id
-      const movieDataResponse = await getMovieData(id);
+      const movieDataResponse = await getMediaDetails(mediaType, id);
       setDetailData(movieDataResponse);
       setTrailers(movieDataResponse.videos.results);
     };
     fetch();
-  }, [id]);
+  }, [mediaType, id]);
 
   return (
     <div className={className}>
@@ -80,8 +79,8 @@ const Details = ({ className }: DetailsProps) => {
         <div className="cast-info">
           {detailData.credits.cast.slice(0, 9).map((person: any) => {
             return (
-              <StyledCardCard
-                key={person.cast_id}
+              <StyledCastCard
+                key={person.id}
                 className="cast-card"
                 person={person}
               />
@@ -91,7 +90,7 @@ const Details = ({ className }: DetailsProps) => {
       ) : null}
 
       <div className="see-more">
-        <Link to={`/detail/cast/${id}`}>
+        <Link to={`/detail/cast/${mediaType}/${id}`}>
           <h3 className="cast-page-link">
             Full cast and crew
             <HiOutlineArrowNarrowRight className="arrow-icon" />
@@ -111,7 +110,6 @@ const Details = ({ className }: DetailsProps) => {
             }
             return (
               <div className="trailer-player" key={data.id}>
-                {/* <h2 id="trailer-name">{data.name.toLowerCase()}</h2> */}
                 <ReactPlayer
                   controls
                   width="340px"
