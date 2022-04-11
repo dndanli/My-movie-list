@@ -25,7 +25,7 @@ const Cast = ({ className }: CastProps) => {
 
   return (
     <div className={className}>
-      <h3>cast</h3>
+      <h2 className="cast-header">Cast</h2>
       <ul>
         {castData.map((data: any, index) => {
           return (
@@ -48,6 +48,7 @@ const Cast = ({ className }: CastProps) => {
           );
         })}
       </ul>
+      <h2 className="cast-header">Crew</h2>
       <ul>
         {crewData.map((data: any, index) => {
           return (
