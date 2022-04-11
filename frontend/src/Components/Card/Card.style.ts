@@ -10,6 +10,7 @@ const StyledCard = styled(Card)`
   max-height: 21.4rem;
   border-radius: 11px;
   position: relative;
+  background-color: rgba(255, 255, 255, 1);
   a {
     text-decoration: none;
   }
@@ -27,7 +28,7 @@ const StyledCard = styled(Card)`
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.8);
     padding-inline: 0.5rem;
   }
   .metadata {
@@ -41,25 +42,29 @@ const StyledCard = styled(Card)`
     align-items: center;
     width: 100%;
     .rating-score {
+      padding-inline: 0.2rem;
       font-weight: 700;
       display: flex;
-      justify-content: center;
+      justify-content: space-evenly;
       align-items: center;
       margin-right: auto;
       position: absolute;
       bottom: 6.5rem;
       left: 1rem;
-      min-width: 2rem;
-      max-width: 2rem;
+      min-width: 3rem;
+      max-width: 3.7rem;
       min-height: 2rem;
       max-height: 2rem;
-      border-radius: 50%;
-      background-color: #fbc7d4;
-      color: rgba(16, 16, 16, 0.8);
+      border-radius: 15px;
+      background-color: rgb(219, 48, 86);
+      color: rgba(255, 255, 255, 1);
+    }
+    .star-icon {
+      font-size: 14px;
     }
     .extra-info {
       margin-top: 0.5rem;
-      color: rgba(255, 255, 255, 1);
+      color: rgba(16, 16, 16, 0.8);
     }
   }
   transition: 0.5s ease;
