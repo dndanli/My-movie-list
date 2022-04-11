@@ -2,26 +2,26 @@ import { GoPerson } from "react-icons/go";
 
 import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom";
-import { getMovieData } from "../../Helpers/clientHelpers";
+import { getMediaDetails } from "../../Helpers/clientHelpers";
 
 type CastProps = {
   className: string;
 };
 
 const Cast = ({ className }: CastProps) => {
-  const { id } = useParams();
+  const { mediaType, id } = useParams();
   const [castData, setCastData] = useState([]);
   const [crewData, setCrewData] = useState([]);
 
   useEffect(() => {
     const fetch = async () => {
       // make get request to backend with the movie id
-      const movieDataResponse = await getMovieData(id);
+      const movieDataResponse = await getMediaDetails(mediaType, id);
       setCastData(movieDataResponse.credits.cast);
       setCrewData(movieDataResponse.credits.crew);
     };
     fetch();
-  }, [id]);
+  }, [mediaType, id]);
 
   return (
     <div className={className}>
