@@ -9,6 +9,7 @@ type BoxProps = {
   date: string;
   boxId: number;
   overview: string;
+  mediaType: string;
 };
 
 const Box = ({
@@ -19,10 +20,11 @@ const Box = ({
   date,
   boxId,
   overview,
+  mediaType,
 }: BoxProps) => {
   return (
     <div className={className}>
-      <Link to={`/detail/${boxId}`}>
+      <Link to={`/detail/${mediaType}/${boxId}`}>
         <div className="wrapper">
           <img
             className="image"
