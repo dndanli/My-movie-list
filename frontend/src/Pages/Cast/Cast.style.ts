@@ -5,13 +5,24 @@ const StyledCast = styled(Cast)`
   padding-inline: 1rem;
   padding-block: 1rem;
 
+  .cast-header {
+    font-family: "Inter", sans-serif;
+    font-size: 1.7rem;
+    font-weight: 500;
+    color: rgba(16, 16, 16, 0.8);
+    margin-block: 0.5rem;
+  }
+
   .list-item {
-    background-color: rgba(47, 47, 47, 0.8);
+    border-radius: 6px;
+    background-color: rgb(50, 50, 50);
     margin-bottom: 1rem;
     display: flex;
   }
 
   .profile {
+    border-top-left-radius: 6px;
+    border-bottom-left-radius: 6px;
     object-fit: cover;
     min-width: 100px;
     max-height: 120px;
