@@ -9,6 +9,7 @@ type CardProps = {
   //TODO: convert to appropriate format
   date: string;
   cardId: number;
+  mediaType: string;
 };
 
 const Card = ({
@@ -18,10 +19,11 @@ const Card = ({
   rating,
   date,
   cardId,
+  mediaType,
 }: CardProps) => {
   return (
     <div className={className}>
-      <Link to={`/detail/${cardId}`}>
+      <Link to={`/detail/${mediaType}/${cardId}`}>
         <img
           className="image"
           src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
