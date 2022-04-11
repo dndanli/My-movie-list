@@ -13,11 +13,11 @@ const StyledNavbar = styled(Navbar)`
   z-index: 2;
   .logo {
     margin-right: auto;
-    color: #fbc7d4;
+    color: rgb(219, 48, 86);
   }
   .menu-icon {
     font-size: 2rem;
-    color: #9796f0;
+    color: rgb(219, 48, 86);
   }
 
   /* mobile navbar wrapper section */
