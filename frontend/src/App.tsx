@@ -24,11 +24,11 @@ function App() {
             element={<StyledDiscover className="discover-page" />}
           ></Route>
           <Route
-            path="detail/:id"
+            path="detail/:mediaType/:id"
             element={<StyledDetails className="detail-page" />}
           ></Route>
           <Route
-            path="/:category/cast/:id"
+            path="/:category/cast/:mediaType/:id"
             element={<StyledCast className="cast-page" />}
           ></Route>
         </Routes>
