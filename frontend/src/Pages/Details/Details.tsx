@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import { getMovieData } from "../../Helpers/clientHelpers";
 
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+
 import StyledCardCard from "../../Components/CastCard/CastCard.style";
 import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
@@ -31,11 +33,15 @@ const Details = ({ className }: DetailsProps) => {
       {/* TODO: Fix background for null paths */}
       {detailData !== undefined ? (
         <div className="overview-images">
-          <img
-            className="overview-background"
-            src={`https://image.tmdb.org/t/p/w500${detailData.backdrop_path}`}
-            alt=""
-          />
+          {detailData.backdrop_path !== null ? (
+            <img
+              className="overview-background"
+              src={`https://image.tmdb.org/t/p/w500${detailData.backdrop_path}`}
+              alt=""
+            />
+          ) : (
+            <div className="overview-background-fill"></div>
+          )}
 
           <img
             className="overview-poster"
@@ -86,7 +92,10 @@ const Details = ({ className }: DetailsProps) => {
 
       <div className="see-more">
         <Link to={`/detail/cast/${id}`}>
-          <h3>Full cast and crew</h3>
+          <h3 className="cast-page-link">
+            Full cast and crew
+            <HiOutlineArrowNarrowRight className="arrow-icon" />
+          </h3>
         </Link>
       </div>
 
@@ -102,7 +111,7 @@ const Details = ({ className }: DetailsProps) => {
             }
             return (
               <div className="trailer-player" key={data.id}>
-                <h2 id="trailer-name">{data.name}</h2>
+                {/* <h2 id="trailer-name">{data.name.toLowerCase()}</h2> */}
                 <ReactPlayer
                   controls
                   width="340px"
