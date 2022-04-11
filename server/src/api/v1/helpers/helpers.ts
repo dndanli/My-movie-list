@@ -3,10 +3,10 @@ import axios from "axios";
 import "dotenv/config";
 const apiKey = process.env.API_KEY;
 
-export const fetchPopularMovies = async () => {
+export const fetchPopularMedia = async (mediaType: string) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/popular?api_key=${apiKey}&language=en-US&page=1`
+      `https://api.themoviedb.org/3/${mediaType}/popular?api_key=${apiKey}&language=en-US&page=1`
     );
     return response.data;
   } catch (err) {
@@ -52,10 +52,10 @@ export const fetchUpcoming = async () => {
   }
 };
 
-export const fetchMovieData = async (movieId: number) => {
+export const fetchMediaDetails = async (mediaType: string, id: number) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=credits,videos`
+      `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${apiKey}&append_to_response=credits,videos`
     );
     return response.data;
   } catch (err) {
