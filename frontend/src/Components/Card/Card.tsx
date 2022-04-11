@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { AiFillStar } from "react-icons/ai";
 
 type CardProps = {
   className: string;
@@ -30,7 +31,10 @@ const Card = ({
           <p>{title}</p>
         </div>
         <div className="metadata">
-          <p className="rating-score">{rating}</p>
+          <p className="rating-score">
+            {rating}
+            <AiFillStar className="star-icon" />
+          </p>
           <p className="extra-info">{date}</p>
         </div>
       </Link>
