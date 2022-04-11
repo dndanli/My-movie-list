@@ -2,7 +2,7 @@ import styled from "styled-components";
 import CastCard from "./CastCard";
 
 const StyledCastCard = styled(CastCard)`
-  background-color: rgba(51, 51, 51, 0.9);
+  background-color: rgba(255, 255, 255, 0.9);
   min-width: 8rem;
   max-height: 18rem;
   display: flex;
