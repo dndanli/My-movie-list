@@ -6,7 +6,7 @@ const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color: #090909;
+    background-color:rgb(245, 245, 245);
   }
 `;
 
