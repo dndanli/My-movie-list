@@ -38,12 +38,12 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(16, 16, 16, 0.8);
   }
   .overview-info,
   .overview-text {
     margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.8);
   }
   .genre-section {
     margin-top: 1rem;
@@ -85,22 +85,40 @@ const StyledDetails = styled(Details)`
   }
 
   .see-more {
-    margin-top: 1rem;
+    margin-top: 0.5rem;
+    margin-bottom: 2rem;
     font-size: 1rem;
     a {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgb(219, 48, 86);
+      text-decoration: none;
     }
   }
-  .see-more-icon {
-    color: rgba(255, 255, 255, 0.8);
-    font-size: 2rem;
+  .cast-page-link {
+    display: flex;
+    align-items: center;
+  }
+  .arrow-icon {
+    margin-left: 0.5rem;
   }
   .trailer-player {
-    margin-block: 1rem;
+    margin-block: 2rem;
   }
   .divider {
     margin-top: 1rem;
-    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    border: 0.5px solid rgba(16, 16, 16, 0.1);
+  }
+  .overview-background-fill {
+    height: 190px;
+    width: 100%;
+    /* background-color: rgb(202, 62, 71); */
+
+    background-color: #ff9a8b;
+    background-image: linear-gradient(
+      90deg,
+      #ff9a8b 0%,
+      #ff6a88 55%,
+      #ff99ac 100%
+    );
   }
 `;
 
