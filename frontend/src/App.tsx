@@ -6,6 +6,7 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import StyledFooter from "./Components/Footer/Footer.style";
 import StyledCast from "./Pages/Cast/Cast.style";
 import StyledDetails from "./Pages/Details/Details.style";
+import StyledDiscover from "./Pages/Discover/Discover.style";
 
 function App() {
   return (
@@ -19,7 +20,11 @@ function App() {
             element={<StyledHome className="home-page" />}
           ></Route>
           <Route
-            path="/:category/:id"
+            path="/discover"
+            element={<StyledDiscover className="discover-page" />}
+          ></Route>
+          <Route
+            path="detail/:id"
             element={<StyledDetails className="detail-page" />}
           ></Route>
           <Route
