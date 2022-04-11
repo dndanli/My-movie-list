@@ -3,7 +3,7 @@ import StyledBox from "../../Components/Box/Box.style";
 import StyledButton from "../../Components/Button/Button.style";
 
 import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
-import { getPopularMovies } from "../../Helpers/clientHelpers";
+import { getPopularMedia } from "../../Helpers/clientHelpers";
 
 type DiscoverProps = {
   className: string;
@@ -11,11 +11,15 @@ type DiscoverProps = {
 
 const Discover = ({ className }: DiscoverProps) => {
   const [popularMovies, setPopularMovies] = useState([]);
+  const [popularShows, setPopularShows] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
-      const popularMoviesResponseData = await getPopularMovies();
+      const popularMoviesResponseData = await getPopularMedia("movie");
+      const popularShowsResponseData = await getPopularMedia("tv");
+
       setPopularMovies(popularMoviesResponseData.results);
+      setPopularShows(popularShowsResponseData.results);
     };
     fetchData();
   }, []);
@@ -28,23 +32,38 @@ const Discover = ({ className }: DiscoverProps) => {
         <StyledButton className="filter-button" text="People" />
       </ul>
       <hr className="divider" />
+
       <div className="content-wrapper">
-        <div className="content-wrapper">
-          {popularMovies.map((data: any) => {
-            return (
-              <StyledBox
-                className="box"
-                imagePath={data.poster_path}
-                title={data.title}
-                rating={data.vote_average}
-                date={data.release_date}
-                boxId={data.id}
-                key={data.id}
-                overview={data.overview}
-              />
-            );
-          })}
-        </div>
+        {popularMovies.map((data: any) => {
+          return (
+            <StyledBox
+              className="box"
+              imagePath={data.poster_path}
+              title={data.name || data.title}
+              rating={data.vote_average}
+              date={data.release_date}
+              boxId={data.id}
+              key={data.id}
+              overview={data.overview}
+              mediaType="movie"
+            />
+          );
+        })}
+        {popularShows.map((data: any) => {
+          return (
+            <StyledBox
+              className="box"
+              imagePath={data.poster_path}
+              title={data.name || data.title}
+              rating={data.vote_average}
+              date={data.release_date}
+              boxId={data.id}
+              key={data.id}
+              overview={data.overview}
+              mediaType="tv"
+            />
+          );
+        })}
       </div>
       <hr className="divider" />
     </div>
