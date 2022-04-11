@@ -1,13 +1,16 @@
 import express from "express";
-import { fetchMovieData } from "../helpers/helpers";
+import { fetchMediaDetails } from "../helpers/helpers";
 const router = express.Router();
 
 /**
  * all routes start with /detail
  */
 
-router.get("/getMovieData/:id", async (request, response) => {
-  const movieData = await fetchMovieData(parseInt(request.params.id));
+router.get("/getDetails/:mediaType/:id", async (request, response) => {
+  const movieData = await fetchMediaDetails(
+    request.params.mediaType,
+    parseInt(request.params.id)
+  );
   response.send(movieData);
   response.end();
 });
