@@ -12,17 +12,14 @@ const StyledHome = styled(Home)`
     padding-inline: 1rem;
     min-height: 15rem;
     max-height: 15rem;
-    background: #9796f0;
-    background: -webkit-linear-gradient(
-      to right,
-      #fbc7d4,
-      #9796f0
-    ); /* Chrome 10-25, Safari 5.1-6 */
-    background: linear-gradient(
-      to right,
-      #fbc7d4,
-      #9796f0
-    ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+
+    background-color: #ff9a8b;
+    background-image: linear-gradient(
+      90deg,
+      #ff9a8b 0%,
+      #ff6a88 55%,
+      #ff99ac 100%
+    );
 
     color: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
@@ -59,13 +56,13 @@ const StyledHome = styled(Home)`
   #popular-heading {
     font-size: 1.7rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.8);
     margin-block: 0.5rem;
   }
   #upcoming-heading {
     font-size: 1.7rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.8);
     margin-block: 1rem;
   }
 `;
