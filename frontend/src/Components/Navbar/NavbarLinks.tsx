@@ -5,31 +5,37 @@ import { IoIosLogIn } from "react-icons/io";
 export const NavbarLinks: {
   id: string;
   linkIcon: JSX.Element;
+  linkName: string;
   link: string;
 }[] = [
   {
-    id: "movie-link",
+    id: "discover-link",
     linkIcon: <MdLocalMovies />,
-    link: "Movies",
+    linkName: "Discover",
+    link: "/discover",
   },
   {
     id: "review-link",
     linkIcon: <MdRateReview />,
-    link: "Reviews",
+    linkName: "Reviews",
+    link: "/reviews",
   },
   {
-    id: "cast-link",
+    id: "people-link",
     linkIcon: <BsFillPeopleFill />,
-    link: "Casts",
+    linkName: "People",
+    link: "/people",
   },
   {
     id: "about-link",
     linkIcon: <GrStatusInfoSmall />,
-    link: "About",
+    linkName: "About",
+    link: "/about",
   },
   {
     id: "login-link",
     linkIcon: <IoIosLogIn />,
-    link: "Login",
+    linkName: "Login",
+    link: "/login",
   },
 ];
