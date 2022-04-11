@@ -1,8 +1,10 @@
 import axios from "axios";
 
-export async function getPopularMovies() {
+export async function getPopularMedia(mediaType: string) {
   try {
-    const response = await axios.get("http://localhost:8000/popular");
+    const response = await axios.get(
+      `http://localhost:8000/popular/${mediaType}`
+    );
     return response.data;
   } catch (err) {
     console.error(err);
@@ -45,10 +47,10 @@ export function postMovieIdToDetail(movieId: number) {
     });
 }
 
-export async function getMovieData(movieId: any) {
+export async function getMediaDetails(mediaType: any, movieId: any) {
   try {
     const response = await axios.get(
-      `http://localhost:8000/detail/getMovieData/${movieId}`
+      `http://localhost:8000/detail/getDetails/${mediaType}/${movieId}`
     );
     return response.data;
   } catch (err) {
