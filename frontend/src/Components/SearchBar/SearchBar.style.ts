@@ -33,7 +33,8 @@ const StyledSearchBar = styled(SearchBar)`
     padding-left: 10px;
     padding-right: 10px;
   }
-  input.search-field {
+
+  /* input.search-field {
     background-color: rgba(255, 255, 255, 0.9);
   }
   input[type="search"]::-webkit-search-decoration,
@@ -41,7 +42,7 @@ const StyledSearchBar = styled(SearchBar)`
   input[type="search"]::-webkit-search-results-button,
   input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
-  }
+  } */
 `;
 
 export default StyledSearchBar;
