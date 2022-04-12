@@ -3,7 +3,9 @@ import StyledBox from "../../Components/Box/Box.style";
 import StyledButton from "../../Components/Button/Button.style";
 
 import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
-import { getPopularMedia } from "../../Helpers/clientHelpers";
+import { getSearchQueryResponse } from "../../Helpers/clientHelpers";
+
+import { useSearchParams } from "react-router-dom";
 
 type DiscoverProps = {
   className: string;
@@ -12,85 +14,45 @@ type DiscoverProps = {
 // TODO: cache api data
 
 const Discover = ({ className }: DiscoverProps) => {
-  const [popularMovies, setPopularMovies] = useState([]);
-  const [popularShows, setPopularShows] = useState([]);
-
-  const [activeMovie, setActiveMovie] = useState(false);
-  const [activeShow, setActiveShow] = useState(false);
+  const [queryResponse, setQueryResponse] = useState([]);
+  const [searchParams] = useSearchParams();
 
   useEffect(() => {
     const fetchData = async () => {
-      const popularMoviesResponseData = await getPopularMedia("movie");
-      const popularShowsResponseData = await getPopularMedia("tv");
-
-      setPopularMovies(popularMoviesResponseData);
-      setPopularShows(popularShowsResponseData);
+      if (searchParams.get("query")) {
+        const response = await getSearchQueryResponse(
+          searchParams.get("query")
+        );
+        setQueryResponse(response.results);
+      }
     };
     fetchData();
-  }, []);
+  }, [searchParams]);
   return (
     <div className={className}>
       <StyledSearchBar className="search-bar" />
       <ul className="filter-section">
-        <StyledButton
-          className="filter-button"
-          text="Movies"
-          onClickHandler={() => setActiveMovie(!activeMovie)}
-        />
-        <StyledButton
-          className="filter-button"
-          text="Tv-Shows"
-          onClickHandler={() => setActiveShow(!activeShow)}
-        />
+        <StyledButton className="filter-button" text="Movies" />
+        <StyledButton className="filter-button" text="Tv-Shows" />
       </ul>
       <hr className="divider" />
 
       <div className="content-wrapper">
-        {/* 
-          if movies btn was clicked then -> display movies
-          if tv-shows btn was clicked then -> display shows
-          if people btn was clicked then -> display people
-
-        */}
-        {activeMovie
-          ? popularMovies.map((page: any) => {
-              return page.results.map((data: any) => {
-                return (
-                  <StyledBox
-                    className="box"
-                    imagePath={data.poster_path}
-                    title={data.name || data.title}
-                    rating={data.vote_average}
-                    date={data.release_date}
-                    boxId={data.id}
-                    key={data.id}
-                    overview={data.overview}
-                    mediaType="movie"
-                  />
-                );
-              });
-            })
-          : null}
-
-        {activeShow
-          ? popularShows.map((page: any) => {
-              return page.results.map((data: any) => {
-                return (
-                  <StyledBox
-                    className="box"
-                    imagePath={data.poster_path}
-                    title={data.name || data.title}
-                    rating={data.vote_average}
-                    date={data.release_date}
-                    boxId={data.id}
-                    key={data.id}
-                    overview={data.overview}
-                    mediaType="tv"
-                  />
-                );
-              });
-            })
-          : null}
+        {queryResponse.map((data: any) => {
+          return (
+            <StyledBox
+              className="box"
+              imagePath={data.poster_path}
+              title={data.name || data.title}
+              rating={data.vote_average}
+              date={data.release_date}
+              boxId={data.id}
+              key={data.id}
+              overview={data.overview}
+              mediaType="movie"
+            />
+          );
+        })}
       </div>
       <hr className="divider" />
     </div>
