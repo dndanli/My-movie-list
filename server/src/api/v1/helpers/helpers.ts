@@ -4,11 +4,18 @@ import "dotenv/config";
 const apiKey = process.env.API_KEY;
 
 export const fetchPopularMedia = async (mediaType: string) => {
+  const responseArray: Array<Object> = [];
+
   try {
-    const response = await axios.get(
-      `https://api.themoviedb.org/3/${mediaType}/popular?api_key=${apiKey}&language=en-US&page=1`
-    );
-    return response.data;
+    for (let numberOfPages = 1; numberOfPages < 3; numberOfPages++) {
+      const response = await axios.get(
+        `https://api.themoviedb.org/3/${mediaType}/popular?api_key=${apiKey}&language=en-US&page=${numberOfPages}`
+      );
+      responseArray.push(response.data);
+      console.log("priting response");
+      console.log(responseArray);
+    }
+    return responseArray;
   } catch (err) {
     console.error(err);
   }
