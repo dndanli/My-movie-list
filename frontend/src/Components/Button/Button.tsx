@@ -3,10 +3,9 @@ import { useState } from "react";
 type ButtonProps = {
   className: string;
   text: string;
-  onClickHandler: any;
 };
 
-const Button = ({ className, text, onClickHandler }: ButtonProps) => {
+const Button = ({ className, text }: ButtonProps) => {
   const [clicked, setCicked] = useState(false);
 
   return (
@@ -18,7 +17,6 @@ const Button = ({ className, text, onClickHandler }: ButtonProps) => {
       }}
       onClick={() => {
         setCicked(!clicked);
-        onClickHandler();
       }}
     >
       <p>{text}</p>
