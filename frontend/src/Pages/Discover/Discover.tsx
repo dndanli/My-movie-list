@@ -18,8 +18,8 @@ const Discover = ({ className }: DiscoverProps) => {
       const popularMoviesResponseData = await getPopularMedia("movie");
       const popularShowsResponseData = await getPopularMedia("tv");
 
-      setPopularMovies(popularMoviesResponseData.results);
-      setPopularShows(popularShowsResponseData.results);
+      setPopularMovies(popularMoviesResponseData);
+      setPopularShows(popularShowsResponseData);
     };
     fetchData();
   }, []);
@@ -34,35 +34,47 @@ const Discover = ({ className }: DiscoverProps) => {
       <hr className="divider" />
 
       <div className="content-wrapper">
-        {popularMovies.map((data: any) => {
-          return (
-            <StyledBox
-              className="box"
-              imagePath={data.poster_path}
-              title={data.name || data.title}
-              rating={data.vote_average}
-              date={data.release_date}
-              boxId={data.id}
-              key={data.id}
-              overview={data.overview}
-              mediaType="movie"
-            />
-          );
+        {/* 
+          if movies btn was clicked then -> display movies
+          if tv-shows btn was clicked then -> display shows
+          if people btn was clicked then -> display people
+
+        */}
+
+        {popularMovies.map((page: any) => {
+          return page.results.map((data: any) => {
+            return (
+              <StyledBox
+                className="box"
+                imagePath={data.poster_path}
+                title={data.name || data.title}
+                rating={data.vote_average}
+                date={data.release_date}
+                boxId={data.id}
+                key={data.id}
+                overview={data.overview}
+                mediaType="movie"
+              />
+            );
+          });
         })}
-        {popularShows.map((data: any) => {
-          return (
-            <StyledBox
-              className="box"
-              imagePath={data.poster_path}
-              title={data.name || data.title}
-              rating={data.vote_average}
-              date={data.release_date}
-              boxId={data.id}
-              key={data.id}
-              overview={data.overview}
-              mediaType="tv"
-            />
-          );
+
+        {popularShows.map((page: any) => {
+          return page.results.map((data: any) => {
+            return (
+              <StyledBox
+                className="box"
+                imagePath={data.poster_path}
+                title={data.name || data.title}
+                rating={data.vote_average}
+                date={data.release_date}
+                boxId={data.id}
+                key={data.id}
+                overview={data.overview}
+                mediaType="tv"
+              />
+            );
+          });
         })}
       </div>
       <hr className="divider" />
