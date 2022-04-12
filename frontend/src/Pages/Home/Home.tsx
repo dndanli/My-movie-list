@@ -17,7 +17,7 @@ const Home = ({ className }: Homeprops) => {
     const fetchData = async () => {
       const popularMoviesResponseData = await getPopularMedia("movie");
       const upcomingResponseData = await getUpcoming();
-      setPopularMovies(popularMoviesResponseData.results);
+      setPopularMovies(popularMoviesResponseData);
       setUpcoming(upcomingResponseData.results);
     };
     fetchData();
@@ -32,22 +32,26 @@ const Home = ({ className }: Homeprops) => {
         </h2>
         <h2 className="hero-heading-2">and Tv-Shows.</h2>
       </div>
+
       <StyledSearchBar className="searchbar" />
       <h1 id="popular-heading">Popular</h1>
+
       <div className="content-wrapper">
-        {popularMovies.map((data: any) => {
-          return (
-            <StyledCard
-              className="card"
-              imagePath={data.poster_path}
-              title={data.title}
-              rating={data.vote_average}
-              date={data.release_date}
-              cardId={data.id}
-              mediaType={"movie"}
-              key={data.id}
-            />
-          );
+        {popularMovies.map((page: any) => {
+          return page.results.map((data: any) => {
+            return (
+              <StyledCard
+                className="card"
+                imagePath={data.poster_path}
+                title={data.title}
+                rating={data.vote_average}
+                date={data.release_date}
+                cardId={data.id}
+                mediaType={"movie"}
+                key={data.id}
+              />
+            );
+          });
         })}
       </div>
 
