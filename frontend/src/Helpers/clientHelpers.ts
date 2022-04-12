@@ -66,3 +66,14 @@ export async function getUpcoming() {
     console.error(err);
   }
 }
+
+export async function getSearchQueryResponse(clientQuery: any) {
+  try {
+    const response = await axios.post(
+      `http://localhost:8000/search/${clientQuery}`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
