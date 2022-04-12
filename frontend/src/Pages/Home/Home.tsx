@@ -9,6 +9,8 @@ type Homeprops = {
   className: string;
 };
 
+// TODO: cache api data
+
 const Home = ({ className }: Homeprops) => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [upcoming, setUpcoming] = useState([]);
