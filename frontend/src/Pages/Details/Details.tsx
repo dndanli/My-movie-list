@@ -51,7 +51,9 @@ const Details = ({ className }: DetailsProps) => {
       ) : null}
 
       {detailData !== undefined ? (
-        <h1 className="overview-title-header">{detailData.title}</h1>
+        <h1 className="overview-title-header">
+          {detailData.title || detailData.name}
+        </h1>
       ) : null}
 
       {detailData !== undefined ? (
