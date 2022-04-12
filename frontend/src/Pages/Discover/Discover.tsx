@@ -9,9 +9,14 @@ type DiscoverProps = {
   className: string;
 };
 
+// TODO: cache api data
+
 const Discover = ({ className }: DiscoverProps) => {
   const [popularMovies, setPopularMovies] = useState([]);
   const [popularShows, setPopularShows] = useState([]);
+
+  const [activeMovie, setActiveMovie] = useState(false);
+  const [activeShow, setActiveShow] = useState(false);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -27,9 +32,16 @@ const Discover = ({ className }: DiscoverProps) => {
     <div className={className}>
       <StyledSearchBar className="search-bar" />
       <ul className="filter-section">
-        <StyledButton className="filter-button" text="Movies" />
-        <StyledButton className="filter-button" text="Tv-Shows" />
-        <StyledButton className="filter-button" text="People" />
+        <StyledButton
+          className="filter-button"
+          text="Movies"
+          onClickHandler={() => setActiveMovie(!activeMovie)}
+        />
+        <StyledButton
+          className="filter-button"
+          text="Tv-Shows"
+          onClickHandler={() => setActiveShow(!activeShow)}
+        />
       </ul>
       <hr className="divider" />
 
@@ -40,42 +52,45 @@ const Discover = ({ className }: DiscoverProps) => {
           if people btn was clicked then -> display people
 
         */}
+        {activeMovie
+          ? popularMovies.map((page: any) => {
+              return page.results.map((data: any) => {
+                return (
+                  <StyledBox
+                    className="box"
+                    imagePath={data.poster_path}
+                    title={data.name || data.title}
+                    rating={data.vote_average}
+                    date={data.release_date}
+                    boxId={data.id}
+                    key={data.id}
+                    overview={data.overview}
+                    mediaType="movie"
+                  />
+                );
+              });
+            })
+          : null}
 
-        {popularMovies.map((page: any) => {
-          return page.results.map((data: any) => {
-            return (
-              <StyledBox
-                className="box"
-                imagePath={data.poster_path}
-                title={data.name || data.title}
-                rating={data.vote_average}
-                date={data.release_date}
-                boxId={data.id}
-                key={data.id}
-                overview={data.overview}
-                mediaType="movie"
-              />
-            );
-          });
-        })}
-
-        {popularShows.map((page: any) => {
-          return page.results.map((data: any) => {
-            return (
-              <StyledBox
-                className="box"
-                imagePath={data.poster_path}
-                title={data.name || data.title}
-                rating={data.vote_average}
-                date={data.release_date}
-                boxId={data.id}
-                key={data.id}
-                overview={data.overview}
-                mediaType="tv"
-              />
-            );
-          });
-        })}
+        {activeShow
+          ? popularShows.map((page: any) => {
+              return page.results.map((data: any) => {
+                return (
+                  <StyledBox
+                    className="box"
+                    imagePath={data.poster_path}
+                    title={data.name || data.title}
+                    rating={data.vote_average}
+                    date={data.release_date}
+                    boxId={data.id}
+                    key={data.id}
+                    overview={data.overview}
+                    mediaType="tv"
+                  />
+                );
+              });
+            })
+          : null}
       </div>
       <hr className="divider" />
     </div>
