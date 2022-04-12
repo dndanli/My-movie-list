@@ -24,6 +24,10 @@ function App() {
             element={<StyledDiscover className="discover-page" />}
           ></Route>
           <Route
+            path="/discover:query"
+            element={<StyledDiscover className="discover-page" />}
+          ></Route>
+          <Route
             path="detail/:mediaType/:id"
             element={<StyledDetails className="detail-page" />}
           ></Route>
@@ -33,6 +37,7 @@ function App() {
           ></Route>
         </Routes>
       </BrowserRouter>
+
       <StyledFooter className="footer" />
     </div>
   );
