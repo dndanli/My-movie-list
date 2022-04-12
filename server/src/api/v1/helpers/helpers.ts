@@ -68,3 +68,14 @@ export const fetchMediaDetails = async (mediaType: string, id: number) => {
     console.error(err);
   }
 };
+
+export const fetchClientQuery = async (clientQuery: string) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=1&include_adult=false`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
