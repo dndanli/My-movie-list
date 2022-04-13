@@ -38,7 +38,9 @@ const Card = ({
             {rating}
             <AiFillStar className="star-icon" />
           </p>
-          <p className="extra-info">{convertToMonthDayYear(date)}</p>
+          {date !== null ? (
+            <p className="extra-info">{convertToMonthDayYear(date)}</p>
+          ) : null}
         </div>
       </Link>
     </div>
