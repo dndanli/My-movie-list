@@ -1,3 +1,4 @@
+import { MdLocalMovies } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 type BoxProps = {
@@ -26,11 +27,16 @@ const Box = ({
     <div className={className}>
       <Link to={`/detail/${mediaType}/${boxId}`}>
         <div className="wrapper">
-          <img
-            className="image"
-            src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
-            alt={title}
-          />
+          {imagePath !== null ? (
+            <img
+              className="image"
+              src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
+              alt={title}
+            />
+          ) : (
+            <MdLocalMovies className="box-icon" />
+          )}
+
           <div className="main-info-wrapper">
             <p className="title">{title}</p>
             <p className="rating-score">Score: {rating}</p>
