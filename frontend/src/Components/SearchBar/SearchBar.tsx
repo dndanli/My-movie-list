@@ -1,4 +1,6 @@
 import { HiOutlineSearch } from "react-icons/hi";
+import { IoMdClose } from "react-icons/io";
+
 import { useNavigate } from "react-router-dom";
 
 import { useState } from "react";
@@ -11,7 +13,11 @@ type SearchBarProps = {
 const SearchBar = ({ className }: SearchBarProps) => {
   const [input, setInput] = useState<string>("");
   const navigate = useNavigate();
+
   const validateInput = (input: string) => !!input.trim();
+  const clearSearchInput = () => {
+    setInput("");
+  };
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
@@ -28,11 +34,15 @@ const SearchBar = ({ className }: SearchBarProps) => {
         <input
           className="search-field"
           type="search"
+          value={input}
           onChange={(e) => {
             setInput(e.target.value);
           }}
         ></input>
       </form>
+      {validateInput(input) !== false ? (
+        <IoMdClose className="close-icon" onClick={clearSearchInput} />
+      ) : null}
     </div>
   );
 };
