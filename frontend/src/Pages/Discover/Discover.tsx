@@ -38,6 +38,11 @@ const Discover = ({ className }: DiscoverProps) => {
       <hr className="divider" />
 
       <div className="content-wrapper">
+        {searchParams.get("query") === null ? (
+          <h2 className="message">
+            Nothing here, try searching for something.
+          </h2>
+        ) : null}
         {queryResponse.map((data: any) => {
           return (
             <StyledBox
