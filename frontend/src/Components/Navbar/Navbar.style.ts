@@ -1,5 +1,13 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Navbar from "./Navbar";
+
+const animation = keyframes`
+    0%{opacity:0; transform: translateY(-45px) skewY(10deg) skewX(-9deg); filter:blur(3px)};
+    25%{opacity:1; transform: translateY(0) skewY(0deg) skewX(0deg);  filter:blur(0)};
+    75%{opacity:1; transform: translateY(0) skewY(0deg) skewX(0deg);  filter:blur(0)};
+    100%{opacity:1; };
+`;
+
 const StyledNavbar = styled(Navbar)`
   font-family: "Inter", sans-serif;
   display: flex;
@@ -18,12 +26,7 @@ const StyledNavbar = styled(Navbar)`
       text-decoration: none;
     }
   }
-  .menu-icon {
-    font-size: 2rem;
-    color: rgb(219, 48, 86);
-  }
 
-  /* mobile navbar wrapper section */
   .mobile-navbar-wrapper {
     display: flex;
     flex-direction: column;
@@ -34,6 +37,16 @@ const StyledNavbar = styled(Navbar)`
     position: absolute;
     top: 2.5rem;
     right: 1rem;
+
+    opacity: 0;
+    animation-name: ${animation};
+    animation-duration: 3s;
+    animation-fill-mode: forwards;
+  }
+
+  .menu-icon {
+    font-size: 2rem;
+    color: rgb(219, 48, 86);
   }
 
   .nav-links-wrapper {
