@@ -20,7 +20,9 @@ const Navbar = ({ className }: NavbarProps) => {
           <h2>MVL</h2>
         </Link>
       </div>
+
       <HiOutlineMenuAlt2 className="menu-icon" onClick={toggleActive} />
+      {/* TODO: animate on close */}
       {active ? (
         <div className="mobile-navbar-wrapper">
           {NavbarLinks.map((link) => {
