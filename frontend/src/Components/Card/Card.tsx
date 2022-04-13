@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import { convertToMonthDayYear } from "../../Helpers/dateFormatter";
 
 type CardProps = {
   className: string;
@@ -37,7 +38,7 @@ const Card = ({
             {rating}
             <AiFillStar className="star-icon" />
           </p>
-          <p className="extra-info">{date}</p>
+          <p className="extra-info">{convertToMonthDayYear(date)}</p>
         </div>
       </Link>
     </div>
