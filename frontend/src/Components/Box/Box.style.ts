@@ -35,7 +35,7 @@ const StyledBox = styled(Box)`
   .title {
     margin-top: 1rem;
     font-family: "Inter", sans-serif;
-    font-size: 1rem;
+    font-size: 15px;
     font-weight: 700;
     color: rgba(16, 16, 16, 0.8);
   }
