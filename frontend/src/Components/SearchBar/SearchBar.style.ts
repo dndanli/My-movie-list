@@ -7,21 +7,20 @@ const StyledSearchBar = styled(SearchBar)`
   padding-block: 0.5rem;
   border-radius: 1rem;
   background-color: rgba(255, 255, 255, 1);
-  .search-icon,
-  .close-icon,
-  .close-icon-vis {
+  display: flex;
+  align-items: center;
+  .search-icon {
     font-size: 2rem;
     color: rgba(16, 16, 16, 0.7);
-  }
-  .search-icon {
     padding-left: 10px;
   }
+
   .close-icon {
-    visibility: hidden;
+    font-size: 1.5rem;
+    padding-left: 10px;
+    color: rgba(16, 16, 16, 0.7);
   }
-  .close-icon-vis {
-    padding-right: 10px;
-  }
+
   display: flex;
   .search-field {
     width: 100%;
@@ -34,15 +33,17 @@ const StyledSearchBar = styled(SearchBar)`
     padding-right: 10px;
   }
 
-  /* input.search-field {
+  input.search-field {
     background-color: rgba(255, 255, 255, 0.9);
+    min-height: 2rem;
   }
+
   input[type="search"]::-webkit-search-decoration,
   input[type="search"]::-webkit-search-cancel-button,
   input[type="search"]::-webkit-search-results-button,
   input[type="search"]::-webkit-search-results-decoration {
     -webkit-appearance: none;
-  } */
+  }
 `;
 
 export default StyledSearchBar;
