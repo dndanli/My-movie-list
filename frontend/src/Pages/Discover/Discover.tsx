@@ -14,7 +14,12 @@ type DiscoverProps = {
 // TODO: cache api data
 
 const Discover = ({ className }: DiscoverProps) => {
-  const [queryResponse, setQueryResponse] = useState([]);
+  const [movieResponseData, setMovieResponseData] = useState([]);
+  const [movieVisible, setMovieVisible] = useState(true);
+
+  const [tvShowResponseData, setTvShowResponseData] = useState([]);
+  const [tvShowVisible, setTvShowVisible] = useState(false);
+
   const [searchParams] = useSearchParams();
 
   useEffect(() => {
@@ -23,7 +28,8 @@ const Discover = ({ className }: DiscoverProps) => {
         const response = await getSearchQueryResponse(
           searchParams.get("query")
         );
-        setQueryResponse(response.results);
+        setMovieResponseData(response[0].results);
+        setTvShowResponseData(response[1].results);
       }
     };
     fetchData();
@@ -32,8 +38,22 @@ const Discover = ({ className }: DiscoverProps) => {
     <div className={className}>
       <StyledSearchBar className="search-bar" />
       <ul className="filter-section">
-        <StyledButton className="filter-button" text="Movies" />
-        <StyledButton className="filter-button" text="Tv-Shows" />
+        <StyledButton
+          className="filter-button"
+          text="Movies"
+          clickedStateValue={true}
+          clickHandler={() => {
+            setMovieVisible(!movieVisible);
+          }}
+        />
+        <StyledButton
+          className="filter-button"
+          text="Tv-Shows"
+          clickedStateValue={false}
+          clickHandler={() => {
+            setTvShowVisible(!tvShowVisible);
+          }}
+        />
       </ul>
       <hr className="divider" />
 
@@ -43,21 +63,42 @@ const Discover = ({ className }: DiscoverProps) => {
             Nothing here, try searching for something.
           </h2>
         ) : null}
-        {queryResponse.map((data: any) => {
-          return (
-            <StyledBox
-              className="box"
-              imagePath={data.poster_path}
-              title={data.name || data.title}
-              rating={data.vote_average}
-              date={data.release_date}
-              boxId={data.id}
-              key={data.id}
-              overview={data.overview}
-              mediaType="movie"
-            />
-          );
-        })}
+
+        {movieVisible !== false
+          ? movieResponseData.map((data: any) => {
+              return (
+                <StyledBox
+                  className="box"
+                  imagePath={data.poster_path}
+                  title={data.name || data.title}
+                  rating={data.vote_average}
+                  date={data.release_date}
+                  boxId={data.id}
+                  key={data.id}
+                  overview={data.overview}
+                  mediaType="movie"
+                />
+              );
+            })
+          : null}
+
+        {tvShowVisible !== false
+          ? tvShowResponseData.map((data: any) => {
+              return (
+                <StyledBox
+                  className="box"
+                  imagePath={data.poster_path}
+                  title={data.name || data.title}
+                  rating={data.vote_average}
+                  date={data.release_date}
+                  boxId={data.id}
+                  key={data.id}
+                  overview={data.overview}
+                  mediaType="tv"
+                />
+              );
+            })
+          : null}
       </div>
       <hr className="divider" />
     </div>
