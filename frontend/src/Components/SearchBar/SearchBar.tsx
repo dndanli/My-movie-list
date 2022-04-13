@@ -11,11 +11,14 @@ type SearchBarProps = {
 const SearchBar = ({ className }: SearchBarProps) => {
   const [input, setInput] = useState<string>("");
   const navigate = useNavigate();
+  const validateInput = (input: string) => !!input.trim();
 
   const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    axios.post(`http://localhost:8000/search/${input}`, { query: input });
-    navigate(`/discover?query=${input}`);
+    if (validateInput(input) !== false) {
+      axios.post(`http://localhost:8000/search/${input}`, { query: input });
+      navigate(`/discover?query=${input}`);
+    }
   };
 
   return (
