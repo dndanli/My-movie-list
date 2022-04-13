@@ -13,7 +13,10 @@ const StyledNavbar = styled(Navbar)`
   z-index: 2;
   .logo {
     margin-right: auto;
-    color: rgb(219, 48, 86);
+    a {
+      color: rgb(219, 48, 86);
+      text-decoration: none;
+    }
   }
   .menu-icon {
     font-size: 2rem;
