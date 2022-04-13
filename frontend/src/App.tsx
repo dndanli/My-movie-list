@@ -12,8 +12,8 @@ function App() {
   return (
     <div className="App">
       <GlobalStyle />
-      <StyledNavbar className="navbar" />
       <BrowserRouter>
+        <StyledNavbar className="navbar" />
         <Routes>
           <Route
             path="/"
