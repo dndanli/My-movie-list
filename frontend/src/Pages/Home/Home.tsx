@@ -4,6 +4,7 @@ import StyledSection from "../../Components/Layout/Section.style";
 
 import { getPopularMedia, getUpcoming } from "../../Helpers/clientHelpers";
 import { useEffect, useState } from "react";
+import TextAnimation from "../../Components/Animations/TextAnimation";
 
 type Homeprops = {
   className: string;
@@ -28,7 +29,9 @@ const Home = ({ className }: Homeprops) => {
   return (
     <div className={className}>
       <div className="hero">
-        <h1 id="hero-heading">Welcome</h1>
+        <h1 id="hero-heading">
+          <TextAnimation />
+        </h1>
         <h2 className="hero-heading-2">
           to a place where you discover new movies
         </h2>
