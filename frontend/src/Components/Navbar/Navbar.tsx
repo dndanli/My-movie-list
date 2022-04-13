@@ -2,6 +2,7 @@ import { HiOutlineMenuAlt2 } from "react-icons/hi";
 
 import { useState } from "react";
 import { NavbarLinks } from "./NavbarLinks";
+import { Link } from "react-router-dom";
 
 type NavbarProps = {
   className: string;
@@ -15,7 +16,9 @@ const Navbar = ({ className }: NavbarProps) => {
   return (
     <div className={className}>
       <div className="logo">
-        <h2>MVL</h2>
+        <Link to="/">
+          <h2>MVL</h2>
+        </Link>
       </div>
       <HiOutlineMenuAlt2 className="menu-icon" onClick={toggleActive} />
       {active ? (
