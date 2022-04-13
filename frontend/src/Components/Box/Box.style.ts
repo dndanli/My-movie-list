@@ -18,6 +18,11 @@ const StyledBox = styled(Box)`
     border-top-left-radius: 10px;
     border-bottom-left-radius: 10px;
   }
+  .box-icon {
+    min-width: 120px;
+    min-height: 150px;
+    color: rgba(16, 16, 16, 0.3);
+  }
   .main-info-wrapper {
     padding-left: 1rem;
     max-width: 12rem;
