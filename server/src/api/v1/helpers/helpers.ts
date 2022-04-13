@@ -70,11 +70,17 @@ export const fetchMediaDetails = async (mediaType: string, id: number) => {
 };
 
 export const fetchClientQuery = async (clientQuery: string) => {
+  const responseArray: Array<Object> = [];
   try {
-    const response = await axios.get(
+    const movieResponse = await axios.get(
       `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=1&include_adult=false`
     );
-    return response.data;
+    const tvShowResponse = await axios.get(
+      `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=1&include_adult=false`
+    );
+
+    responseArray.push(movieResponse.data, tvShowResponse.data);
+    return responseArray;
   } catch (err) {
     console.error(err);
   }
