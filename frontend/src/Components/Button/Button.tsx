@@ -3,10 +3,17 @@ import { useState } from "react";
 type ButtonProps = {
   className: string;
   text: string;
+  clickedStateValue: boolean;
+  clickHandler: any;
 };
 
-const Button = ({ className, text }: ButtonProps) => {
-  const [clicked, setCicked] = useState(false);
+const Button = ({
+  className,
+  text,
+  clickHandler,
+  clickedStateValue,
+}: ButtonProps) => {
+  const [clicked, setCicked] = useState(clickedStateValue);
 
   return (
     <li
@@ -17,6 +24,7 @@ const Button = ({ className, text }: ButtonProps) => {
       }}
       onClick={() => {
         setCicked(!clicked);
+        clickHandler();
       }}
     >
       <p>{text}</p>
