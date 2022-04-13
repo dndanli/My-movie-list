@@ -27,6 +27,11 @@ const StyledDiscover = styled(Discover)`
     margin-top: 1rem;
     border: 0.5px solid rgba(16, 16, 16, 0.1);
   }
+  .message {
+    font-size: 1.2rem;
+    color: rgba(219, 48, 86, 0.7);
+    text-align: center;
+  }
 
   .content-wrapper {
     min-height: 25rem;
