@@ -7,6 +7,7 @@ import StyledFooter from "./Components/Footer/Footer.style";
 import StyledCast from "./Pages/Cast/Cast.style";
 import StyledDetails from "./Pages/Details/Details.style";
 import StyledDiscover from "./Pages/Discover/Discover.style";
+import StyledPerson from "./Pages/Person/Person.style";
 
 function App() {
   return (
@@ -34,6 +35,10 @@ function App() {
           <Route
             path="/:category/cast/:mediaType/:id"
             element={<StyledCast className="cast-page" />}
+          ></Route>
+          <Route
+            path="/person/:id"
+            element={<StyledPerson className="person-page" />}
           ></Route>
         </Routes>
       </BrowserRouter>
