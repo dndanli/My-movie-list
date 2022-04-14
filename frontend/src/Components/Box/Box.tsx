@@ -4,10 +4,9 @@ import { Link } from "react-router-dom";
 type BoxProps = {
   className: string;
   imagePath: string;
+
   title: string;
   rating: number;
-  //TODO: convert to appropriate format
-  date: string;
   boxId: number;
   overview: string;
   mediaType: string;
@@ -18,7 +17,6 @@ const Box = ({
   imagePath,
   title,
   rating,
-  date,
   boxId,
   overview,
   mediaType,
