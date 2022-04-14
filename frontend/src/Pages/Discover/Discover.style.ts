@@ -44,6 +44,9 @@ const StyledDiscover = styled(Discover)`
   .box {
     margin-bottom: 1rem;
   }
+  .person-profile {
+    margin-bottom: 0.7rem;
+  }
 `;
 
 export default StyledDiscover;
