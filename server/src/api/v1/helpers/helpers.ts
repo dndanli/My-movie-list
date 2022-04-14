@@ -78,8 +78,15 @@ export const fetchClientQuery = async (clientQuery: string) => {
     const tvShowResponse = await axios.get(
       `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=1&include_adult=false`
     );
+    const peopleResponse = await axios.get(
+      `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=1&include_adult=false`
+    );
 
-    responseArray.push(movieResponse.data, tvShowResponse.data);
+    responseArray.push(
+      movieResponse.data,
+      tvShowResponse.data,
+      peopleResponse.data
+    );
     return responseArray;
   } catch (err) {
     console.error(err);
