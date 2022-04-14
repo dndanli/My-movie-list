@@ -6,12 +6,14 @@ import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
 import { getSearchQueryResponse } from "../../Helpers/clientHelpers";
 
 import { useSearchParams } from "react-router-dom";
+import StyledPersonProfileBox from "../../Components/PersonProfileBox/PersonProfileBox.style";
 
 type DiscoverProps = {
   className: string;
 };
 
 // TODO: cache api data
+// TODO: use useReducer
 
 const Discover = ({ className }: DiscoverProps) => {
   const [movieResponseData, setMovieResponseData] = useState([]);
@@ -19,6 +21,9 @@ const Discover = ({ className }: DiscoverProps) => {
 
   const [tvShowResponseData, setTvShowResponseData] = useState([]);
   const [tvShowVisible, setTvShowVisible] = useState(false);
+
+  const [peopleResponseData, setPeopleesposeData] = useState([]);
+  const [peopleVisible, setPeopleVisible] = useState(false);
 
   const [searchParams] = useSearchParams();
 
@@ -30,14 +35,19 @@ const Discover = ({ className }: DiscoverProps) => {
         );
         setMovieResponseData(response[0].results);
         setTvShowResponseData(response[1].results);
+        setPeopleesposeData(response[2].results);
       }
     };
+
     fetchData();
   }, [searchParams]);
   return (
     <div className={className}>
       <StyledSearchBar className="search-bar" />
       <ul className="filter-section">
+        {/* {
+          movieVisible
+        } */}
         <StyledButton
           className="filter-button"
           text="Movies"
@@ -52,6 +62,14 @@ const Discover = ({ className }: DiscoverProps) => {
           clickedStateValue={false}
           clickHandler={() => {
             setTvShowVisible(!tvShowVisible);
+          }}
+        />
+        <StyledButton
+          className="filter-button"
+          text="People"
+          clickedStateValue={false}
+          clickHandler={() => {
+            setPeopleVisible(!peopleVisible);
           }}
         />
       </ul>
@@ -72,7 +90,6 @@ const Discover = ({ className }: DiscoverProps) => {
                   imagePath={data.poster_path}
                   title={data.name || data.title}
                   rating={data.vote_average}
-                  date={data.release_date}
                   boxId={data.id}
                   key={data.id}
                   overview={data.overview}
@@ -90,11 +107,25 @@ const Discover = ({ className }: DiscoverProps) => {
                   imagePath={data.poster_path}
                   title={data.name || data.title}
                   rating={data.vote_average}
-                  date={data.release_date}
                   boxId={data.id}
                   key={data.id}
                   overview={data.overview}
                   mediaType="tv"
+                />
+              );
+            })
+          : null}
+
+        {peopleVisible !== false
+          ? peopleResponseData.map((data: any) => {
+              return (
+                <StyledPersonProfileBox
+                  className="person-profile"
+                  personName={data.name}
+                  personId={data.id}
+                  profileImgPath={data.profile_path}
+                  knownFor={data.known_for_department}
+                  key={data.id}
                 />
               );
             })
