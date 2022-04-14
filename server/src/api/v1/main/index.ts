@@ -7,6 +7,7 @@ import trailerRoutes from "../routes/trailer";
 import detailRoutes from "../routes/detail";
 import upcomingRoutes from "../routes/upcoming";
 import searchRoutes from "../routes/search";
+import personRoutes from "../routes/person";
 
 const app = express();
 const PORT = process.env.PORT || 8000;
@@ -20,6 +21,7 @@ app.use("/getIdForTrailer", trailerRoutes);
 app.use("/detail", detailRoutes);
 app.use("/upcoming", upcomingRoutes);
 app.use("/search", searchRoutes);
+app.use("/person", personRoutes);
 
 app.listen(PORT, () => {
   console.log(`Server listening on http://localhost:${PORT}`);
