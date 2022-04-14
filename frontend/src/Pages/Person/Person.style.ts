@@ -2,6 +2,6 @@ import styled from "styled-components";
 import Person from "./Person";
 
 const StyledPerson = styled(Person)`
-  background-color: aliceblue;
+  min-height: 100vh;
 `;
 export default StyledPerson;
