@@ -16,5 +16,4 @@ const Wrapper = styled.span`
   animation-name: ${animation};
   animation-duration: 6s;
   animation-fill-mode: forwards;
-  /* animation-iteration-count: infinite; */
 `;
