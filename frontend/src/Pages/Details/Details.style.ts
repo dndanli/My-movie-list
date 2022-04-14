@@ -45,6 +45,13 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     color: rgba(16, 16, 16, 0.8);
   }
+
+  #status {
+    margin-top: 0.5rem;
+    font-size: 1.2rem;
+    font-weight: 400;
+    color: rgba(16, 16, 16, 0.7);
+  }
   .genre-section {
     margin-top: 1rem;
     display: flex;
