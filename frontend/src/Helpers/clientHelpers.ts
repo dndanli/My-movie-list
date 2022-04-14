@@ -77,3 +77,14 @@ export async function getSearchQueryResponse(clientQuery: any) {
     console.error(err);
   }
 }
+
+export async function getPersonResponse(personId: any) {
+  try {
+    const response = await axios.get(
+      `http://localhost:8000/person/${personId}`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
