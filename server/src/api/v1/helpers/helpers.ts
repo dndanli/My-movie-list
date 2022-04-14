@@ -92,3 +92,14 @@ export const fetchClientQuery = async (clientQuery: string) => {
     console.error(err);
   }
 };
+
+export const fetchPerson = async (personId: string) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/person/${personId}}?api_key=${apiKey}&language=en-US`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
