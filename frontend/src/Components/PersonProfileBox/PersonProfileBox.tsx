@@ -17,7 +17,7 @@ const PersonProfileBox = ({
 }: PersonProfileBoxProps) => {
   return (
     <div className={className}>
-      <Link to={`/person${personId}`}>
+      <Link to={`/person/${personId}`}>
         <div className="wrapper">
           {profileImgPath !== null ? (
             <img
