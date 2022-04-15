@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
 import { convertToMonthDayYear } from "../../Helpers/dateFormatter";
+import { MdOutlineMovieFilter } from "react-icons/md";
 
 type CardProps = {
   className: string;
@@ -25,22 +26,32 @@ const Card = ({
   return (
     <div className={className}>
       <Link to={`/detail/${mediaType}/${cardId}`}>
-        <img
-          className="image"
-          src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
-          alt={title}
-        />
-        <div className="title">
-          <p>{title}</p>
-        </div>
-        <div className="metadata">
-          <p className="rating-score">
+        <div className="wrapper">
+          {imagePath !== null ? (
+            <img
+              className="image"
+              src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
+              alt={title}
+            />
+          ) : (
+            <MdOutlineMovieFilter className="icon" />
+          )}
+          <div className="rating-score">
             {rating}
             <AiFillStar className="star-icon" />
-          </p>
-          {date !== null ? (
-            <p className="extra-info">{convertToMonthDayYear(date)}</p>
-          ) : null}
+          </div>
+
+          <div className="text-content">
+            <div className="title">
+              <p>{title}</p>
+            </div>
+
+            <div className="date">
+              {date !== null && date !== undefined ? (
+                <p>{convertToMonthDayYear(date)}</p>
+              ) : null}
+            </div>
+          </div>
         </div>
       </Link>
     </div>
