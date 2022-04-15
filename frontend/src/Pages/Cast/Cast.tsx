@@ -1,7 +1,7 @@
 import { GoPerson } from "react-icons/go";
 
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import { getMediaDetails } from "../../Helpers/clientHelpers";
 
 type CastProps = {
@@ -30,21 +30,23 @@ const Cast = ({ className }: CastProps) => {
         {castData.map((data: any, index) => {
           return (
             // TODO: replace index with uid
-            <li key={index} className="list-item">
-              {data.profile_path !== null ? (
-                <img
-                  className="profile"
-                  src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
-                  alt={data.name}
-                />
-              ) : (
-                <GoPerson className="person-icon" />
-              )}
-              <div className="name-wrapper">
-                <h4 className="name">{data.name}</h4>
-                <h4 className="role">{data.character}</h4>
-              </div>
-            </li>
+            <Link to={`/person/${data.id}`} key={index}>
+              <li className="list-item">
+                {data.profile_path !== null ? (
+                  <img
+                    className="profile"
+                    src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
+                    alt={data.name}
+                  />
+                ) : (
+                  <GoPerson className="person-icon" />
+                )}
+                <div className="name-wrapper">
+                  <h4 className="name">{data.name}</h4>
+                  <h4 className="role">{data.character}</h4>
+                </div>
+              </li>
+            </Link>
           );
         })}
       </ul>
@@ -53,21 +55,23 @@ const Cast = ({ className }: CastProps) => {
         {crewData.map((data: any, index) => {
           return (
             // TODO: replace index with uid
-            <li key={index} className="list-item">
-              {data.profile_path !== null ? (
-                <img
-                  className="profile"
-                  src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
-                  alt={data.name}
-                />
-              ) : (
-                <GoPerson className="person-icon" />
-              )}
-              <div className="name-wrapper">
-                <h4 className="name">{data.name}</h4>
-                <h4 className="role">{data.job}</h4>
-              </div>
-            </li>
+            <Link to={`/person/${data.id}`} key={index}>
+              <li key={index} className="list-item">
+                {data.profile_path !== null ? (
+                  <img
+                    className="profile"
+                    src={`https://image.tmdb.org/t/p/w500${data.profile_path}`}
+                    alt={data.name}
+                  />
+                ) : (
+                  <GoPerson className="person-icon" />
+                )}
+                <div className="name-wrapper">
+                  <h4 className="name">{data.name}</h4>
+                  <h4 className="role">{data.job}</h4>
+                </div>
+              </li>
+            </Link>
           );
         })}
       </ul>
