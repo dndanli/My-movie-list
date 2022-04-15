@@ -2,7 +2,6 @@ import axios from "axios";
 
 import "dotenv/config";
 const apiKey = process.env.API_KEY;
-
 export const fetchPopularMedia = async (mediaType: string) => {
   const responseArray: Array<Object> = [];
   const pages = 5;
@@ -96,7 +95,7 @@ export const fetchClientQuery = async (clientQuery: string) => {
 export const fetchPerson = async (personId: string) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/person/${personId}}?api_key=${apiKey}&language=en-US`
+      `https://api.themoviedb.org/3/person/${personId}}?api_key=${apiKey}&append_to_response=tv_credits,movie_credits&language=en-US`
     );
     return response.data;
   } catch (err) {
