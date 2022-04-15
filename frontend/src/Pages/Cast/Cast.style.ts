@@ -12,7 +12,9 @@ const StyledCast = styled(Cast)`
     color: rgba(16, 16, 16, 0.8);
     margin-block: 0.5rem;
   }
-
+  a {
+    text-decoration: none;
+  }
   .list-item {
     border-radius: 6px;
     background-color: rgb(50, 50, 50);
