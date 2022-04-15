@@ -2,72 +2,88 @@ import styled from "styled-components";
 import Card from "./Card";
 
 const StyledCard = styled(Card)`
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 9.3rem;
-  min-height: 16rem;
-  max-height: 21.4rem;
-  border-radius: 11px;
-  position: relative;
-  background-color: rgba(255, 255, 255, 1);
+  font-family: "Inter", sans-serif;
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 10.3rem;
+    min-height: 21rem;
+    border-radius: 11px;
+    background-color: rgba(255, 255, 255, 1);
+    position: relative;
+    padding-bottom: 0.5rem;
+  }
+
   a {
     text-decoration: none;
   }
+
   .image {
-    max-width: 170px;
-    max-height: 225px;
+    width: 100%;
+    height: 220px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
-  .title {
-    margin-top: 1rem;
-    display: flex;
-    justify-content: flex-start;
+
+  .background {
+    width: 150px;
+    height: 226px;
+    border-radius: 10px;
+  }
+
+  .text-content {
+    margin-inline: 1rem;
+    font-weight: 400;
     width: 100%;
-    font-family: "Inter", sans-serif;
+  }
+
+  .title {
+    margin-block: 1rem;
+    text-align: start;
+    padding-left: 1rem;
     font-size: 1rem;
     font-weight: 700;
     color: rgba(16, 16, 16, 0.8);
-    padding-inline: 0.5rem;
+    p {
+      text-overflow: ellipsis;
+      overflow: hidden;
+      white-space: nowrap;
+    }
   }
-  .metadata {
-    padding-inline: 0.5rem;
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    max-width: 9rem;
-    max-height: 2rem;
+
+  .rating-score {
+    min-width: 3.3rem;
+    min-height: 2rem;
+    font-weight: 700;
     display: flex;
-    justify-content: flex-start;
+    justify-content: space-evenly;
     align-items: center;
-    width: 100%;
-    .rating-score {
-      padding-inline: 0.2rem;
-      font-weight: 700;
-      display: flex;
-      justify-content: space-evenly;
-      align-items: center;
-      margin-right: auto;
-      position: absolute;
-      bottom: 6.5rem;
-      left: 1rem;
-      min-width: 3rem;
-      max-width: 3.7rem;
-      min-height: 2rem;
-      max-height: 2rem;
-      border-radius: 15px;
-      background-color: rgb(219, 48, 86);
-      color: rgba(255, 255, 255, 1);
-    }
-    .star-icon {
-      font-size: 14px;
-    }
-    .extra-info {
-      margin-top: 0.5rem;
-      color: rgba(16, 16, 16, 0.8);
-    }
+    border-radius: 15px;
+    background-color: rgb(219, 48, 86);
+    color: rgba(255, 255, 255, 1);
+    position: absolute;
+    bottom: 6.8rem;
+    left: 1rem;
   }
+
+  .star-icon {
+    font-size: 14px;
+  }
+
+  .date {
+    padding-inline: 1rem;
+    color: rgba(16, 16, 16, 0.8);
+  }
+
+  .icon {
+    font-size: 9rem;
+    color: rgba(16, 16, 16, 0.3);
+    padding-bottom: 6.5rem;
+  }
+
   transition: 0.5s ease;
+
   &:hover {
     transform: scale(1.05);
     transition: 0.5s ease;
