@@ -91,7 +91,7 @@ const Person = ({ className }: PersonProps) => {
       </section>
 
       <h2 className="header" style={{ paddingInline: "1rem" }}>
-        Best Known for
+        Movies and Tv Shows
       </h2>
       <div className="content-wrapper">
         {movieCreditsData
