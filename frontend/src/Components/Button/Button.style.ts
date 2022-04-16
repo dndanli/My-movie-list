@@ -10,6 +10,10 @@ const StyledButton = styled(Button)`
   border-radius: 5px;
   padding-block: 0.5rem;
   padding-inline: 0.5rem;
+
+  .count-value {
+    margin-left: 0.5rem;
+  }
 `;
 
 export default StyledButton;
