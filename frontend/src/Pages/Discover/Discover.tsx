@@ -12,18 +12,27 @@ type DiscoverProps = {
   className: string;
 };
 
+interface Response {
+  0: {
+    results: [];
+    total_results: number;
+  };
+  1: {
+    results: [];
+    total_results: number;
+  };
+  2: {
+    results: [];
+    total_results: number;
+  };
+}
+
 // TODO: cache api data
 // TODO: use useReducer
 
 const Discover = ({ className }: DiscoverProps) => {
-  const [movieResponseData, setMovieResponseData] = useState([]);
-  const [movieVisible, setMovieVisible] = useState(true);
-
-  const [tvShowResponseData, setTvShowResponseData] = useState([]);
-  const [tvShowVisible, setTvShowVisible] = useState(false);
-
-  const [peopleResponseData, setPeopleesposeData] = useState([]);
-  const [peopleVisible, setPeopleVisible] = useState(false);
+  const [responseData, setResponseData] = useState<Response>();
+  const [currVisible, setCurrVisible] = useState<string>("movie");
 
   const [searchParams] = useSearchParams();
 
@@ -33,43 +42,54 @@ const Discover = ({ className }: DiscoverProps) => {
         const response = await getSearchQueryResponse(
           searchParams.get("query")
         );
-        setMovieResponseData(response[0].results);
-        setTvShowResponseData(response[1].results);
-        setPeopleesposeData(response[2].results);
+        setResponseData(response);
       }
     };
 
     fetchData();
   }, [searchParams]);
+
   return (
     <div className={className}>
       <StyledSearchBar className="search-bar" />
       <ul className="filter-section">
-        {/* {
-          movieVisible
-        } */}
         <StyledButton
           className="filter-button"
           text="Movies"
-          clickedStateValue={true}
+          countValue={responseData?.[0].total_results}
+          color={
+            currVisible === "movie"
+              ? "rgba(219, 48, 86, 1)"
+              : "  rgba(219, 48, 86, 0.8)"
+          }
           clickHandler={() => {
-            setMovieVisible(!movieVisible);
+            setCurrVisible("movie");
           }}
         />
         <StyledButton
           className="filter-button"
           text="Tv-Shows"
-          clickedStateValue={false}
+          countValue={responseData?.[1].total_results}
+          color={
+            currVisible === "tv"
+              ? "rgba(219, 48, 86, 1)"
+              : "  rgba(219, 48, 86, 0.8)"
+          }
           clickHandler={() => {
-            setTvShowVisible(!tvShowVisible);
+            setCurrVisible("tv");
           }}
         />
         <StyledButton
           className="filter-button"
           text="People"
-          clickedStateValue={false}
+          countValue={responseData?.[2].total_results}
+          color={
+            currVisible === "people"
+              ? "rgba(219, 48, 86, 1)"
+              : "  rgba(219, 48, 86, 0.8)"
+          }
           clickHandler={() => {
-            setPeopleVisible(!peopleVisible);
+            setCurrVisible("people");
           }}
         />
       </ul>
@@ -82,8 +102,8 @@ const Discover = ({ className }: DiscoverProps) => {
           </h2>
         ) : null}
 
-        {movieVisible !== false
-          ? movieResponseData.map((data: any) => {
+        {currVisible === "movie"
+          ? responseData?.[0].results.map((data: any) => {
               return (
                 <StyledBox
                   className="box"
@@ -99,8 +119,8 @@ const Discover = ({ className }: DiscoverProps) => {
             })
           : null}
 
-        {tvShowVisible !== false
-          ? tvShowResponseData.map((data: any) => {
+        {currVisible === "tv"
+          ? responseData?.[1].results.map((data: any) => {
               return (
                 <StyledBox
                   className="box"
@@ -116,8 +136,8 @@ const Discover = ({ className }: DiscoverProps) => {
             })
           : null}
 
-        {peopleVisible !== false
-          ? peopleResponseData.map((data: any) => {
+        {currVisible === "people"
+          ? responseData?.[2].results.map((data: any) => {
               return (
                 <StyledPersonProfileBox
                   className="person-profile"
