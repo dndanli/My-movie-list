@@ -23,9 +23,10 @@ const StyledDetails = styled(Details)`
     max-width: 100px;
     max-height: 150px;
   }
+
   .overview-background {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: 400px;
+    max-height: 200px;
     border-radius: 6px;
   }
 
