@@ -1,5 +1,4 @@
 import { MdLocalMovies, MdRateReview } from "react-icons/md";
-import { BsFillPeopleFill } from "react-icons/bs";
 import { GrStatusInfoSmall } from "react-icons/gr";
 import { IoIosLogIn } from "react-icons/io";
 export const NavbarLinks: {
@@ -19,12 +18,6 @@ export const NavbarLinks: {
     linkIcon: <MdRateReview />,
     linkName: "Reviews",
     link: "/reviews",
-  },
-  {
-    id: "people-link",
-    linkIcon: <BsFillPeopleFill />,
-    linkName: "People",
-    link: "/people",
   },
   {
     id: "about-link",
