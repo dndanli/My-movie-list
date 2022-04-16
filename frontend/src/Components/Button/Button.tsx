@@ -1,9 +1,8 @@
-import { useState } from "react";
-
 type ButtonProps = {
   className: string;
   text: string;
-  clickedStateValue: boolean;
+  countValue: number | undefined;
+  color: string;
   clickHandler: any;
 };
 
@@ -11,23 +10,19 @@ const Button = ({
   className,
   text,
   clickHandler,
-  clickedStateValue,
+  countValue,
+  color,
 }: ButtonProps) => {
-  const [clicked, setCicked] = useState(clickedStateValue);
-
   return (
     <li
       className={className}
-      style={{
-        background:
-          clicked === false ? "rgba(219, 48, 86, 0.7)" : "rgba(219, 48, 86, 1)",
-      }}
       onClick={() => {
-        setCicked(!clicked);
         clickHandler();
       }}
+      style={{ backgroundColor: color }}
     >
       <p>{text}</p>
+      <p className="count-value">{countValue}</p>
     </li>
   );
 };
