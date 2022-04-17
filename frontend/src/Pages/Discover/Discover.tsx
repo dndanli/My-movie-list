@@ -27,6 +27,7 @@ interface Response {
   };
 }
 
+// TODO: work on pagination
 // TODO: cache api data
 // TODO: use useReducer
 
