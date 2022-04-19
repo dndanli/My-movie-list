@@ -1,9 +1,9 @@
 import StyledBox from "../Box/Box.style";
 import StyledPersonProfileBox from "../PersonProfileBox/PersonProfileBox.style";
-import { useNavigate, useSearchParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import {Wrapper } from "../Layout/DiscoverResults.style";
+import {GrFormPrevious,GrFormNext} from "react-icons/gr";
 
 type DiscoverResultsProps = {
   className: string;
@@ -50,14 +50,21 @@ const DiscoverResults = ({
           />
         );
       })}
+  <Wrapper>
       <ReactPaginate
-        previousLabel={"Previous"}
-        nextLabel={"Next"}
+        previousLabel={<GrFormPrevious/>}
+        nextLabel={<GrFormNext/>}
         pageCount={totalPages! | 0}
         breakLabel={"..."}
         marginPagesDisplayed={3}
         onPageChange={handlePageClick}
+        className={"discover-paginate"}
+        previousLinkClassName={"previous-btn"}
+        nextLinkClassName={"next-btn"}
+        disabledClassName={"paginate-disabled"}
+        activeClassName={"paginate-active"}
       />
+  </Wrapper>
     </div>
   );
 };
