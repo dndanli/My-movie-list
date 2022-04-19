@@ -80,13 +80,54 @@ export const fetchClientQuery = async (clientQuery: string) => {
     const peopleResponse = await axios.get(
       `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=1&include_adult=false`
     );
-
     responseArray.push(
       movieResponse.data,
       tvShowResponse.data,
       peopleResponse.data
     );
     return responseArray;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const fetchClientQueryMovies = async (
+  clientQuery: string,
+  pageNumber: number
+) => {
+  try {
+    const movieResponse = await axios.get(
+      `https://api.themoviedb.org/3/search/movie?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=${pageNumber}&include_adult=false`
+    );
+    return movieResponse.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const fetchClientQueryTv = async (
+  clientQuery: string,
+  pageNumber: number
+) => {
+  try {
+    const movieResponse = await axios.get(
+      `https://api.themoviedb.org/3/search/tv?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=${pageNumber}&include_adult=false`
+    );
+    return movieResponse.data;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
+export const fetchClientQueryPeople = async (
+  clientQuery: string,
+  pageNumber: number
+) => {
+  try {
+    const movieResponse = await axios.get(
+      `https://api.themoviedb.org/3/search/person?api_key=${apiKey}&query=${clientQuery}&language=en-US&page=${pageNumber}&include_adult=false`
+    );
+    return movieResponse.data;
   } catch (err) {
     console.error(err);
   }
