@@ -11,14 +11,12 @@ const StyledDiscover = styled(Discover)`
   .filter-section {
     margin-top: 1rem;
     display: flex;
-    justify-content: center;
     align-items: center;
     list-style-type: none;
     overflow-x: auto;
-    min-width: 100%;
-    min-height: 3rem;
-    padding-inline: 1rem;
+    min-height: 3.5rem;
   }
+
 
   .filter-section > .filter-button {
     margin-left: 0.5rem;
@@ -28,6 +26,7 @@ const StyledDiscover = styled(Discover)`
     margin-top: 1rem;
     border: 0.5px solid rgba(16, 16, 16, 0.1);
   }
+
   .message {
     font-size: 1.2rem;
     color: rgba(219, 48, 86, 0.7);
