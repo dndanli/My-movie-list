@@ -24,7 +24,6 @@ router.post("/:page/:query/:queryType", async (request, response) => {
 
   let searchResponse;
 
-  console.log(queryType);
   if (queryType === "movie") {
     searchResponse = await fetchClientQueryMovies(clientQuery, pageNumber);
   } else if (queryType === "tv") {
