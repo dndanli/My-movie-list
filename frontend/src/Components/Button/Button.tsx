@@ -18,7 +18,10 @@ const Button = ({
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const clickHandlerRedirect = () => {
-    navigate(`/discover?query=${searchParams.get("query")}`);
+    if(searchParams.get("query")!==null){
+      navigate(`/discover?query=${searchParams.get("query")}`);
+    }
+    return;
   };
   return (
     <li
