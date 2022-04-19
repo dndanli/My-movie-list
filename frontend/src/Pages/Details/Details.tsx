@@ -8,6 +8,8 @@ import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 
+import { v4 as uuidv4 } from 'uuid';
+
 type DetailsProps = {
   className: string;
 };
@@ -60,7 +62,7 @@ const Details = ({ className }: DetailsProps) => {
         <ul className="genre-section">
           {detailData.genres.map((genre: any) => {
             return (
-              <li key={genre.id} className="genre-button">
+              <li key={uuidv4()} className="genre-button">
                 <p>{genre.name}</p>
               </li>
             );
@@ -82,7 +84,7 @@ const Details = ({ className }: DetailsProps) => {
           {detailData.credits.cast.slice(0, 9).map((person: any) => {
             return (
               <StyledCastCard
-                key={person.id}
+                key={uuidv4()}
                 className="cast-card"
                 person={person}
               />
@@ -111,7 +113,7 @@ const Details = ({ className }: DetailsProps) => {
               return null;
             }
             return (
-              <div className="trailer-player" key={data.id}>
+              <div className="trailer-player" key={uuidv4()}>
                 <ReactPlayer
                   controls
                   width="340px"
