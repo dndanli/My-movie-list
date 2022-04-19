@@ -12,9 +12,12 @@ const StyledDiscover = styled(Discover)`
     margin-top: 1rem;
     display: flex;
     align-items: center;
+    justify-content: center;
     list-style-type: none;
     overflow-x: auto;
     min-height: 3.5rem;
+    min-width: 100%;
+    padding-inline: 0.7rem;
   }
 
 
