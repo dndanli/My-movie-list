@@ -1,41 +1,32 @@
 import { useEffect, useState } from "react";
-import StyledBox from "../../Components/Box/Box.style";
-import StyledButton from "../../Components/Button/Button.style";
-
-import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
-import { getSearchQueryResponse } from "../../Helpers/clientHelpers";
-
 import { useSearchParams } from "react-router-dom";
-import StyledPersonProfileBox from "../../Components/PersonProfileBox/PersonProfileBox.style";
+
+import StyledButton from "../../Components/Button/Button.style";
+import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
+import DiscoverResults from "../../Components/Layout/DiscoverResults";
+
+import {
+  getSearchQueryPageResponse,
+  getSearchQueryResponse,
+} from "../../Helpers/clientHelpers";
+import { Response } from "../../Interfaces/Response";
+import { PageResponse } from "../../Interfaces/PageResponse";
 
 type DiscoverProps = {
   className: string;
 };
 
-interface Response {
-  0: {
-    results: [];
-    total_results: number;
-  };
-  1: {
-    results: [];
-    total_results: number;
-  };
-  2: {
-    results: [];
-    total_results: number;
-  };
-}
-
-// TODO: work on pagination
-// TODO: cache api data
+// TODO: make pagination work for different active buttons
 // TODO: use useReducer
+// TODO: cache api data
 
 const Discover = ({ className }: DiscoverProps) => {
   const [responseData, setResponseData] = useState<Response>();
+  const [responsePageData, setResponsePageData] = useState<PageResponse>();
   const [currVisible, setCurrVisible] = useState<string>("movie");
 
   const [searchParams] = useSearchParams();
+  const [currQuery, setQuery] = useState<string | null>("");
 
   useEffect(() => {
     const fetchData = async () => {
@@ -44,6 +35,16 @@ const Discover = ({ className }: DiscoverProps) => {
           searchParams.get("query")
         );
         setResponseData(response);
+        setQuery(searchParams.get("query"));
+      }
+
+      if (searchParams.get("page") !== null) {
+        const response = await getSearchQueryPageResponse(
+          searchParams.get("query"),
+          currVisible,
+          searchParams.get("page")
+        );
+        setResponsePageData(response);
       }
     };
 
@@ -57,7 +58,11 @@ const Discover = ({ className }: DiscoverProps) => {
         <StyledButton
           className="filter-button"
           text="Movies"
-          countValue={responseData?.[0].total_results}
+          countValue={
+            searchParams.get("page") && currVisible === "movie"
+              ? responsePageData?.total_results
+              : responseData?.[0].total_results
+          }
           color={
             currVisible === "movie"
               ? "rgba(219, 48, 86, 1)"
@@ -70,7 +75,11 @@ const Discover = ({ className }: DiscoverProps) => {
         <StyledButton
           className="filter-button"
           text="Tv-Shows"
-          countValue={responseData?.[1].total_results}
+          countValue={
+            searchParams.get("page") && currVisible === "tv"
+              ? responsePageData?.total_results
+              : responseData?.[1].total_results
+          }
           color={
             currVisible === "tv"
               ? "rgba(219, 48, 86, 1)"
@@ -83,7 +92,11 @@ const Discover = ({ className }: DiscoverProps) => {
         <StyledButton
           className="filter-button"
           text="People"
-          countValue={responseData?.[2].total_results}
+          countValue={
+            searchParams.get("page") && currVisible === "people"
+              ? responsePageData?.total_results
+              : responseData?.[2].total_results
+          }
           color={
             currVisible === "people"
               ? "rgba(219, 48, 86, 1)"
@@ -102,55 +115,57 @@ const Discover = ({ className }: DiscoverProps) => {
             Nothing here, try searching for something.
           </h2>
         ) : null}
-
-        {currVisible === "movie"
-          ? responseData?.[0].results.map((data: any) => {
-              return (
-                <StyledBox
-                  className="box"
-                  imagePath={data.poster_path}
-                  title={data.name || data.title}
-                  rating={data.vote_average}
-                  boxId={data.id}
-                  key={data.id}
-                  overview={data.overview}
-                  mediaType="movie"
-                />
-              );
-            })
-          : null}
-
-        {currVisible === "tv"
-          ? responseData?.[1].results.map((data: any) => {
-              return (
-                <StyledBox
-                  className="box"
-                  imagePath={data.poster_path}
-                  title={data.name || data.title}
-                  rating={data.vote_average}
-                  boxId={data.id}
-                  key={data.id}
-                  overview={data.overview}
-                  mediaType="tv"
-                />
-              );
-            })
-          : null}
-
-        {currVisible === "people"
-          ? responseData?.[2].results.map((data: any) => {
-              return (
-                <StyledPersonProfileBox
-                  className="person-profile"
-                  personName={data.name}
-                  personId={data.id}
-                  profileImgPath={data.profile_path}
-                  knownFor={data.known_for_department}
-                  key={data.id}
-                />
-              );
-            })
-          : null}
+        {currVisible === "movie" ? (
+          <DiscoverResults
+            className="results"
+            displayData={
+              searchParams.get("page")
+                ? responsePageData?.results
+                : responseData?.[0].results
+            }
+            mediaType="movie"
+            totalPages={
+              searchParams.get("page")
+                ? responsePageData?.total_pages
+                : responseData?.[0].total_pages
+            }
+            query={currQuery}
+          />
+        ) : null}
+        {currVisible === "tv" ? (
+          <DiscoverResults
+            className="results"
+            displayData={
+              searchParams.get("page")
+                ? responsePageData?.results
+                : responseData?.[1].results
+            }
+            mediaType="tv"
+            totalPages={
+              searchParams.get("page")
+                ? responsePageData?.total_pages
+                : responseData?.[1].total_pages
+            }
+            query={currQuery}
+          />
+        ) : null}
+        {currVisible === "people" ? (
+          <DiscoverResults
+            className="results"
+            displayData={
+              searchParams.get("page")
+                ? responsePageData?.results
+                : responseData?.[2].results
+            }
+            mediaType="people"
+            totalPages={
+              searchParams.get("page")
+                ? responsePageData?.total_pages
+                : responseData?.[2].total_pages
+            }
+            query={currQuery}
+          />
+        ) : null}
       </div>
       <hr className="divider" />
     </div>
