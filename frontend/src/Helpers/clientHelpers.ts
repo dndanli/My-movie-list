@@ -78,6 +78,20 @@ export async function getSearchQueryResponse(clientQuery: any) {
   }
 }
 
+export async function getSearchQueryPageResponse(
+  clientQuery: any,
+  queryType: string,
+  pageNumber: any
+) {
+  try {
+    const response = await axios.post(
+      `http://localhost:8000/search/${pageNumber}/${clientQuery}/${queryType}`
+    );
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
 export async function getPersonResponse(personId: any) {
   try {
     const response = await axios.get(
