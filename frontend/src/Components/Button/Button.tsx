@@ -1,3 +1,5 @@
+import { useNavigate, useSearchParams } from "react-router-dom";
+
 type ButtonProps = {
   className: string;
   text: string;
@@ -13,11 +15,17 @@ const Button = ({
   countValue,
   color,
 }: ButtonProps) => {
+  const navigate = useNavigate();
+  const [searchParams] = useSearchParams();
+  const clickHandlerRedirect = () => {
+    navigate(`/discover?query=${searchParams.get("query")}`);
+  };
   return (
     <li
       className={className}
       onClick={() => {
         clickHandler();
+        clickHandlerRedirect();
       }}
       style={{ backgroundColor: color }}
     >
