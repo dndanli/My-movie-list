@@ -17,6 +17,7 @@ const StyledDiscover = styled(Discover)`
     overflow-x: auto;
     min-width: 100%;
     min-height: 3rem;
+    padding-inline: 1rem;
   }
 
   .filter-section > .filter-button {
