@@ -50,21 +50,23 @@ const DiscoverResults = ({
           />
         );
       })}
-      <Wrapper>
-        <ReactPaginate
-          previousLabel={<GrFormPrevious />}
-          nextLabel={<GrFormNext />}
-          pageCount={totalPages! | 0}
-          breakLabel={"..."}
-          marginPagesDisplayed={3}
-          onPageChange={handlePageClick}
-          className={"discover-paginate"}
-          previousLinkClassName={"previous-btn"}
-          nextLinkClassName={"next-btn"}
-          disabledClassName={"paginate-disabled"}
-          activeClassName={"paginate-active"}
-        />
-      </Wrapper>
+      {displayData !== undefined ? (
+        <Wrapper>
+          <ReactPaginate
+            previousLabel={<GrFormPrevious />}
+            nextLabel={<GrFormNext />}
+            pageCount={totalPages! | 0}
+            breakLabel={"..."}
+            marginPagesDisplayed={3}
+            onPageChange={handlePageClick}
+            className={"discover-paginate"}
+            previousLinkClassName={"previous-btn"}
+            nextLinkClassName={"next-btn"}
+            disabledClassName={"paginate-disabled"}
+            activeClassName={"paginate-active"}
+          />
+        </Wrapper>
+      ) : null}
     </div>
   );
 };
