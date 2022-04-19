@@ -16,7 +16,6 @@ type DiscoverProps = {
   className: string;
 };
 
-// TODO: make pagination work for different active buttons
 // TODO: use useReducer
 // TODO: cache api data
 
