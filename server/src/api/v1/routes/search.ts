@@ -1,5 +1,10 @@
-import express from "express";
-import { fetchClientQuery } from "../helpers/helpers";
+import express, { query } from "express";
+import {
+  fetchClientQuery,
+  fetchClientQueryMovies,
+  fetchClientQueryTv,
+  fetchClientQueryPeople,
+} from "../helpers/helpers";
 const router = express.Router();
 
 /**
@@ -9,6 +14,24 @@ const router = express.Router();
 router.post("/:query", async (request, response) => {
   const clientQuery = request.params.query;
   const searchResponse = await fetchClientQuery(clientQuery);
+  response.send(searchResponse);
+});
+
+router.post("/:page/:query/:queryType", async (request, response) => {
+  const clientQuery: string = request.params.query;
+  const pageNumber: number = parseInt(request.params.page);
+  const queryType: string = request.params.queryType;
+
+  let searchResponse;
+
+  console.log(queryType);
+  if (queryType === "movie") {
+    searchResponse = await fetchClientQueryMovies(clientQuery, pageNumber);
+  } else if (queryType === "tv") {
+    searchResponse = await fetchClientQueryTv(clientQuery, pageNumber);
+  } else if (queryType === "people") {
+    searchResponse = await fetchClientQueryPeople(clientQuery, pageNumber);
+  }
   response.send(searchResponse);
 });
 
