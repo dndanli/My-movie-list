@@ -16,7 +16,6 @@ const StyledDiscover = styled(Discover)`
     list-style-type: none;
     overflow-x: auto;
     min-height: 3.5rem;
-    min-width: 100%;
     padding-inline: 0.7rem;
   }
 
@@ -32,7 +31,7 @@ const StyledDiscover = styled(Discover)`
 
   .message {
     font-size: 1.2rem;
-    color: rgba(219, 48, 86, 0.7);
+    color: rgba(16, 16, 16, 0.5);
     text-align: center;
   }
 
