@@ -119,7 +119,6 @@ const StyledDetails = styled(Details)`
   .overview-background-fill {
     height: 190px;
     width: 100%;
-    /* background-color: rgb(202, 62, 71); */
 
     background-color: #ff9a8b;
     background-image: linear-gradient(
@@ -128,6 +127,13 @@ const StyledDetails = styled(Details)`
       #ff6a88 55%,
       #ff99ac 100%
     );
+  }
+  .info-text{
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: orange;
+    margin-top: 0.5rem;
   }
 `;
 
