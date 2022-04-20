@@ -8,6 +8,8 @@ import StyledCast from "./Pages/Cast/Cast.style";
 import StyledDetails from "./Pages/Details/Details.style";
 import StyledDiscover from "./Pages/Discover/Discover.style";
 import StyledPerson from "./Pages/Person/Person.style";
+import StyledSignUp from "./Pages/SignUp/SignUp.style";
+
 
 function App() {
   return (
@@ -43,6 +45,10 @@ function App() {
           <Route
             path="/person/:id"
             element={<StyledPerson className="person-page" />}
+          ></Route>
+          <Route
+            path="/signup"
+            element={<StyledSignUp className="signup-page" />}
           ></Route>
         </Routes>
       </BrowserRouter>
