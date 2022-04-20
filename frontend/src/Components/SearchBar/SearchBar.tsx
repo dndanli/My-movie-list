@@ -35,6 +35,7 @@ const SearchBar = ({ className }: SearchBarProps) => {
           className="search-field"
           type="search"
           value={input}
+          placeholder={"Movie, Tv show or Person ...."}
           onChange={(e) => {
             setInput(e.target.value);
           }}
