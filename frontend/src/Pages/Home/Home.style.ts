@@ -13,13 +13,7 @@ const StyledHome = styled(Home)`
     min-height: 15rem;
     max-height: 15rem;
 
-    background-color: #ff9a8b;
-    background-image: linear-gradient(
-      90deg,
-      #ff9a8b 0%,
-      #ff6a88 55%,
-      #ff99ac 100%
-    );
+    background-image: linear-gradient(135deg, #fad7a1 10%, #e96d71 100%);
 
     color: rgba(255, 255, 255, 0.9);
     border-radius: 5px;
