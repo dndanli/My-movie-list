@@ -22,9 +22,9 @@ const StyledPerson = styled(Person)`
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     padding-inline: 1rem;
-    -moz-box-shadow: 0 0 3px #ccc;
-    -webkit-box-shadow: 0 0 3px #ccc;
-    box-shadow: 0 0 3px #ccc;
+    -moz-box-shadow: 0 0 0.5px #ccc;
+    -webkit-box-shadow: 0 0 0.5px #ccc;
+    box-shadow:0 0 0 0.5px #ccc;
   }
 
   .name {
