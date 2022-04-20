@@ -30,7 +30,7 @@ const Discover = ({ className }: DiscoverProps) => {
   useEffect(() => {
     const fetchData = async () => {
       if (searchParams.get("query")) {
-        const response = await getSearchQueryResponse(
+      const response = await getSearchQueryResponse(
           searchParams.get("query")
         );
         setResponseData(response);
@@ -64,8 +64,8 @@ const Discover = ({ className }: DiscoverProps) => {
           }
           color={
             currVisible === "movie"
-              ? "rgba(219, 48, 86, 1)"
-              : "  rgba(219, 48, 86, 0.8)"
+              ? "rgb(245, 136, 64)"
+              : "  rgb(252, 153, 124)"
           }
           clickHandler={() => {
             setCurrVisible("movie");
@@ -81,8 +81,8 @@ const Discover = ({ className }: DiscoverProps) => {
           }
           color={
             currVisible === "tv"
-              ? "rgba(219, 48, 86, 1)"
-              : "  rgba(219, 48, 86, 0.8)"
+              ? "rgb(245, 136, 64)"
+              : "  rgb(252, 153, 124)"
           }
           clickHandler={() => {
             setCurrVisible("tv");
@@ -98,8 +98,8 @@ const Discover = ({ className }: DiscoverProps) => {
           }
           color={
             currVisible === "people"
-              ? "rgba(219, 48, 86, 1)"
-              : "  rgba(219, 48, 86, 0.8)"
+              ? "rgb(245, 136, 64)"
+              : "  rgb(252, 153, 124)"
           }
           clickHandler={() => {
             setCurrVisible("people");
