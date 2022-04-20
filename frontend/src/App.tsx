@@ -9,6 +9,7 @@ import StyledDetails from "./Pages/Details/Details.style";
 import StyledDiscover from "./Pages/Discover/Discover.style";
 import StyledPerson from "./Pages/Person/Person.style";
 import StyledSignUp from "./Pages/SignUp/SignUp.style";
+import StyledLogin from "./Pages/Login/Login.style";
 
 
 function App() {
@@ -49,6 +50,10 @@ function App() {
           <Route
             path="/signup"
             element={<StyledSignUp className="signup-page" />}
+          ></Route>
+          <Route
+            path="/login"
+            element={<StyledLogin className="login-page" />}
           ></Route>
         </Routes>
       </BrowserRouter>
