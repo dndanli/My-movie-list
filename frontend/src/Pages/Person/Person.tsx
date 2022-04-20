@@ -4,6 +4,8 @@ import StyledCard from "../../Components/Card/Card.style";
 import StyledInfoBlock from "../../Components/InfoBlock/InfoBlock.style";
 import { getPersonResponse } from "../../Helpers/clientHelpers";
 
+import {v4 as uuidv4} from "uuid";
+
 type PersonProps = {
   className: string;
 };
@@ -105,7 +107,7 @@ const Person = ({ className }: PersonProps) => {
                   date={data.release_date}
                   cardId={data.id}
                   mediaType={"movie"}
-                  key={data.id}
+                  key={uuidv4()}
                 />
               );
             })
@@ -121,7 +123,7 @@ const Person = ({ className }: PersonProps) => {
                   date={data.release_date || data.first_air_date}
                   cardId={data.id}
                   mediaType={"tv"}
-                  key={data.id}
+                  key={uuidv4()}
                 />
               );
             })
