@@ -104,6 +104,7 @@ const StyledDetails = styled(Details)`
   .cast-page-link {
     display: flex;
     align-items: center;
+    color: rgb(255, 140, 50);
   }
   .arrow-icon {
     margin-left: 0.5rem;
