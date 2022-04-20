@@ -17,9 +17,12 @@ const StyledCast = styled(Cast)`
   }
   .list-item {
     border-radius: 6px;
-    background-color: rgb(50, 50, 50);
+    background-color: rgba(255, 255, 255, 0.9);
     margin-bottom: 1rem;
     display: flex;
+    -moz-box-shadow: 0 0 0.5px #ccc;
+    -webkit-box-shadow: 0 0 0.5px #ccc;
+    box-shadow:0 0 0 0.5px #ccc;
   }
 
   .profile {
@@ -33,7 +36,7 @@ const StyledCast = styled(Cast)`
   .person-icon {
     min-width: 100px;
     min-height: 120px;
-    color: rgba(255, 255, 255, 0.6);
+    color: rgba(16, 16, 16, 0.5);
   }
 
   .name-wrapper {
@@ -46,6 +49,7 @@ const StyledCast = styled(Cast)`
     font-weight: 500;
     font-size: 16px;
     margin-top: 1rem;
+    color: rgba(16, 16, 16, 0.8);
   }
 `;
 
