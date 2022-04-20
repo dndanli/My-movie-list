@@ -1,10 +1,20 @@
 import { Link } from "react-router-dom";
+import {useState} from "react";
+import { AiFillEye, AiFillEyeInvisible} from "react-icons/ai";
 
 type LoginProps = {
   className: string;
 };
 
 const Login = ({ className }: LoginProps) => {
+  const [inputType, setInputType] = useState<string>("password");
+  const toggleInput = () => {
+    if (inputType === "password") {
+      setInputType("text");
+    } else if (inputType === "text") {
+      setInputType("password");
+    }
+  };
   return (
     <div className={className}>
       <h1 className="header">Sign In</h1>
@@ -25,12 +35,20 @@ const Login = ({ className }: LoginProps) => {
           <label htmlFor="password" className="input-label">
             Password
           </label>
-          <input
-            type="password"
-            name="password"
-            className="user-input"
-            placeholder="password"
-          />
+          <div className="password-input-wrapper">
+            <input
+              type={`${inputType}`}
+              name="password"
+              className="password-input"
+            />
+            <div onClick={toggleInput}>
+              {inputType === "password" ? (
+                <AiFillEyeInvisible className="view-icon" />
+              ) : (
+                <AiFillEye className="view-icon" />
+              )}
+            </div>
+          </div>
         </div>
 
         <div className="text-wrapper-right">
@@ -42,7 +60,16 @@ const Login = ({ className }: LoginProps) => {
         </div>
 
         <div className="submit-wrapper">
-          <input type="submit" value={"Login"} className="submit-btn" />
+          <input
+            type="submit"
+            value={"Login"}
+            className="submit-btn"
+            onClick={() => {
+              if (inputType === "text") {
+                toggleInput();
+              }
+            }}
+          />
         </div>
 
       </form>
