@@ -4,6 +4,7 @@ import Cast from "./Cast";
 const StyledCast = styled(Cast)`
   padding-inline: 1rem;
   padding-block: 1rem;
+  min-height: 100vh;
 
   .cast-header {
     font-family: "Inter", sans-serif;
