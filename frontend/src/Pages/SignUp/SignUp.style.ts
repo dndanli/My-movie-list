@@ -40,6 +40,7 @@ const StyledSignUp = styled(SignUp)`
     font-weight: 500;
     color:rgba(16, 16, 16, 0.6);
     margin-bottom: 0.5rem;
+    padding-left: 0.5rem;
   }
 
   .user-input {
@@ -74,6 +75,21 @@ const StyledSignUp = styled(SignUp)`
     padding-block:1rem;
     background-color:rgb(255, 140, 50);
     color: rgba(255, 255, 255, 0.9);
+    margin-top: 1.3rem;
+  }
+
+  .text-small{
+    margin-top: 1rem;
+    font-family:"Inter", sans-serif;
+    font-weight: 400;
+    color: rgba(16, 16, 16, 0.4);
+    span{
+      color: orange;
+    }
+  }
+
+  a{
+    text-decoration: none;
   }
 `;
 
