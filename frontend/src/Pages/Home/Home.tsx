@@ -33,7 +33,7 @@ const Home = ({ className }: Homeprops) => {
           <TextAnimation />
         </h1>
         <h2 className="hero-heading-2">
-          to a place where you discover new movies
+          to your favorite place to discover new movies
         </h2>
         <h2 className="hero-heading-2">and Tv-Shows.</h2>
       </div>
