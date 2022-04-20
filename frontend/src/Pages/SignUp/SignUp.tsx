@@ -1,3 +1,5 @@
+import {Link} from "react-router-dom";
+
 type SignUpProps = {
   className: string;
 };
@@ -31,6 +33,9 @@ const SignUp = ({ className }: SignUpProps) => {
           <input type="submit" value={"Create an Account"} className="submit-btn" />
         </div>
       </form>
+      <Link to={"/login"}>
+        <h3 className="text-small">Already have an account? <span>Sign In</span></h3>
+      </Link>
     </div>
   );
 };
