@@ -6,6 +6,9 @@ const StyledCastCard = styled(CastCard)`
   max-height: 18rem;
   background-color: rgba(255, 255, 255, 0.9);
   border-radius: 8px;
+  -moz-box-shadow: 0 0 0.5px #ccc;
+  -webkit-box-shadow: 0 0 0.5px #ccc;
+  box-shadow:0 0 0 0.5px #ccc;
   a {
     text-decoration: none;
     .name {
