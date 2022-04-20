@@ -8,7 +8,7 @@ import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 
-import { v4 as uuidv4 } from 'uuid';
+import { v4 as uuidv4 } from "uuid";
 
 type DetailsProps = {
   className: string;
@@ -21,7 +21,6 @@ const Details = ({ className }: DetailsProps) => {
 
   useEffect(() => {
     const fetch = async () => {
-      // make get request to backend with the movie id
       const movieDataResponse = await getMediaDetails(mediaType, id);
       setDetailData(movieDataResponse);
       setTrailers(movieDataResponse.videos.results);
@@ -31,7 +30,6 @@ const Details = ({ className }: DetailsProps) => {
 
   return (
     <div className={className}>
-      {/* TODO: Fix background for null paths */}
       {detailData !== undefined ? (
         <div className="overview-images">
           {detailData.backdrop_path !== null ? (
@@ -52,13 +50,13 @@ const Details = ({ className }: DetailsProps) => {
         </div>
       ) : null}
 
-      {detailData !== undefined ? (
+      {detailData?.title !== undefined ? (
         <h1 className="overview-title-header">
           {detailData.title || detailData.name}
         </h1>
       ) : null}
 
-      {detailData !== undefined ? (
+      {detailData?.genres.length > 0 ? (
         <ul className="genre-section">
           {detailData.genres.map((genre: any) => {
             return (
@@ -68,18 +66,27 @@ const Details = ({ className }: DetailsProps) => {
             );
           })}
         </ul>
-      ) : null}
+        ) :
 
-      {detailData !== undefined ? (
+        <div className="no-info-to-show">
+          <h2 className="info-text">No genres available...</h2>
+        </div>
+      }
+
+      {detailData?.overview !== undefined ? (
         <div className="overview-info">
           <h1 id="overview-info-header">Overview</h1>
           <p className="overview-text">{detailData.overview}</p>
         </div>
-      ) : null}
+      ) : (
+        <div className="no-info-to-show">
+          <h2 className="info-text">No overview to show...</h2>
+        </div>
+      )}
 
       <h1 id="overview-crew-header">Cast</h1>
 
-      {detailData !== undefined ? (
+      {detailData?.credits.cast !== undefined ? (
         <div className="cast-info">
           {detailData.credits.cast.slice(0, 9).map((person: any) => {
             return (
@@ -91,18 +98,26 @@ const Details = ({ className }: DetailsProps) => {
             );
           })}
         </div>
-      ) : null}
+      ) : (
+        <div className="no-info-to-show">
+          <h2 className="info-text">No cast to show...</h2>
+        </div>
+      )}
 
       <div className="see-more">
+      {
+       detailData?.credits.cast !== undefined ? 
         <Link to={`/detail/cast/${mediaType}/${id}`}>
           <h3 className="cast-page-link">
             Full cast and crew
             <HiOutlineArrowNarrowRight className="arrow-icon" />
           </h3>
-        </Link>
+          </Link>
+          :null
+      }
       </div>
 
-      {trailers !== undefined ? (
+      {trailers.length > 0 ? (
         <div className="trailers-wrapper">
           <h2 id="trailers">Trailers</h2>
 
