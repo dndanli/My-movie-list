@@ -30,7 +30,7 @@ const StyledSection = styled(Section)`
     font-size: 1.7rem;
     font-weight: 500;
     margin-block: 1rem;
-    color: rgba(16, 16, 16, 0.8);
+    color:rgba(16, 16, 16, 0.9);
   }
 `;
 
