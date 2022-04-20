@@ -15,7 +15,6 @@ const Cast = ({ className }: CastProps) => {
 
   useEffect(() => {
     const fetch = async () => {
-      // make get request to backend with the movie id
       const movieDataResponse = await getMediaDetails(mediaType, id);
       setCastData(movieDataResponse.credits.cast);
       setCrewData(movieDataResponse.credits.crew);
@@ -25,7 +24,7 @@ const Cast = ({ className }: CastProps) => {
 
   return (
     <div className={className}>
-      <h2 className="cast-header">Cast</h2>
+      {castData.length > 0 ? <h2 className="cast-header">Cast</h2> : null}
       <ul>
         {castData.map((data: any, index) => {
           return (
@@ -50,7 +49,8 @@ const Cast = ({ className }: CastProps) => {
           );
         })}
       </ul>
-      <h2 className="cast-header">Crew</h2>
+      {crewData.length > 0 ? <h2 className="cast-header">Crew</h2> : null}
+      
       <ul>
         {crewData.map((data: any, index) => {
           return (
