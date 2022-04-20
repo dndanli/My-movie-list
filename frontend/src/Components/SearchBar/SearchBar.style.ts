@@ -9,6 +9,7 @@ const StyledSearchBar = styled(SearchBar)`
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
+  box-shadow:0 0 0 0.5px #ccc;
   .search-icon {
     font-size: 2rem;
     color: rgba(16, 16, 16, 0.7);
