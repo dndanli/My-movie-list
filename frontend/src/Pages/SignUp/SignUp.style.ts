@@ -56,6 +56,29 @@ const StyledSignUp = styled(SignUp)`
       border: solid 1.5px rgb(255, 140, 50);
     }
   }
+  .password-input-wrapper{
+    padding: 1rem;
+    border-radius: 12px;
+    -moz-box-shadow: 0 0 0.5px #ccc;
+    -webkit-box-shadow: 0 0 0.5px #ccc;
+    box-shadow:0 0 0 0.5px #ccc;
+    &:focus {
+      border: solid 1.5px rgb(255, 140, 50);
+    }
+    display:flex;
+    justify-content: center;
+  } 
+
+  .password-input{  
+    border: none;
+    border-radius: 0;
+    outline: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    font-size: 1.2rem;
+    color: rgba(57, 62, 70, 0.7);
+  }
 
   .user-input::placeholder{
     color:rgba(16, 16, 16, 0.2);
@@ -90,6 +113,14 @@ const StyledSignUp = styled(SignUp)`
 
   a{
     text-decoration: none;
+  }
+
+  .view-icon{
+    padding-left: 1rem;
+    bottom: 1rem;
+    right: 2rem;
+    font-size: 1.8rem;
+    color: rgba(16, 16, 16, 0.5);
   }
 `;
 
