@@ -20,7 +20,6 @@ const Section = ({ className }: SectionProps) => {
   const [trailerUrl, setTrailerUrl] = useState<any>();
 
   const displayPlayer = () => {
-    console.log("displaying");
     setVideoPlaying(true);
   };
 
