@@ -102,13 +102,14 @@ const StyledSignUp = styled(SignUp)`
   }
 
   .text-small{
-    margin-top: 1rem;
+    margin-top: 2rem;
     font-family:"Inter", sans-serif;
     font-weight: 400;
     color: rgba(16, 16, 16, 0.4);
     span{
       color: orange;
     }
+    text-align: center;
   }
 
   a{
