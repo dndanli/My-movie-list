@@ -1,5 +1,5 @@
 import express from "express";
-import { fetchMediaDetails } from "../helpers/helpers";
+import { fetchMediaDetails, fetchMovieContentRating } from "../helpers/helpers";
 const router = express.Router();
 
 /**
@@ -7,11 +7,24 @@ const router = express.Router();
  */
 
 router.get("/getDetails/:mediaType/:id", async (request, response) => {
-  const movieData = await fetchMediaDetails(
+  let responseContent = [];
+
+  const responseData = await fetchMediaDetails(
     request.params.mediaType,
     parseInt(request.params.id)
   );
-  response.send(movieData);
+
+  if (request.params.mediaType === "tv") {
+    responseContent.push(responseData);
+  }
+
+  if (request.params.mediaType === "movie") {
+    const movieContentRating = await fetchMovieContentRating(
+      parseInt(request.params.id)
+    );
+    responseContent.push(responseData, movieContentRating);
+  }
+  response.send(responseContent);
   response.end();
 });
 
