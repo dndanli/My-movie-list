@@ -1,20 +1,20 @@
 import { useEffect, useState } from "react";
 import { useParams } from "react-router";
-import StyledCard from "../../Components/Card/Card.style";
 import StyledInfoBlock from "../../Components/InfoBlock/InfoBlock.style";
 import { getPersonResponse } from "../../Helpers/clientHelpers";
 
-import {v4 as uuidv4} from "uuid";
+import StyledTruncatedResult from "../../Components/Layout/TruncatedResult.style";
+
 
 type PersonProps = {
   className: string;
 };
-
 const Person = ({ className }: PersonProps) => {
   const { id } = useParams();
   const [personResponseData, setPersonResponseData] = useState<any>({});
-  const [movieCreditsData, setMovieCreditsData] = useState([]);
-  const [tvCreditsData, setTvCreditsData] = useState([]);
+  const [movieCreditsData, setMovieCreditsData] = useState<any>([]);
+  const [tvCreditsData, setTvCreditsData] = useState<any>([]);
+
 
   useEffect(() => {
     const fetch = async () => {
@@ -95,40 +95,27 @@ const Person = ({ className }: PersonProps) => {
       <h2 className="header" style={{ paddingInline: "1rem" }}>
         Movies and Tv Shows
       </h2>
-      <div className="content-wrapper">
-        {movieCreditsData
-          ? movieCreditsData.map((data: any) => {
-              return (
-                <StyledCard
-                  className="card"
-                  imagePath={data.poster_path}
-                  title={data.name || data.title}
-                  rating={data.vote_average}
-                  date={data.release_date}
-                  cardId={data.id}
-                  mediaType={"movie"}
-                  key={uuidv4()}
-                />
-              );
-            })
-          : null}
-        {tvCreditsData
-          ? tvCreditsData.map((data: any) => {
-              return (
-                <StyledCard
-                  className="card"
-                  imagePath={data.poster_path}
-                  title={data.name || data.title}
-                  rating={data.vote_average}
-                  date={data.release_date || data.first_air_date}
-                  cardId={data.id}
-                  mediaType={"tv"}
-                  key={uuidv4()}
-                />
-              );
-            })
-          : null}
-      </div>
+
+      {
+        movieCreditsData?
+
+          <StyledTruncatedResult className="truncated-result"
+            dataToBeDisplayed={movieCreditsData}
+            mediaType={"movie"}
+          />
+            :null
+
+      }
+      {
+        tvCreditsData?
+
+          <StyledTruncatedResult className="truncated-result"
+            dataToBeDisplayed={tvCreditsData}
+            mediaType={"tv"}
+          />
+            :null
+
+      }
     </div>
   );
 };
