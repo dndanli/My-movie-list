@@ -29,11 +29,13 @@ const StyledDetails = styled(Details)`
     display: flex;
     justify-content: center;
   }
+
   .overview-background {
-    object-fit: contain;
     border-radius: 6px;
-    max-width: 370px;
-    max-height: 300px;
+    object-fit: cover;
+    max-width: 100%;
+    height: 200px;
+    object-fit: cover;
   }
 
   .overview-title-header,
@@ -154,7 +156,7 @@ const StyledDetails = styled(Details)`
 
   .p-small {
     font-size: 1.2rem;
-    color:rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   #rating {
