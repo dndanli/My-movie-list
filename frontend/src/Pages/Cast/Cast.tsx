@@ -16,8 +16,8 @@ const Cast = ({ className }: CastProps) => {
   useEffect(() => {
     const fetch = async () => {
       const movieDataResponse = await getMediaDetails(mediaType, id);
-      setCastData(movieDataResponse.credits.cast);
-      setCrewData(movieDataResponse.credits.crew);
+      setCastData(movieDataResponse[0].credits.cast);
+      setCrewData(movieDataResponse[0].credits.crew);
     };
     fetch();
   }, [mediaType, id]);
