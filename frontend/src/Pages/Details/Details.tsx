@@ -3,6 +3,7 @@ import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { AiFillStar } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
 import StyledCastCard from "../../Components/CastCard/CastCard.style";
@@ -61,6 +62,10 @@ const Details = ({ className }: DetailsProps) => {
       ) : null}
 
       <div className="metadata">
+        <div className="rating-score">
+          {detailData?.vote_average}
+          <AiFillStar className="star-icon" />
+        </div>
         {mediaType === "tv" ? (
           detailData?.content_ratings.results.map((data: any) => {
             return data.iso_3166_1 === "US" ? (
