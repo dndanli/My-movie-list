@@ -51,13 +51,5 @@ const StyledPerson = styled(Person)`
     font-weight: 500;
   }
 
-  .content-wrapper {
-    padding-inline: 1rem;
-    padding-bottom: 2rem;
-    display: grid;
-    grid-column-gap: 1rem;
-    grid-row-gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
-  }
 `;
 export default StyledPerson;
