@@ -166,6 +166,19 @@ const StyledDetails = styled(Details)`
     margin-right: 1rem;
     padding-block: 0.2rem;
   }
+
+  .rating-score {
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    border-radius: 4px;
+    color: rgba(255, 255, 255, 1);
+    margin-right: 1rem;
+    .star-icon {
+      margin-left: 0.5rem;
+      font-size: 1.4rem;
+    }
+  }
 `;
 
 export default StyledDetails;
