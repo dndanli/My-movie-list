@@ -63,13 +63,11 @@ const Details = ({ className }: DetailsProps) => {
       <div className="metadata">
         {mediaType === "tv" ? (
           detailData?.content_ratings.results.map((data: any) => {
-            if (data.iso_3166_1 === "US") {
-              return (
-                <p className="p-small" id="rating" key={uuidv4()}>
-                  {data.rating}
-                </p>
-              );
-            }
+            return data.iso_3166_1 === "US" ? (
+              <p className="p-small" id="rating" key={uuidv4()}>
+                {data.rating}
+              </p>
+            ) : null;
           })
         ) : (
           <p className="p-small" id="rating" key={uuidv4()}>
