@@ -1,14 +1,14 @@
 import { useState, useEffect } from "react";
-import { getMediaDetails } from "../../Helpers/clientHelpers";
-
-import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-
-import StyledCastCard from "../../Components/CastCard/CastCard.style";
 import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
-
+import { HiOutlineArrowNarrowRight } from "react-icons/hi";
 import { v4 as uuidv4 } from "uuid";
+
+import StyledCastCard from "../../Components/CastCard/CastCard.style";
+
+import { getMediaDetails } from "../../Helpers/clientHelpers";
+import { formatMinutesToHoursAndMinutes } from "../../Helpers/timeFormatter";
 
 type DetailsProps = {
   className: string;
@@ -18,12 +18,14 @@ const Details = ({ className }: DetailsProps) => {
   const { mediaType, id } = useParams();
   const [detailData, setDetailData] = useState<any>();
   const [trailers, setTrailers] = useState([]);
+  const [movieContentRating, setMovieContentRating] = useState("");
 
   useEffect(() => {
     const fetch = async () => {
-      const movieDataResponse = await getMediaDetails(mediaType, id);
-      setDetailData(movieDataResponse);
-      setTrailers(movieDataResponse.videos.results);
+      const detailResponse = await getMediaDetails(mediaType, id);
+      setDetailData(detailResponse[0]);
+      setMovieContentRating(detailResponse[1]);
+      setTrailers(detailResponse[0].videos.results);
     };
     fetch();
   }, [mediaType, id]);
@@ -33,11 +35,13 @@ const Details = ({ className }: DetailsProps) => {
       {detailData !== undefined ? (
         <div className="overview-images">
           {detailData.backdrop_path !== null ? (
-            <img
-              className="overview-background"
-              src={`https://image.tmdb.org/t/p/w500${detailData.backdrop_path}`}
-              alt=""
-            />
+            <div className="background">
+              <img
+                className="overview-background"
+                src={`https://image.tmdb.org/t/p/w500${detailData.backdrop_path}`}
+                alt=""
+              />
+            </div>
           ) : (
             <div className="overview-background-fill"></div>
           )}
@@ -50,11 +54,38 @@ const Details = ({ className }: DetailsProps) => {
         </div>
       ) : null}
 
-      {detailData?.title !== undefined ? (
+      {detailData?.title !== undefined || detailData?.name !== undefined ? (
         <h1 className="overview-title-header">
           {detailData.title || detailData.name}
         </h1>
       ) : null}
+
+      <div className="metadata">
+        {mediaType === "tv" ? (
+          detailData?.content_ratings.results.map((data: any) => {
+            if (data.iso_3166_1 === "US") {
+              return (
+                <p className="p-small" id="rating" key={uuidv4()}>
+                  {data.rating}
+                </p>
+              );
+            }
+          })
+        ) : (
+          <p className="p-small" id="rating" key={uuidv4()}>
+            {movieContentRating}
+          </p>
+        )}
+        {detailData?.episode_run_time !== undefined ? (
+          <p className="p-small">{detailData?.episode_run_time}m</p>
+        ) : null}
+
+        {detailData?.runtime !== undefined ? (
+          <p className="p-small">
+            {formatMinutesToHoursAndMinutes(detailData?.runtime)}
+          </p>
+        ) : null}
+      </div>
 
       {detailData?.genres.length > 0 ? (
         <ul className="genre-section">
@@ -66,12 +97,11 @@ const Details = ({ className }: DetailsProps) => {
             );
           })}
         </ul>
-        ) :
-
+      ) : (
         <div className="no-info-to-show">
           <h2 className="info-text">No genres available...</h2>
         </div>
-      }
+      )}
 
       {detailData?.overview !== undefined ? (
         <div className="overview-info">
@@ -105,16 +135,14 @@ const Details = ({ className }: DetailsProps) => {
       )}
 
       <div className="see-more">
-      {
-       detailData?.credits.cast !== undefined ? 
-        <Link to={`/detail/cast/${mediaType}/${id}`}>
-          <h3 className="cast-page-link">
-            Full cast and crew
-            <HiOutlineArrowNarrowRight className="arrow-icon" />
-          </h3>
+        {detailData?.credits.cast !== undefined ? (
+          <Link to={`/detail/cast/${mediaType}/${id}`}>
+            <h3 className="cast-page-link">
+              Full cast and crew
+              <HiOutlineArrowNarrowRight className="arrow-icon" />
+            </h3>
           </Link>
-          :null
-      }
+        ) : null}
       </div>
 
       {trailers.length > 0 ? (
