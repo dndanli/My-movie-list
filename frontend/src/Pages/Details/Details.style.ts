@@ -34,7 +34,7 @@ const StyledDetails = styled(Details)`
     border-radius: 6px;
     object-fit: cover;
     max-width: 100%;
-    height: 200px;
+    min-height: 230px;
     object-fit: cover;
   }
 
@@ -43,6 +43,7 @@ const StyledDetails = styled(Details)`
   #overview-info-header,
   #overview-crew-header,
   #trailers,
+  .header-2,
   #trailer-name {
     margin-top: 1rem;
     font-weight: 500;
