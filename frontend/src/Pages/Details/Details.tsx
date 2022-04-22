@@ -166,6 +166,7 @@ const Details = ({ className }: DetailsProps) => {
               authorRating={data.author_details.rating}
               authorReview={data.content}
               authorProfile={data.author_details.avatar_path}
+              dateCreated={data.created_at}
             />
           );
         })}
