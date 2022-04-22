@@ -10,6 +10,7 @@ import StyledCastCard from "../../Components/CastCard/CastCard.style";
 
 import { getMediaDetails } from "../../Helpers/clientHelpers";
 import { formatMinutesToHoursAndMinutes } from "../../Helpers/timeFormatter";
+import StyledReviewPanel from "../../Components/ReviewPanel/ReviewPanel.style";
 
 type DetailsProps = {
   className: string;
@@ -20,6 +21,7 @@ const Details = ({ className }: DetailsProps) => {
   const [detailData, setDetailData] = useState<any>();
   const [trailers, setTrailers] = useState([]);
   const [movieContentRating, setMovieContentRating] = useState("");
+  const [reviews, setReviews] = useState([]);
 
   useEffect(() => {
     const fetch = async () => {
@@ -27,6 +29,8 @@ const Details = ({ className }: DetailsProps) => {
       setDetailData(detailResponse[0]);
       setMovieContentRating(detailResponse[1]);
       setTrailers(detailResponse[0].videos.results);
+      setReviews(detailResponse[0].reviews.results);
+      console.log(detailResponse[0].reviews);
     };
     fetch();
   }, [mediaType, id]);
@@ -146,6 +150,25 @@ const Details = ({ className }: DetailsProps) => {
             </h3>
           </Link>
         ) : null}
+      </div>
+
+      <div className="reviews">
+        <h2 className="header-2" style={{ marginBottom: "0.5rem" }}>
+          Reviews
+        </h2>
+        {reviews.slice(0, 1).map((data: any) => {
+          return (
+            <StyledReviewPanel
+              className="review-panel"
+              key={data.id}
+              authorName={data.author}
+              authorUsername={data.author_details.username}
+              authorRating={data.author_details.rating}
+              authorReview={data.content}
+              authorProfile={data.author_details.avatar_path}
+            />
+          );
+        })}
       </div>
 
       {trailers.length > 0 ? (
