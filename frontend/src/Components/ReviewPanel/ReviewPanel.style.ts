@@ -20,7 +20,7 @@ const StyledReviewPanel = styled(ReviewSection)`
     display: flex;
     justify-content: center;
     align-items: center;
-    max-height: 2rem;
+    max-height: 1.5rem;
     background-color: orange;
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 4px;
@@ -46,11 +46,16 @@ const StyledReviewPanel = styled(ReviewSection)`
 
   .name-wrapper {
     margin-left: 1rem;
+  
+  }
+  .profile-img-wrapper{
+    width: 4rem;
   }
   .user {
-    width: 75px;
-    height: 70px;
-    border-radius: 50%;
+    width: 100%;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 8px;
     -moz-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
     -webkit-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
     box-shadow: 0 0 0 0.5px rgba(16, 16, 16, 0.5);
@@ -72,8 +77,18 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .author-name {
+    font-weight: 500;
+    color: rgba(16, 16, 16, 1);
+  }
+
+  .author-username {
     font-weight: 400;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(16, 16, 16, 1);
+  }
+
+  .posted{
+    margin-top: 1rem;
+    color:rgba(16, 16, 16, 1);
   }
 `;
 
