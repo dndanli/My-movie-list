@@ -62,11 +62,11 @@ export const fetchMediaDetails = async (mediaType: string, id: number) => {
   try {
     if (mediaType === "tv") {
       response = await axios.get(
-        `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${apiKey}&append_to_response=credits,videos,content_ratings`
+        `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${apiKey}&append_to_response=credits,videos,content_ratings,reviews`
       );
-    } else if(mediaType === "movie"){
+    } else if (mediaType === "movie") {
       response = await axios.get(
-        `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${apiKey}&append_to_response=credits,videos`
+        `https://api.themoviedb.org/3/${mediaType}/${id}?api_key=${apiKey}&append_to_response=credits,videos,reviews`
       );
     }
     return response?.data;
@@ -75,23 +75,23 @@ export const fetchMediaDetails = async (mediaType: string, id: number) => {
   }
 };
 
-export const fetchMovieContentRating = async (movieId:number) =>{
-  try{
-    const response = await axios.get(`https://api.themoviedb.org/3/movie/${movieId}/release_dates?api_key=${apiKey}`);
-      const responseResults:[] = response.data.results;
-      let contentRating:string = "";
-      responseResults.forEach((obj:any)=>{
-        if(obj.iso_3166_1 === "US"){
-              contentRating = obj.release_dates[0].certification;
-        }
-      });
-      return contentRating;
-  }catch(err){
-      console.error(err);
+export const fetchMovieContentRating = async (movieId: number) => {
+  try {
+    const response = await axios.get(
+      `https://api.themoviedb.org/3/movie/${movieId}/release_dates?api_key=${apiKey}`
+    );
+    const responseResults: [] = response.data.results;
+    let contentRating: string = "";
+    responseResults.forEach((obj: any) => {
+      if (obj.iso_3166_1 === "US") {
+        contentRating = obj.release_dates[0].certification;
+      }
+    });
+    return contentRating;
+  } catch (err) {
+    console.error(err);
   }
-}
-
-
+};
 
 export const fetchClientQuery = async (clientQuery: string) => {
   const responseArray: Array<Object> = [];
