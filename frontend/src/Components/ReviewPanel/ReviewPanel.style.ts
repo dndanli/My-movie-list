@@ -46,7 +46,9 @@ const StyledReviewPanel = styled(ReviewSection)`
 
   .name-wrapper {
     margin-left: 1rem;
-  
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
   }
   .profile-img-wrapper{
     width: 4rem;
@@ -76,7 +78,7 @@ const StyledReviewPanel = styled(ReviewSection)`
     padding-inline: 0.5rem;
     padding-bottom: 0.5rem;
     min-height: 8rem;
-    max-width: 15rem;
+    max-width: 17rem;
 
     p {
       display: -webkit-box;
@@ -100,6 +102,19 @@ const StyledReviewPanel = styled(ReviewSection)`
   .posted{
     margin-top: 1rem;
     color:rgba(16, 16, 16, 1);
+  }
+
+  .tmdb-user{
+    font-family:"Inter", sans-serif;
+    font-weight: 500;
+    margin-top: 0.5rem;
+    border-radius: 2px;
+    width:4rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #01b4e4;
+    color:rgba(255, 255, 255, 0.9);
   }
 `;
 
