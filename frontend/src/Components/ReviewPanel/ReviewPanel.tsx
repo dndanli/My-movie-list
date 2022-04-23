@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
 import { AiFillStar } from "react-icons/ai";
+import {BsFillPersonFill} from "react-icons/bs";
 import { convertISO8601toMMDDYYY } from "../../Helpers/dateFormatter";
+import {useState} from "react";
 
 type ReviewsProps = {
   className: string;
@@ -21,6 +23,9 @@ const ReviewPanel = ({
   authorProfile,
   dateCreated,
 }: ReviewsProps) => {
+
+  const [imageLoadError, setImageLoadError] = useState(true);
+
   return (
     <div className={className}>
       <div className="wrapper">
@@ -40,14 +45,21 @@ const ReviewPanel = ({
       </div>
       <div className="user-wrapper">
         <div className="profile-img-wrapper">
-          <img
-            src={`${authorProfile.slice(1)}`}
+        {
+        authorProfile !== null  ?
+        <img
+          src={ authorProfile ? `${authorProfile.slice(1)}` : ""}
             alt={authorName}
-            onError={(e) => {
-              e.currentTarget.src = `https://image.tmdb.org/t/p/w400${authorProfile}`;
+            onError={(e)=>{
+              if(imageLoadError){
+                setImageLoadError(false);
+                e.currentTarget.src = `https://image.tmdb.org/t/p/w400${authorProfile}`;
+              }
             }}
             className="user"
           />
+          :<BsFillPersonFill className="user-icon"/>
+        }
         </div>
         <div className="name-wrapper">
           <h4 className="author-name">{authorName}</h4>
