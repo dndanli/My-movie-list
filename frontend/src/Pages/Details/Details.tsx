@@ -77,11 +77,11 @@ const Details = ({ className }: DetailsProps) => {
               </p>
             ) : null;
           })
-          ) : movieContentRating !== "" ?(
+        ) : movieContentRating !== "" ? (
           <p className="p-small" id="rating" key={uuidv4()}>
             {movieContentRating}
           </p>
-          ):null}
+        ) : null}
         {detailData?.episode_run_time !== undefined ? (
           <p className="p-small">{detailData?.episode_run_time}m</p>
         ) : null}
@@ -150,34 +150,34 @@ const Details = ({ className }: DetailsProps) => {
           </Link>
         ) : null}
       </div>
-
-      <div className="reviews">
-        <h2 className="header-2" style={{ marginBottom: "0.5rem" }}>
-          Reviews
-        </h2>
-        {
-          reviews.length > 0 ?
-          reviews.slice(0, 1).map((data: any) => {
-          return (
-            <StyledReviewPanel
-              className="review-panel"
-              key={data.id}
-              authorName={data.author}
-              authorUsername={data.author_details.username}
-              authorRating={data.author_details.rating}
-              authorReview={data.content}
-              authorProfile={data.author_details.avatar_path}
-              dateCreated={data.created_at}
-            />
-          );
-          }):null}
+      {reviews.length > 0 ? (
+        <div className="reviews">
+          <h2 className="header-2" style={{ marginBottom: "0.5rem" }}>
+            Reviews
+          </h2>
+          {reviews.slice(0, 1).map((data: any) => {
+            return (
+              <StyledReviewPanel
+                className="review-panel"
+                key={data.id}
+                authorName={data.author}
+                authorUsername={data.author_details.username}
+                authorRating={data.author_details.rating}
+                authorReview={data.content}
+                authorProfile={data.author_details.avatar_path}
+                dateCreated={data.created_at}
+              />
+            );
+          })}
       <Link to="/" style={{color:"rgba(16, 16, 16, 1)"}}>
           <p>see all reviews</p>
         </Link>
       </div>
+      ) : null}
 
       {trailers.length > 0 ? (
         <div className="trailers-wrapper">
+
           <h2 id="trailers">Trailers</h2>
 
           <hr className="divider" />
