@@ -21,7 +21,7 @@ const StyledReviewPanel = styled(ReviewSection)`
     justify-content: center;
     align-items: center;
     max-height: 1.5rem;
-    background-color: orange;
+    background-color: rgba(255, 140, 50, 0.9);
     border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 4px;
     padding-inline: 0.5rem;
@@ -52,6 +52,17 @@ const StyledReviewPanel = styled(ReviewSection)`
     width: 4rem;
   }
   .user {
+    width: 100%;
+    height: 4rem;
+    object-fit: cover;
+    border-radius: 8px;
+    -moz-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
+    -webkit-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
+    box-shadow: 0 0 0 0.5px rgba(16, 16, 16, 0.5);
+  }
+
+  .user-icon{
+    color: rgba(16, 16, 16, 0.6);
     width: 100%;
     height: 4rem;
     object-fit: cover;
