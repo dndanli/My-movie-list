@@ -166,6 +166,7 @@ const Details = ({ className }: DetailsProps) => {
                 authorReview={data.content}
                 authorProfile={data.author_details.avatar_path}
                 dateCreated={data.created_at}
+                tmdbUser={true}
               />
             );
           })}
