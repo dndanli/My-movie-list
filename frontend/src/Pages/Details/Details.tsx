@@ -30,7 +30,6 @@ const Details = ({ className }: DetailsProps) => {
       setMovieContentRating(detailResponse[1]);
       setTrailers(detailResponse[0].videos.results);
       setReviews(detailResponse[0].reviews.results);
-      console.log(detailResponse[0].reviews);
     };
     fetch();
   }, [mediaType, id]);
@@ -78,11 +77,11 @@ const Details = ({ className }: DetailsProps) => {
               </p>
             ) : null;
           })
-        ) : (
+          ) : movieContentRating !== "" ?(
           <p className="p-small" id="rating" key={uuidv4()}>
             {movieContentRating}
           </p>
-        )}
+          ):null}
         {detailData?.episode_run_time !== undefined ? (
           <p className="p-small">{detailData?.episode_run_time}m</p>
         ) : null}
@@ -156,7 +155,9 @@ const Details = ({ className }: DetailsProps) => {
         <h2 className="header-2" style={{ marginBottom: "0.5rem" }}>
           Reviews
         </h2>
-        {reviews.slice(0, 1).map((data: any) => {
+        {
+          reviews.length > 0 ?
+          reviews.slice(0, 1).map((data: any) => {
           return (
             <StyledReviewPanel
               className="review-panel"
@@ -169,7 +170,10 @@ const Details = ({ className }: DetailsProps) => {
               dateCreated={data.created_at}
             />
           );
-        })}
+          }):null}
+      <Link to="/" style={{color:"rgba(16, 16, 16, 1)"}}>
+          <p>see all reviews</p>
+        </Link>
       </div>
 
       {trailers.length > 0 ? (
