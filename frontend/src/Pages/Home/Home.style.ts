@@ -1,10 +1,9 @@
 import styled from "styled-components";
 import Home from "./Home";
 const StyledHome = styled(Home)`
+  padding-inline: 1rem;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
-  padding-inline: 1rem;
-
   .hero {
     display: flex;
     flex-direction: column;
@@ -32,8 +31,9 @@ const StyledHome = styled(Home)`
     }
   }
 
-  .searchbar {
-    margin-block: 1rem;
+  .search-wrapper {
+    display: flex;
+    justify-content: center;
   }
 
   .content-wrapper {
