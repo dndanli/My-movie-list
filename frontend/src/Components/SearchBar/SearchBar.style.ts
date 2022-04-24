@@ -2,10 +2,11 @@ import styled from "styled-components";
 import SearchBar from "./SearchBar";
 
 const StyledSearchBar = styled(SearchBar)`
+  width: 20rem;
   background-color: white;
   min-height: 2rem;
   padding-block: 0.5rem;
-  border-radius: 1rem;
+  border-radius: 15px;
   background-color: rgba(255, 255, 255, 1);
   display: flex;
   align-items: center;
