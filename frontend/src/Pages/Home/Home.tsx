@@ -28,22 +28,46 @@ const Home = ({ className }: Homeprops) => {
 
   return (
     <div className={className}>
-      <div className="hero">
-        <h1 id="hero-heading">
-          <TextAnimation />
-        </h1>
-        <h2 className="hero-heading-2">
-          to your favorite place to discover new movies
-        </h2>
-        <h2 className="hero-heading-2">and Tv-Shows.</h2>
-      </div>
+      <div className="home-wrapper">
+        <div className="hero">
+          <h1 id="hero-heading">
+            <TextAnimation />
+          </h1>
+          <h2 className="hero-heading-2">
+            to your favorite place to discover new movies
+          </h2>
+          <h2 className="hero-heading-2">and Tv-Shows.</h2>
+        </div>
+        <div className="search-wrapper">
+          <StyledSearchBar className="searchbar" />
+        </div>
+        <h1 id="popular-heading">Popular</h1>
 
-      <StyledSearchBar className="searchbar" />
-      <h1 id="popular-heading">Popular</h1>
+        <div className="content-wrapper">
+          {popularMovies.map((page: any) => {
+            return page.results.map((data: any) => {
+              return (
+                <StyledCard
+                  className="card"
+                  imagePath={data.poster_path}
+                  title={data.title}
+                  rating={data.vote_average}
+                  date={data.release_date}
+                  cardId={data.id}
+                  mediaType={"movie"}
+                  key={data.id}
+                />
+              );
+            });
+          })}
+        </div>
 
-      <div className="content-wrapper">
-        {popularMovies.map((page: any) => {
-          return page.results.map((data: any) => {
+        <StyledSection className="section" />
+
+        <h1 id="upcoming-heading">Upcoming movies</h1>
+
+        <div className="content-wrapper">
+          {upcoming.map((data: any) => {
             return (
               <StyledCard
                 className="card"
@@ -56,29 +80,8 @@ const Home = ({ className }: Homeprops) => {
                 key={data.id}
               />
             );
-          });
-        })}
-      </div>
-
-      <StyledSection className="section" />
-
-      <h1 id="upcoming-heading">Upcoming movies</h1>
-
-      <div className="content-wrapper">
-        {upcoming.map((data: any) => {
-          return (
-            <StyledCard
-              className="card"
-              imagePath={data.poster_path}
-              title={data.title}
-              rating={data.vote_average}
-              date={data.release_date}
-              cardId={data.id}
-              mediaType={"movie"}
-              key={data.id}
-            />
-          );
-        })}
+          })}
+        </div>
       </div>
     </div>
   );
