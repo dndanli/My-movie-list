@@ -48,7 +48,7 @@ const Discover = ({ className }: DiscoverProps) => {
     };
 
     fetchData();
-  }, [searchParams]);
+  }, [searchParams, currVisible]);
 
   return (
     <div className={className}>
