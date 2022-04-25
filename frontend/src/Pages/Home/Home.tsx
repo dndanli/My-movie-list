@@ -1,10 +1,11 @@
 import StyledSearchBar from "../../Components/SearchBar/SearchBar.style";
-import StyledCard from "../../Components/Card/Card.style";
 import StyledSection from "../../Components/Layout/Section.style";
 
 import { getPopularMedia, getUpcoming } from "../../Helpers/clientHelpers";
 import { useEffect, useState } from "react";
 import TextAnimation from "../../Components/Animations/TextAnimation";
+
+import StyledCarousel from "../../Components/Carousel/Carousel.style";
 
 type Homeprops = {
   className: string;
@@ -13,8 +14,8 @@ type Homeprops = {
 // TODO: cache api data
 
 const Home = ({ className }: Homeprops) => {
-  const [popularMovies, setPopularMovies] = useState([]);
-  const [upcoming, setUpcoming] = useState([]);
+  const [popularMovies, setPopularMovies] = useState<any>([]);
+  const [upcoming, setUpcoming] = useState<any>([]);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -43,45 +44,20 @@ const Home = ({ className }: Homeprops) => {
         </div>
         <h1 id="popular-heading">Popular</h1>
 
-        <div className="content-wrapper">
-          {popularMovies.map((page: any) => {
-            return page.results.map((data: any) => {
-              return (
-                <StyledCard
-                  className="card"
-                  imagePath={data.poster_path}
-                  title={data.title}
-                  rating={data.vote_average}
-                  date={data.release_date}
-                  cardId={data.id}
-                  mediaType={"movie"}
-                  key={data.id}
-                />
-              );
-            });
-          })}
-        </div>
+        <StyledCarousel
+          className="embla"
+          slides={popularMovies}
+          multiPages={true}
+        />
 
         <StyledSection className="section" />
 
         <h1 id="upcoming-heading">Upcoming movies</h1>
-
-        <div className="content-wrapper">
-          {upcoming.map((data: any) => {
-            return (
-              <StyledCard
-                className="card"
-                imagePath={data.poster_path}
-                title={data.title}
-                rating={data.vote_average}
-                date={data.release_date}
-                cardId={data.id}
-                mediaType={"movie"}
-                key={data.id}
-              />
-            );
-          })}
-        </div>
+        <StyledCarousel
+          className="embla"
+          slides={upcoming}
+          multiPages={false}
+        />
       </div>
     </div>
   );
