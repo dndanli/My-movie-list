@@ -12,10 +12,10 @@ const StyledHome = styled(Home)`
     min-height: 15rem;
     max-height: 15rem;
 
-    background-image: linear-gradient(135deg, #fad7a1 10%, #e96d71 100%);
-
+    background-color: rgba(16, 16, 16, 9);
     color: rgba(255, 255, 255, 0.9);
-    border-radius: 5px;
+
+    border-radius: 1rem;
     margin-block: 1rem;
 
     #hero-heading {
@@ -49,13 +49,13 @@ const StyledHome = styled(Home)`
 
   #popular-heading {
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 700;
     color: rgba(16, 16, 16, 0.8);
     margin-block: 0.5rem;
   }
   #upcoming-heading {
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 700;
     color: rgba(16, 16, 16, 0.8);
     margin-block: 1rem;
   }
