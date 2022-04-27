@@ -15,7 +15,7 @@ const StyledCard = styled(Card)`
     padding-bottom: 0.5rem;
     -moz-box-shadow: 0 0 0.5px #ccc;
     -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow:0 0 0 0.5px #ccc;
+    box-shadow: 0 0 0 0.5px #ccc;
   }
 
   a {
@@ -47,7 +47,7 @@ const StyledCard = styled(Card)`
     padding-left: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    color:rgba(16,16,16, 0.9);
+    color: rgba(16, 16, 16, 0.9);
     p {
       text-overflow: ellipsis;
       overflow: hidden;
@@ -63,7 +63,7 @@ const StyledCard = styled(Card)`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
-    background-color:rgb(255, 140, 50);
+    background-color: rgb(253, 0, 84);
     color: rgba(255, 255, 255, 1);
     position: absolute;
     bottom: 6.8rem;
