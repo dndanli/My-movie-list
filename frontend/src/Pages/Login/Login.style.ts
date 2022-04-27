@@ -73,7 +73,7 @@ const StyledLogin = styled(Login)`
     width: 100%;
     border-radius: 10px;
     padding-block: 1rem;
-    background-color: rgb(255, 140, 50);
+    background-color: rgb(253, 0, 84);
     color: rgba(255, 255, 255, 0.9);
     margin-top: 2.5rem;
   }
@@ -83,7 +83,7 @@ const StyledLogin = styled(Login)`
     font-weight: 400;
     color: rgba(16, 16, 16, 0.4);
     span {
-      color: orange;
+      color: rgb(253, 0, 84);
     }
   }
 
@@ -101,7 +101,7 @@ const StyledLogin = styled(Login)`
     display: flex;
     justify-content: center;
   }
-  .view-icon{
+  .view-icon {
     padding-left: 1rem;
     bottom: 1rem;
     right: 2rem;
@@ -109,19 +109,19 @@ const StyledLogin = styled(Login)`
     color: rgba(16, 16, 16, 0.5);
   }
 
-  .password-input-wrapper{
+  .password-input-wrapper {
     padding: 1rem;
     border-radius: 12px;
     -moz-box-shadow: 0 0 0.5px #ccc;
     -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow:0 0 0 0.5px #ccc;
+    box-shadow: 0 0 0 0.5px #ccc;
     &:focus {
       border: solid 1.5px rgb(255, 140, 50);
     }
-    display:flex;
+    display: flex;
     justify-content: center;
-  } 
-  .password-input{  
+  }
+  .password-input {
     border: none;
     border-radius: 0;
     outline: none;
@@ -131,8 +131,6 @@ const StyledLogin = styled(Login)`
     font-size: 1.2rem;
     color: rgba(57, 62, 70, 0.7);
   }
-
-
 `;
 
 export default StyledLogin;
