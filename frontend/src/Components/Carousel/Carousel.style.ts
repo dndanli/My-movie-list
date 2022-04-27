@@ -6,7 +6,8 @@ const StyledCarousel = styled(Carousel)`
   position: relative;
   padding-top: 3.5rem;
   padding-bottom: 3rem;
-  
+  padding-left: 0.5rem;
+
   .embla__container {
     display: flex;
   }
@@ -26,7 +27,11 @@ const StyledCarousel = styled(Carousel)`
     justify-content: center;
     align-items: center;
 
-     border: solid 1px #ccc;
+    border: solid 1px #ccc;
+
+    &:hover {
+      cursor: pointer;
+    }
   }
 
   .prev {
@@ -37,9 +42,7 @@ const StyledCarousel = styled(Carousel)`
     right: 0;
   }
 
-
   .embla__slide {
-
   }
 
   .card {
