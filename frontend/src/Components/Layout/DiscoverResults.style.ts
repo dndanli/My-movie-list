@@ -20,7 +20,7 @@ export const Wrapper = styled.div`
 
   .paginate-active {
     color: white;
-    background-color: rgb(245, 136, 64);
+    background-color: rgb(218, 0, 55);
     padding-inline: 1rem;
     text-align: center;
     border-radius: 2px;
