@@ -2,6 +2,9 @@ import styled from "styled-components";
 import Section from "./Section";
 
 const StyledSection = styled(Section)`
+  padding-block: 2rem;
+  border-radius: 8px;
+
   .trailers-wrapper {
     display: flex;
     overflow: auto;
@@ -11,6 +14,12 @@ const StyledSection = styled(Section)`
     }
     padding-bottom: 2rem;
   }
+  .play {
+    &:hover {
+      cursor: pointer;
+    }
+  }
+
   .player-wrapper {
     position: fixed;
     top: 50%;
@@ -25,12 +34,15 @@ const StyledSection = styled(Section)`
     margin-right: 0.5rem;
     font-weight: 700;
     font-size: 2.4rem;
+    &:hover {
+      cursor: pointer;
+    }
   }
   #trailers-heading {
     font-size: 1.7rem;
-    font-weight: 500;
+    font-weight: 700;
     margin-block: 1rem;
-    color:rgba(16, 16, 16, 0.9);
+    color: rgba(16, 16, 16, 0.9);
   }
 `;
 
