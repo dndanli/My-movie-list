@@ -19,7 +19,6 @@ const StyledDiscover = styled(Discover)`
     padding-inline: 0.7rem;
   }
 
-
   .filter-section > .filter-button {
     margin-left: 0.5rem;
   }
