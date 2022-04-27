@@ -30,7 +30,7 @@ const Discover = ({ className }: DiscoverProps) => {
   useEffect(() => {
     const fetchData = async () => {
       if (searchParams.get("query")) {
-      const response = await getSearchQueryResponse(
+        const response = await getSearchQueryResponse(
           searchParams.get("query")
         );
         setResponseData(response);
@@ -52,7 +52,9 @@ const Discover = ({ className }: DiscoverProps) => {
 
   return (
     <div className={className}>
-      <StyledSearchBar className="search-bar" />
+      <div className="searchbar-discover wrapper">
+        <StyledSearchBar className="search-bar" />
+      </div>
       <ul className="filter-section">
         <StyledButton
           className="filter-button"
@@ -63,9 +65,7 @@ const Discover = ({ className }: DiscoverProps) => {
               : responseData?.[0].total_results
           }
           color={
-            currVisible === "movie"
-              ? "rgb(245, 136, 64)"
-              : "  rgb(252, 153, 124)"
+            currVisible === "movie" ? "rgb(253, 0, 84)" : "rgb(187, 187, 187)"
           }
           clickHandler={() => {
             setCurrVisible("movie");
@@ -80,9 +80,7 @@ const Discover = ({ className }: DiscoverProps) => {
               : responseData?.[1].total_results
           }
           color={
-            currVisible === "tv"
-              ? "rgb(245, 136, 64)"
-              : "  rgb(252, 153, 124)"
+            currVisible === "tv" ? "rgb(253, 0, 84)" : " rgb(187, 187, 187)"
           }
           clickHandler={() => {
             setCurrVisible("tv");
@@ -97,9 +95,7 @@ const Discover = ({ className }: DiscoverProps) => {
               : responseData?.[2].total_results
           }
           color={
-            currVisible === "people"
-              ? "rgb(245, 136, 64)"
-              : "  rgb(252, 153, 124)"
+            currVisible === "people" ? "rgb(253, 0, 84)" : "rgb(187, 187, 187)"
           }
           clickHandler={() => {
             setCurrVisible("people");
