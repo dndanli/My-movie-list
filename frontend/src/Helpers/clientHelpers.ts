@@ -102,3 +102,12 @@ export async function getPersonResponse(personId: any) {
     console.error(err);
   }
 }
+
+export async function getTopRatedMovies() {
+  try {
+    const response = await axios.get(`http://localhost:8000/topRated`);
+    return response.data;
+  } catch (err) {
+    console.error(err);
+  }
+}
