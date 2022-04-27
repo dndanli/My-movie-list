@@ -6,7 +6,7 @@ type ButtonProps = {
 
 export const PrevButton = ({ className, onClick }: ButtonProps) => {
   return (
-    <div className={className} onClick={onClick}> 
+    <div className={className} onClick={onClick}>
       <MdArrowBackIos />
     </div>
   );
