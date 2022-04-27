@@ -5,12 +5,11 @@ const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
   font-family: "Inter", sans-serif;
   border-right: 0.5px solid #ccc;
-  /* background-color: red; */
-
   .logo {
     margin-right: auto;
+    padding-left: 2rem;
     a {
-      color: rgb(255, 140, 50);
+      color: rgb(253, 0, 84);
       text-decoration: none;
     }
   }
@@ -21,6 +20,7 @@ const StyledSidebar = styled(Siderbar)`
 
   .header-2 {
     color: rgba(16, 16, 16, 0.8);
+    padding-inline: 2rem;
   }
 
   .links {
@@ -31,23 +31,30 @@ const StyledSidebar = styled(Siderbar)`
       text-decoration: none;
     }
     margin-top: 2rem;
+    padding-left: 1rem;
   }
 
   .link-container {
     display: flex;
     align-items: center;
     margin-bottom: 2rem;
+    &:hover {
+      background-color: rgba(235, 240, 233, 0.6);
+    }
+    padding-left: 1rem;
+    padding-block: 1rem;
+    transition: 500ms;
   }
 
   .link-icon {
     font-size: 1.6rem;
     margin-right: 1rem;
-    color: rgb(255, 140, 50);
+    color: rgb(253, 0, 84);
   }
 
   .link-name {
     font-size: 1rem;
-    color: rgb(255, 140, 50);
+    color: rgba(16, 16, 16, 0.6);
   }
 `;
 
