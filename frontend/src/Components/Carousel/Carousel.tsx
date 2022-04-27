@@ -13,6 +13,7 @@ const Carousel = ({ className, slides, multiPages }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: true,
     containScroll: "trimSnaps",
+    slidesToScroll: 2,
     speed: 25,
   });
   const scrollPrev = useCallback(() => {
