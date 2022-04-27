@@ -6,20 +6,20 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color:rgba(255, 255, 255, 0.5);
+    background-color:#FCFCFD;
   }
 
-  /* ::-webkit-scrollbar {
-      height: 0.5em;
+  ::-webkit-scrollbar {
+      height: 0.5em;  
       width: 0.5rem;
     }
-    ::-webkit-scrollbar-track {
-      background-color: white;
-    }
-    ::-webkit-scrollbar-thumb {
-      background-color: rgba(255, 140, 50, 0.5);
-      border-radius: 10px;
-    } */
+  ::-webkit-scrollbar-track {
+    background-color: white;
+  }
+  ::-webkit-scrollbar-thumb {
+    background-color:rgb(59, 61, 58);
+    border-radius: 10px;
+  }
 `;
 
 export const Wrapper = styled.div`
@@ -38,22 +38,22 @@ export const Wrapper = styled.div`
 
   /* 635px */
   @media only screen and (min-width: 39.6em) {
-    padding-inline: 4rem;
+    padding-inline: 3rem;
   }
 
   /* 768px */
   @media only screen and (min-width: 48em) {
-    padding-inline: 5rem;
+    padding-inline: 3.3rem;
   }
 
   /* 800px */
   @media only screen and (min-width: 50em) {
-    padding-inline: 6rem;
+    padding-inline: 4rem;
   }
 
   /* 900px */
   @media only screen and (min-width: 56.25em) {
-    padding-inline: 8rem;
+    padding-inline: 6rem;
   }
 
   /* 1024px */
@@ -75,12 +75,14 @@ export const Wrapper = styled.div`
 
   /* 1295px */
   @media only screen and (min-width: 80em) {
-    /* .search-wrapper {
-      display: none;
-    } */
-
     .home-page {
       width: 70%;
+      .search-wrapper {
+        display: none;
+      }
+      .hero {
+        min-height: 20rem;
+      }
     }
     .content-bar {
       padding-top: 2.3rem;
@@ -91,8 +93,10 @@ export const Wrapper = styled.div`
   /* 1575px */
   @media only screen and (min-width: 98em) {
     .home-page {
-      width: 70%;
+      width: 60%;
+      padding-inline: 4rem;
     }
+
     .content-bar {
       display: block;
     }
