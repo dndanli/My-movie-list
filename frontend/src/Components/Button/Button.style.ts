@@ -2,7 +2,8 @@ import styled from "styled-components";
 import Button from "./Button";
 
 const StyledButton = styled(Button)`
-  font-weight: 400;
+  font-weight: 500;
+  font-size: 14px;
   max-height: 1.2rem;
   white-space: nowrap;
   display: flex;
