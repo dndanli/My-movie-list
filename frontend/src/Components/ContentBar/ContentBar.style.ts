@@ -5,10 +5,47 @@ const StyledContentBar = styled(ContentBar)`
   min-width: 17rem;
   border-left: 0.5px solid #ccc;
   border-right: 0.5px solid #ccc;
-  padding-inline: 1rem;
+  padding-inline: 1.2rem;
+  font-family: "Inter", sans-serif;
 
+  .searchbar-wrapper {
+    display: flex;
+    justify-content: center;
+  }
   .searchbar {
-    width: 17rem;
+    width: 19rem;
+  }
+
+  .header-2 {
+    color: rgba(16, 16, 16, 0.8);
+    font-size: 1.5rem;
+    font-family: "Inter", sans-serif;
+    font-weight: 500;
+    margin-top: 3rem;
+  }
+
+  .content {
+    margin-top: 1.5rem;
+    .content-box {
+      margin-bottom: 1.5rem;
+      font-family: "Inter", sans-serif;
+    }
+    overflow-y: auto;
+    max-height: 33rem;
+  }
+
+  .truncate-btn {
+    background-color: rgb(253, 0, 84);
+    padding-inline: 1rem;
+    padding-block: 0.7rem;
+    max-height: 3rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 500;
+    border-radius: 10px;
+    font-size: 1.2rem;
   }
 `;
 
