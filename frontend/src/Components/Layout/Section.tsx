@@ -71,6 +71,7 @@ const Section = ({ className }: SectionProps) => {
             height="280px"
             url={trailerUrl}
             stopOnUnmount={true}
+            className="react-player"
           />
         </div>
       ) : null}
