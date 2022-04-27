@@ -3,6 +3,10 @@ import Box from "./Box";
 
 const StyledBox = styled(Box)`
   width: 100%;
+  -moz-box-shadow: 0 0 0.5px #ccc;
+  -webkit-box-shadow: 0 0 0.5px #ccc;
+  box-shadow: 0 0 0 0.5px #ccc;
+  border-radius: 8px;
   .wrapper {
     display: flex;
     border-radius: 11px;
