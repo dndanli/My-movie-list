@@ -6,15 +6,15 @@ const StyledSignUp = styled(SignUp)`
   padding-block: 2rem;
   min-height: 100vh;
 
-  .form-container{
+  .form-container {
     margin-top: 3rem;
   }
 
   .header {
     font-size: 2.4rem;
     font-weight: 500;
-    font-family:"Libre Baskerville", sans-serif;
-    color:rgba(16, 16, 16, 0.8);
+    font-family: "Libre Baskerville", sans-serif;
+    color: rgba(16, 16, 16, 0.8);
   }
 
   .input-label,
@@ -38,7 +38,7 @@ const StyledSignUp = styled(SignUp)`
     font-family: "Inter", sans-serif;
     font-size: 1rem;
     font-weight: 500;
-    color:rgba(16, 16, 16, 0.6);
+    color: rgba(16, 16, 16, 0.6);
     margin-bottom: 0.5rem;
     padding-left: 0.5rem;
   }
@@ -50,26 +50,26 @@ const StyledSignUp = styled(SignUp)`
     font-size: 1.2rem;
     -moz-box-shadow: 0 0 0.5px #ccc;
     -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow:0 0 0 0.5px #ccc;
+    box-shadow: 0 0 0 0.5px #ccc;
     color: rgba(57, 62, 70, 0.7);
     &:focus {
       border: solid 1.5px rgb(255, 140, 50);
     }
   }
-  .password-input-wrapper{
+  .password-input-wrapper {
     padding: 1rem;
     border-radius: 12px;
     -moz-box-shadow: 0 0 0.5px #ccc;
     -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow:0 0 0 0.5px #ccc;
+    box-shadow: 0 0 0 0.5px #ccc;
     &:focus {
       border: solid 1.5px rgb(255, 140, 50);
     }
-    display:flex;
+    display: flex;
     justify-content: center;
-  } 
+  }
 
-  .password-input{  
+  .password-input {
     border: none;
     border-radius: 0;
     outline: none;
@@ -80,43 +80,43 @@ const StyledSignUp = styled(SignUp)`
     color: rgba(57, 62, 70, 0.7);
   }
 
-  .user-input::placeholder{
-    color:rgba(16, 16, 16, 0.2);
+  .user-input::placeholder {
+    color: rgba(16, 16, 16, 0.2);
   }
 
-  .submit-wrapper{
+  .submit-wrapper {
     display: flex;
     justify-content: center;
   }
 
-  .submit-btn{
+  .submit-btn {
     font-size: 1.5rem;
-    font-family:"Roboto", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 500;
     width: 100%;
     border-radius: 10px;
-    padding-block:1rem;
-    background-color:rgb(255, 140, 50);
+    padding-block: 1rem;
+    background-color: rgb(253, 0, 84);
     color: rgba(255, 255, 255, 0.9);
     margin-top: 1.3rem;
   }
 
-  .text-small{
+  .text-small {
     margin-top: 2rem;
-    font-family:"Inter", sans-serif;
+    font-family: "Inter", sans-serif;
     font-weight: 400;
     color: rgba(16, 16, 16, 0.4);
-    span{
-      color: orange;
+    span {
+      color: rgb(253, 0, 84);
     }
     text-align: center;
   }
 
-  a{
+  a {
     text-decoration: none;
   }
 
-  .view-icon{
+  .view-icon {
     padding-left: 1rem;
     bottom: 1rem;
     right: 2rem;
