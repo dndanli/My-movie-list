@@ -3,7 +3,7 @@ import Home from "./Home";
 const StyledHome = styled(Home)`
   padding-inline: 1rem;
   min-height: 100vh;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
 
   .search-wrapper {
     display: flex;
@@ -24,13 +24,13 @@ const StyledHome = styled(Home)`
   #popular-heading {
     font-size: 1.7rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin-block: 0.5rem;
   }
   #upcoming-heading {
     font-size: 1.7rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     margin-block: 1rem;
   }
   .hero {
