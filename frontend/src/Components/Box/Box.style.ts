@@ -3,14 +3,11 @@ import Box from "./Box";
 
 const StyledBox = styled(Box)`
   width: 100%;
-  -moz-box-shadow: 0 0 0.5px #ccc;
-  -webkit-box-shadow: 0 0 0.5px #ccc;
-  box-shadow: 0 0 0 0.5px #ccc;
   border-radius: 8px;
   .wrapper {
     display: flex;
     border-radius: 11px;
-    background-color: rgba(255, 255, 255, 1);
+    background-color: rgb(34, 35, 46);
   }
   a {
     text-decoration: none;
@@ -25,10 +22,10 @@ const StyledBox = styled(Box)`
   .box-icon {
     min-width: 120px;
     min-height: 150px;
-    color: rgba(16, 16, 16, 0.3);
+    color: rgba(255, 255, 255, 0.9);
   }
   .main-info-wrapper {
-    padding-left: 1rem;
+    padding-inline: 1rem;
     max-width: 12rem;
   }
 
@@ -38,10 +35,10 @@ const StyledBox = styled(Box)`
 
   .title {
     margin-top: 1rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .overview-wrapper {
@@ -58,7 +55,7 @@ const StyledBox = styled(Box)`
     -webkit-box-orient: vertical;
     white-space: normal;
 
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.7);
     margin-top: 1rem;
   }
 
@@ -68,7 +65,7 @@ const StyledBox = styled(Box)`
     display: flex;
     align-items: center;
     border-radius: 15px;
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
   }
 `;
 
