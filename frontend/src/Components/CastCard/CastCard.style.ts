@@ -4,18 +4,15 @@ import CastCard from "./CastCard";
 const StyledCastCard = styled(CastCard)`
   min-width: 8rem;
   max-height: 18rem;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgb(34, 35, 46);
   border-radius: 8px;
-  -moz-box-shadow: 0 0 0.5px #ccc;
-  -webkit-box-shadow: 0 0 0.5px #ccc;
-  box-shadow:0 0 0 0.5px #ccc;
   a {
     text-decoration: none;
     .name {
-      color: rgba(16, 16, 16, 0.9);
+      color: rgba(255, 255, 255, 0.9);
     }
     .character-name {
-      color: rgba(16, 16, 16, 0.8);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 
@@ -39,10 +36,11 @@ const StyledCastCard = styled(CastCard)`
   .name-wrapper {
     padding-inline: 0.5rem;
   }
+
   .name {
     margin-top: 0.5rem;
     font-size: 1rem;
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-overflow: ellipsis;
     white-space: nowrap;
@@ -51,7 +49,7 @@ const StyledCastCard = styled(CastCard)`
 
   .character-name {
     font-size: 13.5px;
-    font-family: "Inter", sans-serif;
+    font-family: "Poppins", sans-serif;
     font-weight: 500;
     text-overflow: ellipsis;
     white-space: nowrap;
