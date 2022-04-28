@@ -22,7 +22,7 @@ const StyledNavbar = styled(Navbar)`
   .logo {
     margin-right: auto;
     a {
-      color: rgb(253, 0, 84);
+      color: rgb(255, 140, 50);
       text-decoration: none;
     }
   }
@@ -46,7 +46,7 @@ const StyledNavbar = styled(Navbar)`
 
   .menu-icon {
     font-size: 2rem;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .nav-links-wrapper {
