@@ -6,18 +6,18 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color:#FCFCFD;
+    background-color:rgb(25,26, 34);  
   }
 
   ::-webkit-scrollbar {
-      height: 0.5em;  
+      height: 0.3em;  
       width: 0.5rem;
     }
   ::-webkit-scrollbar-track {
-    background-color: white;
+    background-color: #000000;
   }
   ::-webkit-scrollbar-thumb {
-    background-color:rgb(59, 61, 58);
+    background-color: rgba(255, 255, 255, 0.7);
     border-radius: 10px;
   }
 `;
@@ -49,6 +49,13 @@ export const Wrapper = styled.div`
   /* 768px */
   @media only screen and (min-width: 48em) {
     padding-inline: 3.3rem;
+    .main-panel {
+      .watch-btn {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+      }
+    }
   }
 
   /* 800px */
@@ -56,6 +63,9 @@ export const Wrapper = styled.div`
     padding-inline: 4rem;
     .main-panel {
       .title {
+        font-size: 1.7rem;
+      }
+      .play-icon {
         font-size: 1.7rem;
       }
     }
@@ -70,6 +80,11 @@ export const Wrapper = styled.div`
   @media only screen and (min-width: 64em) {
     flex-direction: row;
     justify-content: center;
+    .main-panel {
+      .watch-btn {
+        font-size: 1.2em;
+      }
+    }
     .sidebar {
       display: block;
       padding-top: 2.3rem;
