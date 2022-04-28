@@ -48,12 +48,12 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.9);
   }
   .overview-info,
   .overview-text {
     margin-top: 1rem;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   #status {
@@ -151,7 +151,8 @@ const StyledDetails = styled(Details)`
     align-items: center;
     padding: 0.5rem;
     margin-top: 1rem;
-    background-color: rgba(255, 140, 50, 0.9);
+    background-color: #ff7700;
+    background-image: linear-gradient(336deg, #ff7700 0%, #eaa15c 100%);
     border-radius: 8px;
   }
 
