@@ -6,6 +6,7 @@ import { useEffect, useState } from "react";
 import TextAnimation from "../../Components/Animations/TextAnimation";
 
 import StyledCarousel from "../../Components/Carousel/Carousel.style";
+import StyledMainPanel from "../../Components/MainPanel/MainPanel.style";
 
 type Homeprops = {
   className: string;
@@ -30,7 +31,7 @@ const Home = ({ className }: Homeprops) => {
   return (
     <div className={className}>
       <div className="home-wrapper">
-        <div className="hero">
+        {/* <div className="hero">
           <h1 id="hero-heading">
             <TextAnimation />
           </h1>
@@ -38,7 +39,8 @@ const Home = ({ className }: Homeprops) => {
             to your favorite place to discover new movies
           </h2>
           <h2 className="hero-heading-2">and Tv-Shows.</h2>
-        </div>
+        </div> */}
+        <StyledMainPanel className="main-panel" />
         <div className="search-wrapper">
           <StyledSearchBar className="searchbar" />
         </div>
