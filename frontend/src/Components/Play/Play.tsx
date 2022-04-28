@@ -1,4 +1,4 @@
-import { BsFillPlayFill } from "react-icons/bs";
+import { IoPlay } from "react-icons/io5";
 
 type PlayProps = {
   className: string;
@@ -16,7 +16,7 @@ const Play = ({ className, cover, title, onClickAction }: PlayProps) => {
           alt={title}
           className="cover"
         />
-        <BsFillPlayFill className="play-icon" />
+        <IoPlay className="play-icon" />
       </div>
     </div>
   );
