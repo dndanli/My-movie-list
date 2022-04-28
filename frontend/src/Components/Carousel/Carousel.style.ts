@@ -4,6 +4,7 @@ import Carousel from "./Carousel";
 const StyledCarousel = styled(Carousel)`
   overflow: hidden;
   position: relative;
+  margin-top: 2rem;
   padding-top: 3.5rem;
   padding-bottom: 3rem;
   padding-left: 0.5rem;
@@ -11,9 +12,14 @@ const StyledCarousel = styled(Carousel)`
   .embla__container {
     display: flex;
   }
-
+  .heading {
+    color: rgba(255, 255, 255, 0.9);
+    position: absolute;
+    top: 1%;
+    font-size: 1.8rem;
+  }
   .embla__button {
-    color: rgba(23, 23, 23, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     position: absolute;
     transition: 500ms ease-in-out;
     width: 2rem;
