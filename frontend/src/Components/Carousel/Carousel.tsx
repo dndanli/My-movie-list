@@ -7,9 +7,15 @@ type CarouselProps = {
   className: string;
   multiPages: boolean;
   slides: any[];
+  heading: string;
 };
 
-const Carousel = ({ className, slides, multiPages }: CarouselProps) => {
+const Carousel = ({
+  className,
+  slides,
+  multiPages,
+  heading,
+}: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: true,
     containScroll: "trimSnaps",
@@ -63,6 +69,7 @@ const Carousel = ({ className, slides, multiPages }: CarouselProps) => {
               );
             })}
       </div>
+      <h2 className="heading">{heading}</h2>
       <PrevButton className="embla__button prev" onClick={scrollPrev} />
       <NextButton className="embla__button next" onClick={scrollNext} />
     </div>
