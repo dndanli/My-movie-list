@@ -2,7 +2,7 @@ import styled from "styled-components";
 import Card from "./Card";
 
 const StyledCard = styled(Card)`
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   .wrapper {
     display: flex;
     flex-direction: column;
@@ -10,12 +10,9 @@ const StyledCard = styled(Card)`
     width: 10.3rem;
     min-height: 21rem;
     border-radius: 11px;
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(34, 35, 46);
     position: relative;
     padding-bottom: 0.5rem;
-    -moz-box-shadow: 0 0 0.5px #ccc;
-    -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow: 0 0 0 0.5px #ccc;
   }
 
   a {
@@ -42,12 +39,12 @@ const StyledCard = styled(Card)`
   }
 
   .title {
-    margin-block: 1rem;
+    margin-block: 1.5rem;
     text-align: start;
     padding-left: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     p {
       text-overflow: ellipsis;
       overflow: hidden;
@@ -63,7 +60,8 @@ const StyledCard = styled(Card)`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
-    background-color: rgb(253, 0, 84);
+    background-color: #ff7700;
+    background-image: linear-gradient(336deg, #ff7700 0%, #eaa15c 100%);
     color: rgba(255, 255, 255, 1);
     position: absolute;
     bottom: 6.8rem;
@@ -76,12 +74,12 @@ const StyledCard = styled(Card)`
 
   .date {
     padding-inline: 1rem;
-    color: rgba(16, 16, 16, 1);
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .icon {
     font-size: 9rem;
-    color: rgba(16, 16, 16, 0.3);
+    color: rgba(255, 255, 255, 1);
     padding-bottom: 6.5rem;
   }
 
