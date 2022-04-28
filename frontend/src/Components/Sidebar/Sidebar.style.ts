@@ -3,13 +3,13 @@ import Siderbar from "./Sidebar";
 
 const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
-  font-family: "Inter", sans-serif;
-  border-right: 0.5px solid #ccc;
+  font-family: "Poppins", sans-serif;
+  border-right: 0.5px solid rgba(235, 240, 233, 0.2);
   .logo {
     margin-right: auto;
     padding-left: 2rem;
     a {
-      color: rgb(253, 0, 84);
+      color: rgb(255, 140, 50);
       text-decoration: none;
     }
   }
@@ -19,7 +19,7 @@ const StyledSidebar = styled(Siderbar)`
   }
 
   .header-2 {
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.9);
     padding-inline: 2rem;
   }
 
@@ -37,24 +37,24 @@ const StyledSidebar = styled(Siderbar)`
   .link-container {
     display: flex;
     align-items: center;
-    margin-bottom: 2rem;
-    &:hover {
+    margin-bottom: 1rem;
+    /* &:hover {
       background-color: rgba(235, 240, 233, 0.6);
-    }
+    } */
     padding-left: 1rem;
     padding-block: 1rem;
     transition: 500ms;
   }
 
   .link-icon {
-    font-size: 1.6rem;
+    font-size: 1.4rem;
     margin-right: 1rem;
-    color: rgb(253, 0, 84);
+    color: rgb(255, 140, 50);
   }
 
   .link-name {
     font-size: 1rem;
-    color: rgba(16, 16, 16, 0.6);
+    color: rgba(255, 255, 255, 0.8);
   }
 `;
 
