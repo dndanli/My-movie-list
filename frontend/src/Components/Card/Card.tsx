@@ -37,7 +37,7 @@ const Card = ({
             <MdOutlineMovieFilter className="icon" />
           )}
           <div className="rating-score">
-            {rating}
+            {rating !== 0 ? rating : <p>NR</p>}
             <AiFillStar className="star-icon" />
           </div>
 
