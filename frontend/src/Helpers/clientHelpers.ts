@@ -11,9 +11,11 @@ export async function getPopularMedia(mediaType: string) {
   }
 }
 
-export async function getTrending() {
+export async function getTrending(mediaType: string) {
   try {
-    const response = await axios.get("http://localhost:8000/trending");
+    const response = await axios.get(
+      `http://localhost:8000/trending/${mediaType}`
+    );
     return response.data;
   } catch (err) {
     console.error(err);
