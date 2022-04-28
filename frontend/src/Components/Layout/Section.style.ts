@@ -39,10 +39,11 @@ const StyledSection = styled(Section)`
     }
   }
   #trailers-heading {
+    font-family: "Poppins", sans-serif;
     font-size: 1.7rem;
     font-weight: 700;
     margin-block: 1rem;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 `;
 
