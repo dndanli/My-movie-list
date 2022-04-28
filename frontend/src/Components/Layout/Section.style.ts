@@ -42,7 +42,7 @@ const StyledSection = styled(Section)`
     font-size: 1.7rem;
     font-weight: 700;
     margin-block: 1rem;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(16, 16, 16, 0.8);
   }
 `;
 
