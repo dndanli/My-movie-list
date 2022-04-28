@@ -1,6 +1,8 @@
-import { MdLocalMovies, MdRateReview } from "react-icons/md";
-import { GrStatusInfoSmall } from "react-icons/gr";
+import { MdMovie, MdRateReview } from "react-icons/md";
+import { BiCube } from "react-icons/bi";
 import { IoIosLogIn } from "react-icons/io";
+import { AiOutlineUserAdd } from "react-icons/ai";
+
 export const NavbarLinks: {
   id: string;
   linkIcon: JSX.Element;
@@ -9,7 +11,7 @@ export const NavbarLinks: {
 }[] = [
   {
     id: "discover-link",
-    linkIcon: <MdLocalMovies />,
+    linkIcon: <MdMovie />,
     linkName: "Discover",
     link: "/discover",
   },
@@ -21,7 +23,7 @@ export const NavbarLinks: {
   },
   {
     id: "about-link",
-    linkIcon: <GrStatusInfoSmall />,
+    linkIcon: <BiCube />,
     linkName: "About",
     link: "/about",
   },
@@ -30,5 +32,11 @@ export const NavbarLinks: {
     linkIcon: <IoIosLogIn />,
     linkName: "Login",
     link: "/login",
+  },
+  {
+    id: "signup-link",
+    linkIcon: <AiOutlineUserAdd />,
+    linkName: "Sign up",
+    link: "/signup",
   },
 ];
