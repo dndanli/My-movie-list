@@ -170,15 +170,14 @@ const Details = ({ className }: DetailsProps) => {
               />
             );
           })}
-      <Link to="/" style={{color:"rgba(16, 16, 16, 1)"}}>
-          <p>see all reviews</p>
-        </Link>
-      </div>
+          <Link to="/" style={{ color: "rgba(16, 16, 16, 1)" }}>
+            <p>see all reviews</p>
+          </Link>
+        </div>
       ) : null}
 
       {trailers.length > 0 ? (
         <div className="trailers-wrapper">
-
           <h2 id="trailers">Trailers</h2>
 
           <hr className="divider" />
