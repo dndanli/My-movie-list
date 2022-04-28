@@ -25,7 +25,7 @@ const Section = ({ className }: SectionProps) => {
 
   useEffect(() => {
     const fetchData = async () => {
-      const trendingResponseData = await getTrending();
+      const trendingResponseData = await getTrending("tv");
       setTrending(trendingResponseData.results);
     };
     fetchData();
