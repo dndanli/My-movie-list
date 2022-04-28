@@ -13,10 +13,10 @@ const Sidebar = ({ className }: SidebarProps) => {
         </Link>
       </div>
       <h2 className="header-2" id="menu">
-        MENU
+        Menu
       </h2>
       <ul className="links">
-        {NavbarLinks.slice(0, NavbarLinks.length - 1).map((link) => {
+        {NavbarLinks.slice(0, NavbarLinks.length - 2).map((link) => {
           return (
             <Link to={link.link} key={link.id}>
               <div className="link-container">
@@ -28,9 +28,9 @@ const Sidebar = ({ className }: SidebarProps) => {
         })}
       </ul>
 
-      <h2 className="header-2">GENERAL</h2>
+      <h2 className="header-2">General</h2>
       <ul className="links">
-        {NavbarLinks.slice(NavbarLinks.length - 1).map((link) => {
+        {NavbarLinks.slice(-2).map((link) => {
           return (
             <Link to={link.link} key={link.id}>
               <div className="link-container">
