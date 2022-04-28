@@ -42,9 +42,6 @@ const StyledCarousel = styled(Carousel)`
     right: 0;
   }
 
-  .embla__slide {
-  }
-
   .card {
     margin-right: 1.5rem;
   }
