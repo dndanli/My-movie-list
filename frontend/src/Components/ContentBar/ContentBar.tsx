@@ -41,7 +41,6 @@ const ContentBar = ({ className }: ContentBarProps) => {
           );
         })}
       </div>
-      <div className="truncate-btn">See more</div>
     </div>
   );
 };
