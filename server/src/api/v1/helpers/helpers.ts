@@ -19,10 +19,10 @@ export const fetchPopularMedia = async (mediaType: string) => {
   }
 };
 
-export const fetchTrending = async () => {
+export const fetchTrending = async (mediaType: string) => {
   try {
     const response = await axios.get(
-      `https://api.themoviedb.org/3/trending/tv/week?api_key=${apiKey}`
+      `https://api.themoviedb.org/3/trending/${mediaType}/week?api_key=${apiKey}`
     );
     return response.data;
   } catch (err) {
