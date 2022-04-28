@@ -44,21 +44,18 @@ const Home = ({ className }: Homeprops) => {
         <div className="search-wrapper">
           <StyledSearchBar className="searchbar" />
         </div>
-        <h1 id="popular-heading">Popular</h1>
-
         <StyledCarousel
           className="embla"
           slides={popularMovies}
           multiPages={true}
+          heading={"Popular"}
         />
-
         <StyledSection className="section" />
-
-        <h1 id="upcoming-heading">Upcoming movies</h1>
         <StyledCarousel
           className="embla"
           slides={upcoming}
           multiPages={false}
+          heading={"Upcoming movies"}
         />
       </div>
     </div>
