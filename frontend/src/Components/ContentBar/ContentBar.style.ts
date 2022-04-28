@@ -3,8 +3,9 @@ import ContentBar from "./ContentBar";
 
 const StyledContentBar = styled(ContentBar)`
   min-width: 17rem;
-  border-left: 0.5px solid #ccc;
-  border-right: 0.5px solid #ccc;
+  border-left: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+
   padding-inline: 1.2rem;
   font-family: "Inter", sans-serif;
 
@@ -17,10 +18,10 @@ const StyledContentBar = styled(ContentBar)`
   }
 
   .header-2 {
-    color: rgba(16, 16, 16, 0.8);
-    font-size: 1.5rem;
+    color: rgba(255, 255, 255, 0.9);
+    font-weight: 700;
+    font-size: 1.8rem;
     font-family: "Inter", sans-serif;
-    font-weight: 500;
     margin-top: 3rem;
   }
 
