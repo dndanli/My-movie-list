@@ -39,6 +39,11 @@ export const Wrapper = styled.div`
   /* 635px */
   @media only screen and (min-width: 39.6em) {
     padding-inline: 3rem;
+    .main-panel {
+      .title {
+        font-size: 1.4rem;
+      }
+    }
   }
 
   /* 768px */
@@ -49,6 +54,11 @@ export const Wrapper = styled.div`
   /* 800px */
   @media only screen and (min-width: 50em) {
     padding-inline: 4rem;
+    .main-panel {
+      .title {
+        font-size: 1.7rem;
+      }
+    }
   }
 
   /* 900px */
@@ -67,9 +77,40 @@ export const Wrapper = styled.div`
     .home-page {
       width: 90%;
       padding-top: 1.3rem;
+      .card {
+        .wrapper {
+          width: 11rem;
+        }
+      }
+      .hero {
+        #hero-heading {
+          font-size: 2.3rem;
+        }
+        .hero-heading-2 {
+          font-size: 1.7rem;
+        }
+      }
+      #popular-heading,
+      #upcoming-heading {
+        font-size: 2rem;
+      }
+
+      .section {
+        #trailers-heading {
+          font-size: 2rem;
+        }
+      }
     }
     .navbar {
       display: none;
+    }
+    .main-panel {
+      .wrapper {
+        width: 100%;
+      }
+      .title {
+        font-size: 2rem;
+      }
     }
   }
 
@@ -94,7 +135,7 @@ export const Wrapper = styled.div`
   @media only screen and (min-width: 98em) {
     .home-page {
       width: 60%;
-      padding-inline: 4rem;
+      padding-inline: 3rem;
     }
 
     .content-bar {
