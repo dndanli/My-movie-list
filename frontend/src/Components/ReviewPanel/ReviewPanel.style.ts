@@ -2,12 +2,9 @@ import styled from "styled-components";
 import ReviewSection from "./ReviewPanel";
 
 const StyledReviewPanel = styled(ReviewSection)`
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(34, 35, 46);
   border-radius: 8px;
-  -moz-box-shadow: 0 0 0.5px #ccc;
-  -webkit-box-shadow: 0 0 0.5px #ccc;
-  box-shadow: 0 0 0 0.5px #ccc;
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   padding: 1rem;
 
   .wrapper {
@@ -35,7 +32,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .read-all {
-    color: black;
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .user-wrapper {
@@ -48,9 +45,9 @@ const StyledReviewPanel = styled(ReviewSection)`
     margin-left: 1rem;
     display: flex;
     flex-direction: column;
-    justify-content: center; 
+    justify-content: center;
   }
-  .profile-img-wrapper{
+  .profile-img-wrapper {
     width: 4rem;
   }
   .user {
@@ -63,8 +60,8 @@ const StyledReviewPanel = styled(ReviewSection)`
     box-shadow: 0 0 0 0.5px rgba(16, 16, 16, 0.5);
   }
 
-  .user-icon{
-    color: rgba(16, 16, 16, 0.6);
+  .user-icon {
+    color: rgba(255, 255, 255, 0.8);
     width: 100%;
     height: 4rem;
     object-fit: cover;
@@ -79,6 +76,7 @@ const StyledReviewPanel = styled(ReviewSection)`
     padding-bottom: 0.5rem;
     min-height: 8rem;
     max-width: 17rem;
+    color: rgba(255, 255, 255, 0.8);
 
     p {
       display: -webkit-box;
@@ -91,30 +89,30 @@ const StyledReviewPanel = styled(ReviewSection)`
 
   .author-name {
     font-weight: 500;
-    color: rgba(16, 16, 16, 1);
+    color: rgba(255, 255, 255, 0.8);
   }
 
   .author-username {
     font-weight: 400;
-    color: rgba(16, 16, 16, 1);
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  .posted{
+  .posted {
     margin-top: 1rem;
-    color:rgba(16, 16, 16, 1);
+    color: rgba(255, 255, 255, 0.8);
   }
 
-  .tmdb-user{
-    font-family:"Inter", sans-serif;
+  .tmdb-user {
+    font-family: "Inter", sans-serif;
     font-weight: 500;
     margin-top: 0.5rem;
     border-radius: 2px;
-    width:4rem;
+    width: 4rem;
     display: flex;
     justify-content: center;
     align-items: center;
     background-color: #01b4e4;
-    color:rgba(255, 255, 255, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 `;
 
