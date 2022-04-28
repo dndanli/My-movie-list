@@ -3,10 +3,10 @@ import { fetchTrending } from "../helpers/helpers";
 const router = express.Router();
 
 /**
- * all routes start with /nowPlaying
+ * all routes start with /trending
  */
-router.get("/", async (request, response) => {
-  response.send(await fetchTrending());
+router.get("/:mediaType", async (request, response) => {
+  response.send(await fetchTrending(request.params.mediaType));
 });
 
 export default router;
