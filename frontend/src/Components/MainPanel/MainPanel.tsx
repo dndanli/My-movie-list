@@ -3,6 +3,7 @@ import { getTrending } from "../../Helpers/clientHelpers";
 
 import { MdArrowBackIos, MdArrowForwardIos } from "react-icons/md";
 import { AiFillStar } from "react-icons/ai";
+import { IoPlay } from "react-icons/io5";
 
 type MainPanelProps = {
   className: string;
@@ -44,6 +45,10 @@ const MainPanel = ({ className }: MainPanelProps) => {
             className="panel-img"
           />
           <h2 className="title">{slides[current].title}</h2>
+          <div className="watch-btn">
+            <IoPlay className="play-icon" />
+            Watch Trailer
+          </div>
           <div className="rating-score">
             {slides[current].vote_average !== 0 ? (
               slides[current].vote_average
