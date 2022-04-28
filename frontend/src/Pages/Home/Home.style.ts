@@ -4,32 +4,6 @@ const StyledHome = styled(Home)`
   padding-inline: 1rem;
   min-height: 100vh;
   font-family: "Inter", sans-serif;
-  .hero {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-inline: 1rem;
-    min-height: 15rem;
-    max-height: 15rem;
-
-    background-color: rgba(16, 16, 16, 9);
-    color: rgba(255, 255, 255, 0.9);
-
-    border-radius: 1rem;
-    margin-block: 1rem;
-
-    #hero-heading {
-      font-size: 2rem;
-      margin-top: 1.8rem;
-      margin-bottom: 1rem;
-      font-weight: 700;
-    }
-    h2 {
-      margin-top: 0;
-      margin-bottom: 0;
-      font-weight: 500;
-    }
-  }
 
   .search-wrapper {
     display: flex;
@@ -58,6 +32,32 @@ const StyledHome = styled(Home)`
     font-weight: 700;
     color: rgba(16, 16, 16, 0.8);
     margin-block: 1rem;
+  }
+  .hero {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-inline: 1rem;
+    min-height: 15rem;
+    max-height: 15rem;
+
+    background-color: rgba(16, 16, 16, 9);
+    color: rgba(255, 255, 255, 0.9);
+
+    border-radius: 1rem;
+    margin-block: 1rem;
+
+    #hero-heading {
+      font-size: 2rem;
+      margin-top: 1.8rem;
+      margin-bottom: 1rem;
+      font-weight: 700;
+    }
+    h2 {
+      margin-top: 0;
+      margin-bottom: 0;
+      font-weight: 500;
+    }
   }
 `;
 export default StyledHome;
