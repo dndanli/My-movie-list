@@ -2,29 +2,33 @@ import styled from "styled-components";
 import PersonProfileBox from "./PersonProfileBox";
 
 const StyledPersonProfileBox = styled(PersonProfileBox)`
+  background-color: rgb(34, 35, 46);
+
   .wrapper {
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(34, 35, 46);
     display: flex;
     border-radius: 8px;
   }
 
   .profile {
     object-fit: contain;
-    max-width: 100px;
-    max-height: 100px;
+    max-width: 130px;
+    max-height: 130px;
     border-top-left-radius: 8px;
     border-bottom-left-radius: 8px;
   }
   .person-icon {
-    color: rgba(16, 16, 16, 0.3);
+    color: rgba(255, 255, 255, 0.8);
     margin-top: 1.5rem;
-    min-height: 100px;
-    min-width: 80px;
+    min-width: 90px;
+    min-height: 130px;
     margin-left: 0;
   }
+
   .profile-info-wrapper {
-    font-family: "Inter", sans-serif;
-    color: rgba(16, 16, 16, 0.9);
+    font-family: "Poppins", sans-serif;
+    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -40,7 +44,7 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
     font-weight: 500;
   }
   .knownFor {
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     font-size: 1rem;
     font-weight: 500;
   }
