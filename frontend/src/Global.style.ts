@@ -34,6 +34,11 @@ export const Wrapper = styled.div`
   /* 535px */
   @media only screen and (min-width: 33.4em) {
     padding-inline: 2rem;
+    .discover-page {
+      .filter-button {
+        font-size: 1rem;
+      }
+    }
   }
 
   /* 635px */
@@ -42,6 +47,11 @@ export const Wrapper = styled.div`
     .main-panel {
       .title {
         font-size: 1.4rem;
+      }
+    }
+    .discover-page {
+      .filter-button {
+        margin-left: 1.5rem;
       }
     }
   }
@@ -84,6 +94,12 @@ export const Wrapper = styled.div`
       .watch-btn {
         font-size: 1.2em;
       }
+      .wrapper {
+        width: 100%;
+      }
+      .title {
+        font-size: 2rem;
+      }
     }
     .sidebar {
       display: block;
@@ -119,12 +135,28 @@ export const Wrapper = styled.div`
     .navbar {
       display: none;
     }
-    .main-panel {
-      .wrapper {
-        width: 100%;
+    .discover-page {
+      width: 80%;
+
+      .profile {
+        max-width: 150px;
+        max-height: 150px;
       }
-      .title {
-        font-size: 2rem;
+      .person-icon {
+        min-width: 100px;
+        min-height: 150px;
+      }
+
+      .box {
+        .image {
+          max-width: 160px;
+          max-height: 160px;
+        }
+
+        .box-icon {
+          min-width: 110px;
+          min-height: 150px;
+        }
       }
     }
   }
@@ -143,6 +175,9 @@ export const Wrapper = styled.div`
     .content-bar {
       padding-top: 2.3rem;
       display: block;
+    }
+    .discover-page {
+      width: 60%;
     }
   }
 
