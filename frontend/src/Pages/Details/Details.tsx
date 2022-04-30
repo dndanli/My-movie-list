@@ -3,14 +3,16 @@ import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { AiFillStar } from "react-icons/ai";
 import { v4 as uuidv4 } from "uuid";
 
-import StyledCastCard from "../../Components/CastCard/CastCard.style";
-
 import { getMediaDetails } from "../../Helpers/clientHelpers";
-import { formatMinutesToHoursAndMinutes } from "../../Helpers/timeFormatter";
 import StyledReviewPanel from "../../Components/ReviewPanel/ReviewPanel.style";
+import StyledCastCarousel from "../../Components/CastCarousel/CastCarousel.style";
+import StyledGenres from "../../Components/Genres/Genres.style";
+import StyledTextPanel from "../../Components/TextPanel/TextPanel.style";
+import StyledDetailMetadata from "../../Components/DetailMetadata/DetailMetadata.style";
+import StyledDetailBackground from "../../Components/DetailBackground/DetailBackground.style";
+import StyledDetailDesktopViewInfo from "../../Components/DetailDesktopViewInfo/DetailDesktopViewInfo.style";
 
 type DetailsProps = {
   className: string;
@@ -30,126 +32,91 @@ const Details = ({ className }: DetailsProps) => {
       setMovieContentRating(detailResponse[1]);
       setTrailers(detailResponse[0].videos.results);
       setReviews(detailResponse[0].reviews.results);
+      console.log(detailResponse[0]);
     };
     fetch();
   }, [mediaType, id]);
 
   return (
     <div className={className}>
-      {detailData !== undefined ? (
-        <div className="overview-images">
-          {detailData.backdrop_path !== null ? (
-            <div className="background">
-              <img
-                className="overview-background"
-                src={`https://image.tmdb.org/t/p/w500${detailData.backdrop_path}`}
-                alt=""
-              />
-            </div>
-          ) : (
-            <div className="overview-background-fill"></div>
-          )}
+      {detailData?.backdrop_path !== undefined ? (
+        <StyledDetailBackground
+          className="detail-background"
+          backdropPath={detailData.backdrop_path}
+          posterPath={detailData.poster_path}
+        />
+      ) : (
+        <div className="overview-background-fill">Loading</div>
+      )}
 
-          <img
-            className="overview-poster"
-            src={`https://image.tmdb.org/t/p/w500${detailData.poster_path}`}
-            alt=""
+      <div className="mobile-info-wrapper">
+        {detailData?.title !== undefined || detailData?.name !== undefined ? (
+          <h1 className="overview-title-header">
+            {detailData.title || detailData.name}
+          </h1>
+        ) : null}
+
+        {detailData?.genres.length > 0 ? (
+          <StyledGenres className="genres" genres={detailData?.genres} />
+        ) : (
+          <div className="no-info-to-show">
+            <h2 className="info-text">No genres available...</h2>
+          </div>
+        )}
+
+        <div className="metadata-wrapper">
+          <StyledDetailMetadata
+            className="metadata"
+            mediaType={mediaType}
+            detailData={detailData}
+            movieContentRating={movieContentRating}
           />
         </div>
-      ) : null}
-
-      {detailData?.title !== undefined || detailData?.name !== undefined ? (
-        <h1 className="overview-title-header">
-          {detailData.title || detailData.name}
-        </h1>
-      ) : null}
-
-      <div className="metadata">
-        <div className="rating-score">
-          {detailData?.vote_average}
-          <AiFillStar className="star-icon" />
-        </div>
-        {mediaType === "tv" ? (
-          detailData?.content_ratings.results.map((data: any) => {
-            return data.iso_3166_1 === "US" ? (
-              <p className="p-small" id="rating" key={uuidv4()}>
-                {data.rating}
-              </p>
-            ) : null;
-          })
-        ) : movieContentRating !== "" ? (
-          <p className="p-small" id="rating" key={uuidv4()}>
-            {movieContentRating}
-          </p>
-        ) : null}
-        {detailData?.episode_run_time !== undefined ? (
-          <p className="p-small">{detailData?.episode_run_time}m</p>
-        ) : null}
-
-        {detailData?.runtime !== undefined ? (
-          <p className="p-small">
-            {formatMinutesToHoursAndMinutes(detailData?.runtime)}
-          </p>
-        ) : null}
       </div>
 
-      {detailData?.genres.length > 0 ? (
-        <ul className="genre-section">
-          {detailData.genres.map((genre: any) => {
-            return (
-              <li key={uuidv4()} className="genre-button">
-                <p>{genre.name}</p>
-              </li>
-            );
-          })}
-        </ul>
-      ) : (
-        <div className="no-info-to-show">
-          <h2 className="info-text">No genres available...</h2>
-        </div>
-      )}
+      {/* <div className="desktop-view-wrapper">
+        <StyledDetailDesktopViewInfo
+          className="desktop-view-info"
+          detailData={detailData}
+          mediaType={mediaType}
+          movieContentRating={movieContentRating}
+        />
+      </div> */}
 
-      {detailData?.overview !== undefined ? (
-        <div className="overview-info">
-          <h1 id="overview-info-header">Overview</h1>
-          <p className="overview-text">{detailData.overview}</p>
-        </div>
-      ) : (
-        <div className="no-info-to-show">
-          <h2 className="info-text">No overview to show...</h2>
-        </div>
-      )}
+      <div className="block">
+        {detailData?.overview !== undefined ? (
+          <StyledTextPanel className="text-panel" text={detailData.overview} />
+        ) : (
+          <div className="no-info-to-show">
+            <h2 className="info-text">No overview to show...</h2>
+          </div>
+        )}
 
-      <h1 id="overview-crew-header">Cast</h1>
-
-      {detailData?.credits.cast !== undefined ? (
-        <div className="cast-info">
-          {detailData.credits.cast.slice(0, 9).map((person: any) => {
-            return (
-              <StyledCastCard
-                key={uuidv4()}
-                className="cast-card"
-                person={person}
-              />
-            );
-          })}
-        </div>
-      ) : (
-        <div className="no-info-to-show">
-          <h2 className="info-text">No cast to show...</h2>
-        </div>
-      )}
-
-      <div className="see-more">
         {detailData?.credits.cast !== undefined ? (
+          <div className="cast-info">
+            <StyledCastCarousel
+              className="cast-carousel"
+              slides={detailData.credits.cast}
+              total={9}
+              heading={"Cast"}
+            />
+          </div>
+        ) : (
+          <div className="no-info-to-show">
+            <h2 className="info-text">No cast to show...</h2>
+          </div>
+        )}
+      </div>
+      {detailData?.credits.cast !== undefined ? (
+        <div className="see-more">
           <Link to={`/detail/cast/${mediaType}/${id}`}>
             <h3 className="cast-page-link">
               Full cast and crew
               <HiOutlineArrowNarrowRight className="arrow-icon" />
             </h3>
           </Link>
-        ) : null}
-      </div>
+        </div>
+      ) : null}
       {reviews.length > 0 ? (
         <div className="reviews">
           <h2 className="header-2" style={{ marginBottom: "0.5rem" }}>
@@ -170,7 +137,7 @@ const Details = ({ className }: DetailsProps) => {
               />
             );
           })}
-          <Link to="/" style={{ color: "rgba(16, 16, 16, 1)" }}>
+          <Link to="/" style={{ color: "rgba(255,255,255, 0.8)" }}>
             <p>see all reviews</p>
           </Link>
         </div>
