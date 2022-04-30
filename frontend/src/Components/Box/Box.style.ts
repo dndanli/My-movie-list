@@ -20,7 +20,7 @@ const StyledBox = styled(Box)`
     border-bottom-left-radius: 10px;
   }
   .box-icon {
-    min-width: 120px;
+    min-width: 110px;
     min-height: 150px;
     color: rgba(255, 255, 255, 0.9);
   }
