@@ -52,7 +52,7 @@ const Discover = ({ className }: DiscoverProps) => {
 
   return (
     <div className={className}>
-      <div className="searchbar-discover wrapper">
+      <div className="searchbar-discover-wrapper">
         <StyledSearchBar className="search-bar" />
       </div>
       <ul className="filter-section">
@@ -64,9 +64,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[0].total_results
           }
-          color={
-            currVisible === "movie" ? "rgb(253, 0, 84)" : "rgb(187, 187, 187)"
-          }
+          color={currVisible === "movie" ? " #ff7700" : "rgb(187, 187, 187)"}
           clickHandler={() => {
             setCurrVisible("movie");
           }}
@@ -79,9 +77,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[1].total_results
           }
-          color={
-            currVisible === "tv" ? "rgb(253, 0, 84)" : " rgb(187, 187, 187)"
-          }
+          color={currVisible === "tv" ? " #ff7700" : " rgb(187, 187, 187)"}
           clickHandler={() => {
             setCurrVisible("tv");
           }}
@@ -94,9 +90,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[2].total_results
           }
-          color={
-            currVisible === "people" ? "rgb(253, 0, 84)" : "rgb(187, 187, 187)"
-          }
+          color={currVisible === "people" ? "#ff7700" : "rgb(187, 187, 187)"}
           clickHandler={() => {
             setCurrVisible("people");
           }}
