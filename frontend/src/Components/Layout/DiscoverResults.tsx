@@ -3,7 +3,7 @@ import StyledPersonProfileBox from "../PersonProfileBox/PersonProfileBox.style";
 import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
 import { Wrapper } from "../Layout/DiscoverResults.style";
-import { GrFormPrevious, GrFormNext } from "react-icons/gr";
+import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 
 type DiscoverResultsProps = {
   className: string;
@@ -50,11 +50,11 @@ const DiscoverResults = ({
           />
         );
       })}
-      {displayData !== undefined ? (
+      {displayData?.length! > 0 ? (
         <Wrapper>
           <ReactPaginate
-            previousLabel={<GrFormPrevious />}
-            nextLabel={<GrFormNext />}
+            previousLabel={<BiLeftArrow />}
+            nextLabel={<BiRightArrow />}
             pageCount={totalPages! | 0}
             breakLabel={"..."}
             marginPagesDisplayed={3}
