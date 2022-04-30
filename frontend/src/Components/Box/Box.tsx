@@ -1,4 +1,4 @@
-import { MdLocalMovies } from "react-icons/md";
+import { MdMovie } from "react-icons/md";
 import { Link } from "react-router-dom";
 
 type BoxProps = {
@@ -32,7 +32,7 @@ const Box = ({
               alt={title}
             />
           ) : (
-            <MdLocalMovies className="box-icon" />
+            <MdMovie className="box-icon" />
           )}
 
           <div className="main-info-wrapper">
