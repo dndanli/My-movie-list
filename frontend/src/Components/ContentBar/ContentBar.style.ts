@@ -14,7 +14,7 @@ const StyledContentBar = styled(ContentBar)`
     justify-content: center;
   }
   .searchbar {
-    width: 19rem;
+    width: 100%;
   }
 
   .header-2 {
