@@ -3,9 +3,10 @@ import CastCard from "./CastCard";
 
 const StyledCastCard = styled(CastCard)`
   min-width: 8rem;
-  max-height: 18rem;
+  /* max-height: 18rem; */
   background-color: rgb(34, 35, 46);
   border-radius: 8px;
+  padding-bottom: 1rem;
   a {
     text-decoration: none;
     .name {
@@ -22,10 +23,17 @@ const StyledCastCard = styled(CastCard)`
     position: relative;
   }
 
+  .image-wrapper {
+    width: 100%;
+  }
+
   .profile {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
+    max-width: 100%;
+    min-height: 190px;
   }
+
   .person-icon {
     color: rgba(16, 16, 16, 0.3);
     margin-top: 1.5rem;
@@ -39,7 +47,7 @@ const StyledCastCard = styled(CastCard)`
 
   .name {
     margin-top: 0.5rem;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-family: "Poppins", sans-serif;
     font-weight: 700;
     text-overflow: ellipsis;
