@@ -30,8 +30,16 @@ const StyledDiscover = styled(Discover)`
 
   .message {
     font-size: 1.2rem;
-    color: rgba(16, 16, 16, 0.5);
+    color: rgba(255, 255, 255, 0.7);
     text-align: center;
+  }
+
+  .searchbar-discover-wrapper {
+    display: flex;
+    justify-content: center;
+    .search-bar {
+      width: 100%;
+    }
   }
 
   .content-wrapper {
