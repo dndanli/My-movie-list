@@ -30,10 +30,10 @@ const SearchBar = ({ className }: SearchBarProps) => {
   return (
     <div className={className}>
       <HiOutlineSearch className="search-icon" />
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} className="form-container">
         <input
           className="search-field"
-          type="search"
+          type="text"
           value={input}
           placeholder={"Movie, Tv show or Person ...."}
           onChange={(e) => {
