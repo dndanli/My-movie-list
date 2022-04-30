@@ -3,7 +3,6 @@ import StyledSection from "../../Components/Layout/Section.style";
 
 import { getPopularMedia, getUpcoming } from "../../Helpers/clientHelpers";
 import { useEffect, useState } from "react";
-import TextAnimation from "../../Components/Animations/TextAnimation";
 
 import StyledCarousel from "../../Components/Carousel/Carousel.style";
 import StyledMainPanel from "../../Components/MainPanel/MainPanel.style";
