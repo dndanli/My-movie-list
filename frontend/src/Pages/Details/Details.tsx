@@ -12,7 +12,8 @@ import StyledGenres from "../../Components/Genres/Genres.style";
 import StyledTextPanel from "../../Components/TextPanel/TextPanel.style";
 import StyledDetailMetadata from "../../Components/DetailMetadata/DetailMetadata.style";
 import StyledDetailBackground from "../../Components/DetailBackground/DetailBackground.style";
-import StyledDetailDesktopViewInfo from "../../Components/DetailDesktopViewInfo/DetailDesktopViewInfo.style";
+import { filterPeople } from "../../Helpers/filterPeople";
+import StyledInfoBlockContainer from "../../Components/InfoBlockContainer/InfoBlockContainer.style";
 
 type DetailsProps = {
   className: string;
@@ -32,7 +33,6 @@ const Details = ({ className }: DetailsProps) => {
       setMovieContentRating(detailResponse[1]);
       setTrailers(detailResponse[0].videos.results);
       setReviews(detailResponse[0].reviews.results);
-      console.log(detailResponse[0]);
     };
     fetch();
   }, [mediaType, id]);
@@ -74,15 +74,6 @@ const Details = ({ className }: DetailsProps) => {
         </div>
       </div>
 
-      {/* <div className="desktop-view-wrapper">
-        <StyledDetailDesktopViewInfo
-          className="desktop-view-info"
-          detailData={detailData}
-          mediaType={mediaType}
-          movieContentRating={movieContentRating}
-        />
-      </div> */}
-
       <div className="block">
         {detailData?.overview !== undefined ? (
           <StyledTextPanel className="text-panel" text={detailData.overview} />
@@ -91,6 +82,11 @@ const Details = ({ className }: DetailsProps) => {
             <h2 className="info-text">No overview to show...</h2>
           </div>
         )}
+
+        <StyledInfoBlockContainer
+          className="info-block-container"
+          data={filterPeople(detailData?.credits.crew)}
+        />
 
         {detailData?.credits.cast !== undefined ? (
           <div className="cast-info">
@@ -137,7 +133,7 @@ const Details = ({ className }: DetailsProps) => {
               />
             );
           })}
-          <Link to="/" style={{ color: "rgba(255,255,255, 0.8)" }}>
+          <Link to="/" style={{ color: "rgba(255,255,255, 0.8)", textDecoration: "underline"}}>
             <p>see all reviews</p>
           </Link>
         </div>
@@ -156,9 +152,10 @@ const Details = ({ className }: DetailsProps) => {
             return (
               <div className="trailer-player" key={uuidv4()}>
                 <ReactPlayer
+                  className="react-player"
                   controls
-                  width="340px"
-                  height="280px"
+                  width="90%"
+                  height="300px"
                   url={`https://www.youtube.com/watch?v=${data.key}`}
                 />
               </div>
