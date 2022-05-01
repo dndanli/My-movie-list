@@ -27,15 +27,16 @@ export async function getTrailer() {
     const response = await axios.get(
       `http://localhost:8000/getIdForTrailer/trailer`
     );
+      console.log(response.data);
     return response.data;
   } catch (err) {
     console.error(err);
   }
 }
 
-export function postIdForTrailer(movieId: number) {
+export function postIdForTrailer(id: number) {
   axios
-    .post(`http://localhost:8000/getIdForTrailer`, { id: movieId })
+    .post(`http://localhost:8000/getIdForTrailer`, { id: id })
     .catch((e) => {
       console.error(e);
     });
