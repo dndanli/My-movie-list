@@ -16,7 +16,7 @@ type SectionProps = {
 
 const Section = ({ className }: SectionProps) => {
   const [videoPlaying, setVideoPlaying] = useState(false);
-  const [trendingResponse, setTrending] = useState([]);
+  const [trendingResponse, setTrending] = useState <any | undefined>([]);
   const [trailerUrl, setTrailerUrl] = useState<any>();
 
   const displayPlayer = () => {
@@ -35,7 +35,9 @@ const Section = ({ className }: SectionProps) => {
     <div className={className}>
       <h1 id="trailers-heading">Trailers</h1>
       <div className="trailers-wrapper">
-        {trendingResponse.map((data: any) => {
+      {
+       trendingResponse !== undefined ? 
+        trendingResponse.map((data: any) => {
           return (
             <StyledPlay
               className="play"
@@ -44,16 +46,18 @@ const Section = ({ className }: SectionProps) => {
               onClickAction={() => {
                 postIdForTrailer(data.id);
                 getTrailer().then((res) => {
+                  if(res){
                   setTrailerUrl(
                     `https://www.youtube.com/watch?v=${res.results[0].key}`
                   );
+                  }
                 });
                 displayPlayer();
               }}
               key={data.id}
             />
           );
-        })}
+       }):null}
       </div>
       {videoPlaying ? (
         <div className="player-wrapper">
