@@ -43,7 +43,6 @@ const Section = ({ className }: SectionProps) => {
               title={data.title}
               onClickAction={() => {
                 postIdForTrailer(data.id);
-                // TODO: debug this
                 getTrailer().then((res) => {
                   setTrailerUrl(
                     `https://www.youtube.com/watch?v=${res.results[0].key}`
