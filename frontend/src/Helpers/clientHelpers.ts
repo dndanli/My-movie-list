@@ -27,7 +27,6 @@ export async function getTrailer() {
     const response = await axios.get(
       `http://localhost:8000/getIdForTrailer/trailer`
     );
-      console.log(response.data);
     return response.data;
   } catch (err) {
     console.error(err);
