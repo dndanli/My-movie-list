@@ -15,6 +15,8 @@ const StyledDetailBackground = styled(DetailBackground)`
     background-color: rgba(16, 16, 16, 0.8);
     display: flex;
     justify-content: center;
+    border-bottom-left-radius: 0.9rem;
+    border-top-left-radius: 0.9rem;
   }
 
   .overview-poster {
