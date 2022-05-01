@@ -33,6 +33,7 @@ const StyledReviewPanel = styled(ReviewSection)`
 
   .read-all {
     color: rgba(255, 255, 255, 0.8);
+    text-decoration: underline;
   }
 
   .user-wrapper {
@@ -75,12 +76,11 @@ const StyledReviewPanel = styled(ReviewSection)`
     padding-inline: 0.5rem;
     padding-bottom: 0.5rem;
     min-height: 8rem;
-    max-width: 17rem;
     color: rgba(255, 255, 255, 0.8);
 
     p {
       display: -webkit-box;
-      -webkit-line-clamp: 7;
+      -webkit-line-clamp: 5;
       -webkit-box-orient: vertical;
       overflow: hidden;
       text-overflow: ellipsis;
