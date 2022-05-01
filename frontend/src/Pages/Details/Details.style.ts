@@ -10,7 +10,6 @@ const StyledDetails = styled(Details)`
   .desktop-view-wrapper {
     display: none;
   }
-
   .overview-title-header,
   .cast-info,
   #overview-info-header,
@@ -64,6 +63,8 @@ const StyledDetails = styled(Details)`
   .arrow-icon {
     margin-left: 0.5rem;
   }
+    
+
   .trailer-player {
     margin-block: 2rem;
   }
@@ -187,26 +188,22 @@ const StyledDetails = styled(Details)`
     width: 60%;
   }
 
+  /*1400px*/
+  @media only screen and (min-width: 87.500em){
+    .cast-carousel{
+      .cast-card{
+        margin-right: 1.5rem;
+        
+      }
+    }
+  }
+
   /* 1575px */
   @media only screen and (min-width: 98em) {
-    .mobile-info-wrapper {
-      /* display: none; */
-    }
-
-    /* .desktop-view-wrapper {
-      display: block;
-    } */
-
-    /* 
-    .detail-background {
-      .bg {
-        display: none;
-      }
-    } */
-
-    .block {
-      /* display: flex; */
-    }
+  .trailers-wrapper{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+  }
   }
 `;
 
