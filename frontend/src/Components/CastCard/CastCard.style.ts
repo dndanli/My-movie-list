@@ -2,8 +2,7 @@ import styled from "styled-components";
 import CastCard from "./CastCard";
 
 const StyledCastCard = styled(CastCard)`
-  min-width: 8rem;
-  /* max-height: 18rem; */
+  width: 8rem;
   background-color: rgb(34, 35, 46);
   border-radius: 8px;
   padding-bottom: 1rem;
@@ -30,7 +29,7 @@ const StyledCastCard = styled(CastCard)`
   .profile {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
-    max-width: 100%;
+    min-width: 100%;
     min-height: 190px;
   }
 
