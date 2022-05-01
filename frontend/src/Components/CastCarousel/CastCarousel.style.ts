@@ -11,10 +11,8 @@ const StyledCastCarousel = styled(CastCarousel)`
 
   .embla__container {
     display: flex;
-
-    /* display: grid; */
-    /* grid-template-columns: repeat(5, 1fr); */
   }
+
   .heading {
     color: rgba(255, 255, 255, 0.9);
     position: absolute;
@@ -22,6 +20,7 @@ const StyledCastCarousel = styled(CastCarousel)`
     font-size: 1rem;
     font-weight: 500;
   }
+
   .embla__button {
     color: rgba(255, 255, 255, 0.9);
     position: absolute;
