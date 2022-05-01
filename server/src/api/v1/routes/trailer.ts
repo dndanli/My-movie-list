@@ -1,5 +1,4 @@
 import express from "express";
-import axios from "axios";
 import { fetchTrailer } from "../helpers/helpers";
 const router = express.Router();
 
@@ -8,8 +7,9 @@ const router = express.Router();
  */
 let movieId: number;
 
-router.post("/", async (request, response, next) => {
+router.post("/", (request, response) => {
   movieId = request.body.id;
+  response.end();
 });
 
 router.get("/trailer", async (request, response) => {
