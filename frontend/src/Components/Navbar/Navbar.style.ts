@@ -18,7 +18,7 @@ const StyledNavbar = styled(Navbar)`
   position: relative;
   border-radius: 1rem;
   margin-top: 1rem;
-  z-index: 2;
+  z-index: 3;
   .logo {
     margin-right: auto;
     a {
