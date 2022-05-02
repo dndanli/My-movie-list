@@ -75,6 +75,7 @@ const StyledMainPanel = styled(MainPanel)`
     justify-content: center;
     align-items: center;
     cursor: pointer;
+    z-index:2;
   }
 
   .panel-btn {
