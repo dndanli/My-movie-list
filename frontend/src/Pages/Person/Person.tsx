@@ -5,7 +5,6 @@ import { getPersonResponse } from "../../Helpers/clientHelpers";
 
 import StyledTruncatedResult from "../../Components/Layout/TruncatedResult.style";
 
-
 type PersonProps = {
   className: string;
 };
@@ -14,8 +13,6 @@ const Person = ({ className }: PersonProps) => {
   const [personResponseData, setPersonResponseData] = useState<any>({});
   const [movieCreditsData, setMovieCreditsData] = useState<any>([]);
   const [tvCreditsData, setTvCreditsData] = useState<any>([]);
-
-
   useEffect(() => {
     const fetch = async () => {
       const personResponse = await getPersonResponse(id);
@@ -55,14 +52,16 @@ const Person = ({ className }: PersonProps) => {
   };
   return (
     <div className={className}>
-      {personResponseData.profile_path !== undefined ? (
-        <img
-          className="profile"
-          src={`https://image.tmdb.org/t/p/w500${personResponseData.profile_path}`}
-          alt={personResponseData.name}
-        />
-      ) : null}
       <div className="info-wrapper">
+        {personResponseData.profile_path !== undefined ? (
+          <div className="profile-wrapper">
+            <img
+              className="profile"
+              src={`https://www.themoviedb.org/t/p/w375_and_h375_face/${personResponseData.profile_path}`}
+              alt={personResponseData.name}
+            />
+          </div>
+        ) : null}
         <h2 className="name">{personResponseData.name}</h2>
         <div className="general-info">
           <StyledInfoBlock
@@ -88,7 +87,7 @@ const Person = ({ className }: PersonProps) => {
         </div>
       </div>
       <section className="biography-section">
-        <h2 className="header">Biography</h2>
+        <h2 className="header bio-header">Biography</h2>
         <p className="biography-text">{personResponseData.biography}</p>
       </section>
 
@@ -96,26 +95,20 @@ const Person = ({ className }: PersonProps) => {
         Movies and Tv Shows
       </h2>
 
-      {
-        movieCreditsData?
-
-          <StyledTruncatedResult className="truncated-result"
-            dataToBeDisplayed={movieCreditsData}
-            mediaType={"movie"}
-          />
-            :null
-
-      }
-      {
-        tvCreditsData?
-
-          <StyledTruncatedResult className="truncated-result"
-            dataToBeDisplayed={tvCreditsData}
-            mediaType={"tv"}
-          />
-            :null
-
-      }
+      {movieCreditsData ? (
+        <StyledTruncatedResult
+          className="truncated-result"
+          dataToBeDisplayed={movieCreditsData}
+          mediaType={"movie"}
+        />
+      ) : null}
+      {tvCreditsData ? (
+        <StyledTruncatedResult
+          className="truncated-result"
+          dataToBeDisplayed={tvCreditsData}
+          mediaType={"tv"}
+        />
+      ) : null}
     </div>
   );
 };
