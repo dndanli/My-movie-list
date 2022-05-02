@@ -17,6 +17,7 @@ const StyledDetailBackground = styled(DetailBackground)`
     justify-content: center;
     border-bottom-left-radius: 0.9rem;
     border-top-left-radius: 0.9rem;
+    padding-inline: 0.2rem;
   }
 
   .overview-poster {
@@ -24,6 +25,7 @@ const StyledDetailBackground = styled(DetailBackground)`
     max-height: 170px;
     margin-top: 1rem;
     object-fit: contain;
+    border-radius: 10px;
   }
 
   .overview-background {
