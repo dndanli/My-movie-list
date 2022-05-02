@@ -3,6 +3,7 @@ import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
+import { GoPerson } from "react-icons/go";
 import { v4 as uuidv4 } from "uuid";
 
 import { getMediaDetails } from "../../Helpers/clientHelpers";
@@ -97,11 +98,13 @@ const Details = ({ className }: DetailsProps) => {
               heading={"Cast"}
             />
           </div>
-        ) : (
+          ) :
+
           <div className="no-info-to-show">
             <h2 className="info-text">No cast to show...</h2>
           </div>
-        )}
+        }
+
       </div>
       {detailData?.credits.cast !== undefined ? (
         <div className="see-more">
@@ -133,7 +136,13 @@ const Details = ({ className }: DetailsProps) => {
               />
             );
           })}
-          <Link to="/" style={{ color: "rgba(255,255,255, 0.8)", textDecoration: "underline"}}>
+          <Link
+            to="/"
+            style={{
+              color: "rgba(255,255,255, 0.8)",
+              textDecoration: "underline",
+            }}
+          >
             <p>see all reviews</p>
           </Link>
         </div>
