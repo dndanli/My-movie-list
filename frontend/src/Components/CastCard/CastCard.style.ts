@@ -15,24 +15,15 @@ const StyledCastCard = styled(CastCard)`
       color: rgba(255, 255, 255, 0.8);
     }
   }
-
-  .wrapper {
-    display: flex;
-    flex-direction: column;
-    position: relative;
-  }
-
   .image-wrapper {
     width: 100%;
   }
-
   .profile {
     border-top-left-radius: 8px;
     border-top-right-radius: 8px;
     min-width: 100%;
-    min-height: 190px;
+    height: 190px;
   }
-
   .person-icon {
     color: rgba(16, 16, 16, 0.3);
     margin-top: 1.5rem;
@@ -62,6 +53,7 @@ const StyledCastCard = styled(CastCard)`
     white-space: nowrap;
     overflow: hidden;
   }
+
 `;
 
 export default StyledCastCard;
