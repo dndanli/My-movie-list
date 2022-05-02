@@ -17,7 +17,6 @@ const MainPanel = ({ className }: MainPanelProps) => {
     const fetch = async () => {
       const response = await getTrending("movie");
       setSlides(response.results);
-      console.log(response);
     };
 
     fetch();
