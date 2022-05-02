@@ -7,11 +7,8 @@ const StyledReviewPanel = styled(ReviewSection)`
   font-family: "Poppins", sans-serif;
   padding: 1rem;
 
-  .wrapper {
-    display: flex;
-  }
-
   .rating {
+    width: 4rem;
     font-weight: 500;
     font-size: 1.5rem;
     display: flex;
@@ -19,11 +16,11 @@ const StyledReviewPanel = styled(ReviewSection)`
     align-items: center;
     max-height: 1.5rem;
     background-color: rgba(255, 140, 50, 0.9);
-    border: 1px solid rgba(255, 255, 255, 0.9);
     border-radius: 4px;
     padding-inline: 0.5rem;
     padding-block: 0.2rem;
     color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 0.5rem;
 
     .star-icon {
       margin-left: 0.5rem;
@@ -73,7 +70,6 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .content {
-    padding-inline: 0.5rem;
     padding-bottom: 0.5rem;
     min-height: 8rem;
     color: rgba(255, 255, 255, 0.8);
