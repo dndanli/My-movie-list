@@ -13,16 +13,28 @@ const Person = ({ className }: PersonProps) => {
   const [personResponseData, setPersonResponseData] = useState<any>({});
   const [movieCreditsData, setMovieCreditsData] = useState<any>([]);
   const [tvCreditsData, setTvCreditsData] = useState<any>([]);
+
+  const [movieCreditsDataCrew, setMovieCreditsDataCrew] = useState<any>([]);
+  const [tvCreditsDataCrew, setTvCreditsDataCrew] = useState<any>([]);
+
   useEffect(() => {
     const fetch = async () => {
       const personResponse = await getPersonResponse(id);
       setPersonResponseData(personResponse);
 
-      if (personResponse.tv_credits) {
+      if (personResponse.tv_credits.cast) {
         setTvCreditsData(personResponse.tv_credits.cast);
       }
-      if (personResponse.movie_credits) {
+      if (personResponse.movie_credits.cast) {
         setMovieCreditsData(personResponse.movie_credits.cast);
+      }
+
+      if (personResponse.tv_credits.crew) {
+        setTvCreditsDataCrew(personResponse.tv_credits.crew);
+      }
+
+      if (personResponse.movie_credits.crew) {
+        setMovieCreditsDataCrew(personResponse.movie_credits.crew);
       }
     };
     fetch();
@@ -64,26 +76,34 @@ const Person = ({ className }: PersonProps) => {
         ) : null}
         <h2 className="name">{personResponseData.name}</h2>
         <div className="general-info">
-          <StyledInfoBlock
-            className="info-block"
-            title="Known for"
-            value={personResponseData.known_for_department}
-          />
-          <StyledInfoBlock
-            className="info-block"
-            title="Gender"
-            value={getGender(personResponseData.gender)}
-          />
-          <StyledInfoBlock
-            className="info-block"
-            title="Birthday"
-            value={personResponseData.birthday}
-          />
-          <StyledInfoBlock
-            className="info-block"
-            title="Place of birth"
-            value={personResponseData.place_of_birth}
-          />
+          {personResponseData.known_for_department ? (
+            <StyledInfoBlock
+              className="info-block"
+              title="Known for"
+              value={personResponseData.known_for_department}
+            />
+          ) : null}
+          {personResponseData.gender ? (
+            <StyledInfoBlock
+              className="info-block"
+              title="Gender"
+              value={getGender(personResponseData.gender)}
+            />
+          ) : null}
+          {personResponseData.birthday ? (
+            <StyledInfoBlock
+              className="info-block"
+              title="Birthday"
+              value={personResponseData.birthday}
+            />
+          ) : null}
+          {personResponseData.place_of_birth ? (
+            <StyledInfoBlock
+              className="info-block"
+              title="Place of birth"
+              value={personResponseData.place_of_birth}
+            />
+          ) : null}
         </div>
       </div>
       <section className="biography-section">
@@ -91,21 +111,37 @@ const Person = ({ className }: PersonProps) => {
         <p className="biography-text">{personResponseData.biography}</p>
       </section>
 
-      <h2 className="header" style={{ paddingInline: "1rem" }}>
-        Movies and Tv Shows
-      </h2>
-
-      {movieCreditsData ? (
+      {movieCreditsData !== undefined && tvCreditsData !== undefined ? (
+        <h2 className="header" style={{ paddingInline: "1rem" }}>
+          Movies and Tv Shows
+        </h2>
+      ) : null}
+      {movieCreditsData.length > 0 ? (
         <StyledTruncatedResult
           className="truncated-result"
           dataToBeDisplayed={movieCreditsData}
           mediaType={"movie"}
         />
       ) : null}
-      {tvCreditsData ? (
+      {tvCreditsData.length > 0 ? (
         <StyledTruncatedResult
           className="truncated-result"
           dataToBeDisplayed={tvCreditsData}
+          mediaType={"tv"}
+        />
+      ) : null}
+
+      {movieCreditsDataCrew.length > 0 ? (
+        <StyledTruncatedResult
+          className="truncated-result"
+          dataToBeDisplayed={movieCreditsDataCrew}
+          mediaType={"movie"}
+        />
+      ) : null}
+      {tvCreditsDataCrew.length > 0 ? (
+        <StyledTruncatedResult
+          className="truncated-result"
+          dataToBeDisplayed={tvCreditsDataCrew}
           mediaType={"tv"}
         />
       ) : null}
