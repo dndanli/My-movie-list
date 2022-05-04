@@ -10,9 +10,10 @@ const StyledCast = styled(Cast)`
     font-family: "Inter", sans-serif;
     font-size: 1.7rem;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(16, 16, 16, 0.9);
     margin-block: 0.5rem;
   }
+
   /* 1024px */
   @media only screen and (min-width: 64em) {
     width: 100%;

@@ -19,7 +19,7 @@ const StyledSidebar = styled(Siderbar)`
   }
 
   .header-2 {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.8);
     padding-inline: 2rem;
   }
 
@@ -54,7 +54,7 @@ const StyledSidebar = styled(Siderbar)`
 
   .link-name {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(16, 16, 16, 0.8);
   }
 `;
 

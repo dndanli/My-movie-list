@@ -3,16 +3,19 @@ import CastCard from "./CastCard";
 
 const StyledCastCard = styled(CastCard)`
   width: 8rem;
-  background-color: rgb(34, 35, 46);
+  background-color: rgb(255, 255, 255);
   border-radius: 8px;
   padding-bottom: 1rem;
+  -moz-box-shadow: 0 0 0.5px #ccc;
+  -webkit-box-shadow: 0 0 0.5px #ccc;
+  box-shadow: 0 0 0 0.5px #ccc;
   a {
     text-decoration: none;
     .name {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(16, 16, 16, 0.9);
     }
     .character-name {
-      color: rgba(255, 255, 255, 0.8);
+      color: rgba(16, 16, 16, 0.8);
     }
   }
   .image-wrapper {

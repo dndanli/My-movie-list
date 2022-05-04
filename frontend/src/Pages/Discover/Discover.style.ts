@@ -30,7 +30,7 @@ const StyledDiscover = styled(Discover)`
 
   .message {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(16, 16, 16, 0.7);
     text-align: center;
   }
 

@@ -22,23 +22,22 @@ const StyledPerson = styled(Person)`
   }
 
   .info-wrapper {
-    margin-top: 3rem;
+    margin-top: 1rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     padding-inline: 1rem;
     padding-top:1rem;
     position: relative;
-    background-color: rgb(34, 35, 46);
   }
 
   .info-block {
     .value {
-      color: rgba(255, 255, 255, 0.9);
+      color: rgba(16, 16, 16, 0.9);
     }
   }
 
   .name {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.9);
   }
 
   .general-info {
@@ -50,20 +49,19 @@ const StyledPerson = styled(Person)`
   .biography-section {
     padding-block: 1rem;
     padding-inline: 1rem;
-    background-color: rgb(34, 35, 46);
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(16, 16, 16, 0.7);
   }
   .header {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.9);
     font-weight: 500;
     margin-block: 0.5rem;
   }
   .bio-header {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.9);
   }
   .biography {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.9);
     font-weight: 500;
   }
 

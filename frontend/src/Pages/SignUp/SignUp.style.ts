@@ -59,14 +59,17 @@ const StyledSignUp = styled(SignUp)`
   .password-input-wrapper {
     padding: 1rem;
     border-radius: 12px;
+    background-color: rgba(255, 255, 255, 1);
     -moz-box-shadow: 0 0 0.5px #ccc;
     -webkit-box-shadow: 0 0 0.5px #ccc;
     box-shadow: 0 0 0 0.5px #ccc;
-    &:focus {
-      border: solid 1.5px rgb(255, 140, 50);
-    }
     display: flex;
     justify-content: center;
+
+    //TODO: fix this
+    &:focus {
+      border: solid 1.5px rgb(255, 140, 50);
+    } 
   }
 
   .password-input {
@@ -96,7 +99,7 @@ const StyledSignUp = styled(SignUp)`
     width: 100%;
     border-radius: 10px;
     padding-block: 1rem;
-    background-color: rgb(253, 0, 84);
+    background-color: rgb(255, 140, 50);
     color: rgba(255, 255, 255, 0.9);
     margin-top: 1.3rem;
   }
@@ -105,9 +108,9 @@ const StyledSignUp = styled(SignUp)`
     margin-top: 2rem;
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    color: rgba(16, 16, 16, 0.4);
+    color: rgba(16, 16, 16, 0.5);
     span {
-      color: rgb(253, 0, 84);
+      color: rgb(255, 140, 50);
     }
     text-align: center;
   }

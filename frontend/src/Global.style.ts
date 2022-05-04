@@ -6,18 +6,17 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color:rgb(25,26, 34);  
+    background-color:rgb(251, 250, 251);  
   }
 
   ::-webkit-scrollbar {
-      height: 0.3em;  
+      height: 0.4rem;  
       width: 0.5rem;
     }
   ::-webkit-scrollbar-track {
-    background-color: #000000;
   }
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: rgba(16, 16, 16, 0.7);
     border-radius: 10px;
   }
 `;

@@ -4,7 +4,7 @@ import CastListItem from "./CastListItem";
 const StyledCastListItem = styled(CastListItem)` 
   .list-item {
     border-radius: 6px;
-    background-color: rgb(34, 35, 46);
+    background-color: rgb(255, 255, 255);
     margin-bottom: 1rem;
     display: flex;
     -moz-box-shadow: 0 0 0.5px #ccc;
@@ -32,7 +32,7 @@ const StyledCastListItem = styled(CastListItem)`
   .person-icon {
     min-width: 100px;
     min-height: 120px;
-    color: rgba(255, 255, 255, 0.5);
+    color: rgba(16, 16, 16, 0.5);
   }
 
   .name-wrapper {
@@ -40,18 +40,17 @@ const StyledCastListItem = styled(CastListItem)`
   }
   .name{
     font-family: "Poppins", sans-serif;
-    font-weight: 700;
+    font-weight: 500;
     font-size: 1.1rem;
     margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.9);
-
+    color: rgba(16, 16, 16, 0.9);
   }
   .role {
     font-family: "Poppins", sans-serif;
     font-weight: 500;
     font-size: 16px;
     margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(16, 16, 16, 0.7);
   }
 
 `;

@@ -73,7 +73,7 @@ const StyledLogin = styled(Login)`
     width: 100%;
     border-radius: 10px;
     padding-block: 1rem;
-    background-color: rgb(253, 0, 84);
+    background-color: rgb(255, 140, 50);
     color: rgba(255, 255, 255, 0.9);
     margin-top: 2.5rem;
   }
@@ -81,9 +81,9 @@ const StyledLogin = styled(Login)`
   .text-small {
     font-family: "Inter", sans-serif;
     font-weight: 400;
-    color: rgba(16, 16, 16, 0.4);
+    color: rgba(16, 16, 16, 0.5);
     span {
-      color: rgb(253, 0, 84);
+      color: rgb(255, 140, 50);
     }
   }
 
@@ -120,6 +120,7 @@ const StyledLogin = styled(Login)`
     }
     display: flex;
     justify-content: center;
+    background-color: rgb(255, 255, 255);
   }
   .password-input {
     border: none;

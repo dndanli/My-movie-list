@@ -17,7 +17,7 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(16, 16, 16, 0.9);
   }
 
   #status {
@@ -73,7 +73,7 @@ const StyledDetails = styled(Details)`
     height: 190px;
     width: 100%;
 
-    background-color: rgba(255, 255, 255, 0.8);
+    background-color: rgba(16, 16, 16, 0.8);
   }
   .info-text {
     font-family: "Inter", sans-serif;
