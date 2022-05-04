@@ -8,37 +8,37 @@ const StyledPerson = styled(Person)`
   .profile-wrapper {
     width: 12rem;
     height: 12rem;
-    position: absolute;
-    top: -27%;
-    left: 5%;
     display: flex;
     justify-content: center;
     align-items: center;
-    border-radius: 50%;
+    padding-bottom:2rem;
   }
 
   .profile {
     display: block;
     width: 100%;
     height: 100%;
-    border-radius: 100%;
+    border-radius: 25%;
   }
 
   .info-wrapper {
-    margin-top: 8rem;
-    padding-top: 8rem;
-    background-color: white;
+    margin-top: 3rem;
     border-top-left-radius: 1rem;
     border-top-right-radius: 1rem;
     padding-inline: 1rem;
-    -moz-box-shadow: 0 0 0.5px #ccc;
-    -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow: 0 0 0 0.5px #ccc;
+    padding-top:1rem;
     position: relative;
+    background-color: rgb(34, 35, 46);
+  }
+
+  .info-block {
+    .value {
+      color: rgba(255, 255, 255, 0.9);
+    }
   }
 
   .name {
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .general-info {
@@ -50,9 +50,8 @@ const StyledPerson = styled(Person)`
   .biography-section {
     padding-block: 1rem;
     padding-inline: 1rem;
-    background-color: white;
-    border-bottom-left-radius: 1rem;
-    border-bottom-right-radius: 1rem;
+    background-color: rgb(34, 35, 46);
+    color: rgba(255, 255, 255, 0.7);
   }
   .header {
     color: rgba(255, 255, 255, 0.9);
@@ -60,12 +59,27 @@ const StyledPerson = styled(Person)`
     margin-block: 0.5rem;
   }
   .bio-header {
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
   .biography {
     font-size: 1rem;
     color: rgba(255, 255, 255, 0.9);
     font-weight: 500;
+  }
+
+  /* 535px */
+  @media only screen and (min-width: 33.4em) {
+    .profile-wrapper {
+      margin-top: 1rem;
+      width: 14rem;
+      height: 14rem;
+      top: -40%;
+    }
+  }
+
+  /* 1295px */
+  @media only screen and (min-width: 80em) {
+    width:70%;
   }
 `;
 export default StyledPerson;
