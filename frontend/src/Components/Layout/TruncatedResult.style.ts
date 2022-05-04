@@ -4,30 +4,30 @@ import TruncatedResult from "./TruncatedResult";
 const StyledTruncatedResult = styled(TruncatedResult)`
   .content-wrapper {
     padding-inline: 1rem;
-    padding-bottom: 2rem;
+    padding-block: 1.2rem;
     display: grid;
-    grid-column-gap: 1rem;
+    grid-column-gap: 3%;
     grid-row-gap: 1rem;
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(5, 0fr);
+    width: 90%;
+    overflow-x: auto;
+    margin-bottom: 1.5rem;
   }
 
   .truncate-wrapper{
     display: flex;
-    justify-content: center;
+    justify-content: flex-start;
     width: 100%;
+    padding-left: 1rem;
     padding-bottom: 2rem;
   }
 
   .truncate-btn{
-    background-color: rgb(255, 140, 50);
-    padding-inline: 1rem;
-    padding-block: 0.5rem;
-    max-height: 3rem;
     display: flex;
     justify-content: center;
     align-items: center;
-    color:rgba(255, 255, 255, 0.9);
-    border-radius: 10px; 
+    color:rgb(255, 140, 50);
+    cursor: pointer;
   }
 `;
 
