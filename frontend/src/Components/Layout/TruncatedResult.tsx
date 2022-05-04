@@ -3,7 +3,7 @@ import StyledCard from "../Card/Card.style";
 import { useState } from "react";
 
 type TruncatedResultProps = {
-  dataToBeDisplayed: [];
+  dataToBeDisplayed: any[];
   mediaType: string;
   className: string;
 };
@@ -13,7 +13,7 @@ const TruncatedResult = ({
   dataToBeDisplayed,
   mediaType,
 }: TruncatedResultProps) => {
-  const [contentMaxLength, setContentMaxLength] = useState(4);
+  const [contentMaxLength, setContentMaxLength] = useState(5);
   const [truncateBtnValue, setTruncateBtnValue] = useState("see more");
 
   return (
@@ -26,7 +26,7 @@ const TruncatedResult = ({
               imagePath={data.poster_path}
               title={data.name || data.title}
               rating={data.vote_average}
-              date={data.release_date}
+              date={data.release_date || data.first_air_date}
               cardId={data.id}
               mediaType={mediaType}
               key={uuidv4()}
@@ -35,21 +35,25 @@ const TruncatedResult = ({
         })}
       </div>
       <div className="truncate-wrapper">
+      {
+      dataToBeDisplayed.length > 5 ?
         <h3
           className="truncate-btn"
           onClick={() => {
             truncateBtnValue === "see more"
               ? setTruncateBtnValue("see less")
               : setTruncateBtnValue("see more");
-            if (contentMaxLength === 4) {
+            if (contentMaxLength === 5) {
               setContentMaxLength(dataToBeDisplayed.length);
             } else {
-              setContentMaxLength(4);
+              setContentMaxLength(5);
             }
           }}
         >
           {truncateBtnValue}
         </h3>
+          :null
+      }
       </div>
     </div>
   );
