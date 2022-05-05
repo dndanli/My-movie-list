@@ -3,37 +3,35 @@ import styled from "styled-components";
 import LoginContainer from "./LoginContainer";
 const StyledLoginContainer = styled(LoginContainer)`
   font-family: "Poppins", sans-serif;
-  background-color: rgb(255, 255, 255);
+  background-color: rgb(34, 34, 34);
   padding-inline: 1rem;
   padding-block: 1rem;
   border-radius: 0.8rem;
-  -moz-box-shadow: 0 0 0.5px #ccc;
-  -webkit-box-shadow: 0 0 0.5px #ccc;
-  box-shadow: 0 0 0 0.5px #ccc;
   max-width: 27rem;
+
 
   .wrapper {
     text-align: center;
     h2 {
       font-size: 2rem;
       font-weight: 600;
-      color: #2b2b2b;
+      color: rgba(255, 255, 255, 0.9);
     }
     h3 {
       font-size: 1.1rem;
       font-weight: 400;
-      color: #423f3e;
+      color: rgba(255, 255, 255, 0.9);
       padding-bottom: 1rem;
     }
   }
 
-  .right {
+  .right{
     text-align: end;
     margin-top: 1rem;
   }
 
   h4 {
-    color: #423f3e;
+    color: rgba(255, 255, 255, 0.9);
     font-weight: 400;
     a {
       color: rgb(255, 140, 50);
@@ -74,14 +72,13 @@ const StyledLoginContainer = styled(LoginContainer)`
     color: rgb(255, 255, 255);
     font-size: 1.2rem;
     border-radius: 10px;
-    border: 1px solid #ccc;
     cursor: pointer;
     transition: 300ms ease;
     &:hover {
-      background-color: rgba(43, 43, 43, 0.9);
+      background-color: rgba(43, 43, 43, 0.7);
     }
     &:active {
-      background-color: rgba(43, 43, 43, 0.8);
+      background-color: rgba(43, 43, 43, 0.5);
     }
   }
 
@@ -89,7 +86,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     font-size: 1.2rem;
     font-weight: 400;
     margin-block: 0.7rem;
-    color: #2b2b2b;
+    color:rgba(255, 255, 255,1);
   }
 
   input {
@@ -107,6 +104,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
+    background-color:rgba(255, 255, 255,1);
   }
 
   .view {
