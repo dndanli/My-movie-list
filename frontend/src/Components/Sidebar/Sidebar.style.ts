@@ -4,7 +4,7 @@ import Siderbar from "./Sidebar";
 const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
   font-family: "Poppins", sans-serif;
-  border-right: 0.5px solid rgba(235, 240, 233, 0.2);
+  border-right: 0.5px solid rgba(16, 16, 16, 0.2);
   .logo {
     margin-right: auto;
     padding-left: 2rem;
