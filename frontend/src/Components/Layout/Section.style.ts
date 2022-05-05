@@ -30,7 +30,7 @@ const StyledSection = styled(Section)`
     text-align: end;
   }
   .close {
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     margin-right: 0.5rem;
     font-weight: 700;
     font-size: 2.4rem;
@@ -43,7 +43,7 @@ const StyledSection = styled(Section)`
     font-size: 1.7rem;
     font-weight: 700;
     margin-block: 1rem;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 `;
 

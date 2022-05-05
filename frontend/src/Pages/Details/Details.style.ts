@@ -17,14 +17,14 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   #status {
     margin-top: 0.5rem;
     font-size: 1.2rem;
     font-weight: 400;
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .cast-info {
@@ -67,13 +67,13 @@ const StyledDetails = styled(Details)`
   }
   .divider {
     margin-top: 1rem;
-    border: 0.5px solid rgba(16, 16, 16, 0.1);
+    border: 0.5px solid rgba(255, 255, 255, 0.1);
   }
   .overview-background-fill {
     height: 190px;
     width: 100%;
 
-    background-color: rgba(16, 16, 16, 0.8);
+    background-color: rgba(255, 255, 255, 0.8);
   }
   .info-text {
     font-family: "Inter", sans-serif;

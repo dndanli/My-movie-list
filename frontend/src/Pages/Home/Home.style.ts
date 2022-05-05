@@ -24,13 +24,13 @@ const StyledHome = styled(Home)`
   #popular-heading {
     font-size: 1.7rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     margin-block: 0.5rem;
   }
   #upcoming-heading {
     font-size: 1.7rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     margin-block: 1rem;
   }
   .hero {
@@ -41,8 +41,8 @@ const StyledHome = styled(Home)`
     min-height: 15rem;
     max-height: 15rem;
 
-    background-color: rgba(16, 16, 16, 9);
-    color: rgba(16, 16, 16, 0.9);
+    background-color: rgba(255, 255, 255, 9);
+    color: rgba(255, 255, 255, 0.9);
 
     border-radius: 1rem;
     margin-block: 1rem;

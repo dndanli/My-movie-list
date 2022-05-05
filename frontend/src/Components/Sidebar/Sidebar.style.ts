@@ -4,7 +4,7 @@ import Siderbar from "./Sidebar";
 const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
   font-family: "Poppins", sans-serif;
-  border-right: 0.5px solid rgba(16, 16, 16, 0.2);
+  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
   .logo {
     margin-right: auto;
     padding-left: 2rem;
@@ -19,7 +19,7 @@ const StyledSidebar = styled(Siderbar)`
   }
 
   .header-2 {
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
     padding-inline: 2rem;
   }
 
@@ -54,7 +54,7 @@ const StyledSidebar = styled(Siderbar)`
 
   .link-name {
     font-size: 1rem;
-    color: rgba(16, 16, 16, 0.8);
+    color: rgba(255, 255, 255, 0.8);
   }
 `;
 

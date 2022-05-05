@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ReviewSection from "./ReviewPanel";
 
 const StyledReviewPanel = styled(ReviewSection)`
-  background-color: rgb(34, 35, 46);
+  background-color: rgb(34, 34, 34);
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
   padding: 1rem;
@@ -53,9 +53,6 @@ const StyledReviewPanel = styled(ReviewSection)`
     height: 4rem;
     object-fit: cover;
     border-radius: 8px;
-    -moz-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
-    -webkit-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
-    box-shadow: 0 0 0 0.5px rgba(16, 16, 16, 0.5);
   }
 
   .user-icon {
@@ -64,9 +61,9 @@ const StyledReviewPanel = styled(ReviewSection)`
     height: 4rem;
     object-fit: cover;
     border-radius: 8px;
-    -moz-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
-    -webkit-box-shadow: 0 0 0.5px rgba(16, 16, 16, 0.5);
-    box-shadow: 0 0 0 0.5px rgba(16, 16, 16, 0.5);
+    -moz-box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.5);
+    -webkit-box-shadow: 0 0 0.5px rgba(255, 255, 255, 0.5);
+    box-shadow: 0 0 0 0.5px rgba(255, 255, 255, 0.5);
   }
 
   .content {

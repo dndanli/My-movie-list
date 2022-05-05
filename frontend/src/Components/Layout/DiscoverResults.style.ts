@@ -6,9 +6,10 @@ export const Wrapper = styled.div`
     align-items: center;
     justify-content: space-around;
     list-style-type: none;
+    font-size: 1.2rem;
     font-family: "Inter", sans-serif;
     font-weight: 500;
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     li {
       a {
         cursor: pointer;
@@ -23,7 +24,7 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
     cursor: pointer;
   }
 

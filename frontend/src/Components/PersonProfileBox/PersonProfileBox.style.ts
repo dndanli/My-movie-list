@@ -2,10 +2,9 @@ import styled from "styled-components";
 import PersonProfileBox from "./PersonProfileBox";
 
 const StyledPersonProfileBox = styled(PersonProfileBox)`
-  background-color: rgb(34, 35, 46);
 
   .wrapper {
-    background-color: rgb(34, 35, 46);
+  background-color: rgb(34, 34, 34);
     display: flex;
     border-radius: 8px;
   }

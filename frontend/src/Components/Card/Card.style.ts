@@ -10,13 +10,9 @@ const StyledCard = styled(Card)`
     width: 10.3rem;
     min-height: 21rem;
     border-radius: 11px;
-    background-color: rgb(34, 35, 46);
-    background-color: rgba(255, 255, 255, 0.9);
+    background-color: rgb(34, 34, 34);
     position: relative;
     padding-bottom: 0.5rem;
-    -moz-box-shadow: 0 0 0.5px #ccc;
-    -webkit-box-shadow: 0 0 0.5px #ccc;
-    box-shadow: 0 0 0 0.5px #ccc;
   }
 
   a {
@@ -48,7 +44,7 @@ const StyledCard = styled(Card)`
     padding-left: 1rem;
     font-size: 1rem;
     font-weight: 700;
-    color: rgba(16, 16, 16, 0.9);
+    color: rgba(255, 255, 255, 0.9);
     p {
       text-overflow: ellipsis;
       overflow: hidden;
@@ -78,12 +74,12 @@ const StyledCard = styled(Card)`
 
   .date {
     padding-inline: 1rem;
-    color: rgba(16, 16, 16, 0.7);
+    color: rgba(255, 255, 255, 0.7);
   }
 
   .icon {
     font-size: 9rem;
-    color: rgba(16, 16, 16, 1);
+    color: rgba(255, 255, 255, 1);
     padding-bottom: 6.5rem;
   }
 
