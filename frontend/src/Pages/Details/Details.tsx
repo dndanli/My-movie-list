@@ -98,13 +98,11 @@ const Details = ({ className }: DetailsProps) => {
               heading={"Cast"}
             />
           </div>
-          ) :
-
+        ) : (
           <div className="no-info-to-show">
             <h2 className="info-text">No cast to show...</h2>
           </div>
-        }
-
+        )}
       </div>
       {detailData?.credits.cast !== undefined ? (
         <div className="see-more">
@@ -148,12 +146,10 @@ const Details = ({ className }: DetailsProps) => {
         </div>
       ) : null}
 
+      <h2 id="trailers">Trailers</h2>
+      <hr className="divider" />
       {trailers.length > 0 ? (
         <div className="trailers-wrapper">
-          <h2 id="trailers">Trailers</h2>
-
-          <hr className="divider" />
-
           {trailers.map((data: any) => {
             if (data.type !== "Trailer") {
               return null;
