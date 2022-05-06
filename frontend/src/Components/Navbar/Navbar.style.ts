@@ -9,7 +9,7 @@ const animation = keyframes`
 `;
 
 const StyledNavbar = styled(Navbar)`
-  font-family: "Inter", sans-serif;
+  font-family: "Poppins", sans-serif;
   display: flex;
   justify-content: flex-end;
   align-items: center;
