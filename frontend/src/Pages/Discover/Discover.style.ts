@@ -56,6 +56,75 @@ const StyledDiscover = styled(Discover)`
   .person-profile {
     margin-bottom: 0.7rem;
   }
+
+  /* 535px */
+  @media only screen and (min-width: 33.4em) {
+    padding-inline: 2rem;
+    .filter-button {
+      font-size: 1rem;
+    }
+  }
+
+  /* 635px */
+  @media only screen and (min-width: 39.6em) {
+    padding-inline: 3rem;
+    .filter-button {
+      font-size: 1.2rem;
+    }
+  }
+
+  /* 1024px */
+  @media only screen and (min-width: 64em) {
+    .discover-page {
+      width: 80%;
+
+      .profile {
+        max-width: 150px;
+        max-height: 150px;
+      }
+      .person-icon {
+        min-width: 100px;
+        min-height: 150px;
+      }
+
+      .box {
+        .image {
+          max-width: 160px;
+          max-height: 160px;
+        }
+
+        .box-icon {
+          min-width: 110px;
+          min-height: 150px;
+        }
+      }
+    }
+  }
+
+  /*1024px*/
+  @media only screen and (min-width: 65em) {
+    margin-left: 14rem;
+  }
+
+  /* 1295px */
+  @media only screen and (min-width: 80em) {
+  }
+
+  /* 1515px */
+  @media only screen and (min-width: 94.688em) {
+    margin-right: 15rem;
+    width: 60%;
+  }
+
+  /*1700px*/
+  @media only screen and (min-width: 106.25em) {
+    padding-inline: 5rem;
+  }
+
+  /*1800px*/
+  @media only screen and (min-width: 112.5em) {
+    padding-inline: 7.5rem;
+  }
 `;
 
 export default StyledDiscover;
