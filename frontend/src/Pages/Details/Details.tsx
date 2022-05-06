@@ -168,7 +168,6 @@ const Details = ({ className }: DetailsProps) => {
           })}
         </div>
       ) : null}
-      <hr className="divider" />
     </div>
   );
 };
