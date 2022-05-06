@@ -60,7 +60,6 @@ const StyledDetails = styled(Details)`
   .arrow-icon {
     margin-left: 0.5rem;
   }
-    
 
   .trailer-player {
     margin-block: 2rem;
@@ -130,7 +129,8 @@ const StyledDetails = styled(Details)`
 
   /* 1024px */
   @media only screen and (min-width: 64em) {
-    width: 80%;
+    width: 70%;
+    margin-left: 15rem;
     .detail-background {
       .overview-poster {
         max-height: 330px;
@@ -146,25 +146,39 @@ const StyledDetails = styled(Details)`
 
   /* 1295px */
   @media only screen and (min-width: 80em) {
-    width: 60%;
   }
 
   /*1400px*/
-  @media only screen and (min-width: 87.500em){
-    .cast-carousel{
-      .cast-card{
+  @media only screen and (min-width: 87.5em) {
+    .cast-carousel {
+      .cast-card {
         margin-right: 1.5rem;
-        
       }
     }
   }
 
+  @media only screen and (min-width: 94.688em) {
+    width: 60%;
+  }
+
   /* 1575px */
   @media only screen and (min-width: 98em) {
-  .trailers-wrapper{
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
+    .trailers-wrapper {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    padding-inline: 3rem;
   }
+
+  /*1700px*/
+  @media only screen and (min-width: 106.25em) {
+    padding-inline: 3.5rem;
+  }
+
+  /*1800px*/
+  @media only screen and (min-width: 112.5em) {
+    padding-inline: 5.5rem;
   }
 `;
 
