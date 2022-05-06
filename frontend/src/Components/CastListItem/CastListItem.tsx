@@ -30,7 +30,7 @@ const CastListItem = ({
             <GoPerson className="person-icon" />
           )}
           <div className="name-wrapper">
-          <h4 className="name" style={{color: "rgba(16, 16, 16, 0.9)"}}>{_name}</h4>
+          <h4 className="name">{_name}</h4>
             <h4 className="role">{character}</h4>
           </div>
         </li>
