@@ -73,7 +73,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     font-size: 1.2rem;
     border-radius: 10px;
     cursor: pointer;
-    transition: 300ms ease;
+    transition: 100ms ease;
     &:hover {
       background-color: rgba(43, 43, 43, 0.7);
     }
