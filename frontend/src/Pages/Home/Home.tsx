@@ -18,27 +18,24 @@ const Home = ({ className }: Homeprops) => {
   const [upcoming, setUpcoming] = useState<any>([]);
 
   useEffect(() => {
+    let isMounted = true;
     const fetchData = async () => {
       const popularMoviesResponseData = await getPopularMedia("movie");
       const upcomingResponseData = await getUpcoming();
-      setPopularMovies(popularMoviesResponseData);
-      setUpcoming(upcomingResponseData.results);
+      if (isMounted) {
+        setPopularMovies(popularMoviesResponseData);
+        setUpcoming(upcomingResponseData.results);
+      }
     };
     fetchData();
+    return () => {
+      isMounted = false;
+    };
   }, []);
 
   return (
     <div className={className}>
       <div className="home-wrapper">
-        {/* <div className="hero">
-          <h1 id="hero-heading">
-            <TextAnimation />
-          </h1>
-          <h2 className="hero-heading-2">
-            to your favorite place to discover new movies
-          </h2>
-          <h2 className="hero-heading-2">and Tv-Shows.</h2>
-        </div> */}
         <StyledMainPanel className="main-panel" />
         <div className="search-wrapper">
           <StyledSearchBar className="searchbar" />
