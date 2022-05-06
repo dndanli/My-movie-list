@@ -5,6 +5,10 @@ const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
   font-family: "Poppins", sans-serif;
   border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+  position: fixed;
+  min-height: 100vh;
+  top: 0;
+  left:1%;
   .logo {
     margin-right: auto;
     padding-left: 2rem;
