@@ -8,7 +8,7 @@ const StyledSidebar = styled(Siderbar)`
   position: fixed;
   min-height: 100vh;
   top: 0;
-  left:1%;
+  left: 1%;
   .logo {
     margin-right: auto;
     padding-left: 2rem;
@@ -42,12 +42,16 @@ const StyledSidebar = styled(Siderbar)`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
-    /* &:hover {
-      background-color: rgba(235, 240, 233, 0.6);
-    } */
+    &:hover {
+      background-color: rgb(34, 34, 34);
+    }
+
+    &:active {
+      background-color: rgb(40, 40, 40);
+    }
     padding-left: 1rem;
     padding-block: 1rem;
-    transition: 500ms;
+    transition: 200ms;
   }
 
   .link-icon {
