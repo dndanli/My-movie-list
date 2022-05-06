@@ -12,6 +12,8 @@ import StyledLogin from "./Pages/Login/Login.style";
 import StyledSidebar from "./Components/Sidebar/Sidebar.style";
 import StyledContentBar from "./Components/ContentBar/ContentBar.style";
 
+import StyledAbout from "./Pages/About/About.style";
+
 function App() {
   return (
     <div className="App">
@@ -56,6 +58,10 @@ function App() {
             <Route
               path="/login"
               element={<StyledLogin className="login-page" />}
+            ></Route>
+            <Route
+              path="/about"
+              element={<StyledAbout className="about-page" />}
             ></Route>
           </Routes>
           <StyledContentBar className="content-bar" />
