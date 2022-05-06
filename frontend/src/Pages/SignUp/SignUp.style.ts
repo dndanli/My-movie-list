@@ -7,8 +7,7 @@ const StyledSignUp = styled(SignUp)`
     margin-top: 2rem;
   }
 
-
-  /*498*/
+  /*498px*/
   @media only screen and (min-width: 31.125em) {
     display: flex;
     flex-direction: column;
@@ -38,7 +37,6 @@ const StyledSignUp = styled(SignUp)`
 
   /* 1024px */
   @media only screen and (min-width: 64em) {
-    width: 80%;
     .sign-up-container {
       margin-top: 4rem;
     }
