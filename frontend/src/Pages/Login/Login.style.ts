@@ -39,7 +39,6 @@ const StyledLogin = styled(Login)`
 
   /* 1024px */
   @media only screen and (min-width: 64em) {
-    width: 80%;
     .login-container {
       margin-top: 4rem;
     }
