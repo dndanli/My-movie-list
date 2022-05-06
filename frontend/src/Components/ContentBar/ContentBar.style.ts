@@ -2,8 +2,12 @@ import styled from "styled-components";
 import ContentBar from "./ContentBar";
 
 const StyledContentBar = styled(ContentBar)`
-  min-width: 17rem;
+  max-width: 17rem;
   border-left: 0.5px solid rgba(255, 255, 255, 0.2);
+  min-height: 100vh;
+  position: fixed;
+  top:0;
+  right:0;
 
   padding-inline: 1.2rem;
   font-family: "Inter", sans-serif;
