@@ -46,7 +46,8 @@ const StyledNavbar = styled(Navbar)`
 
   .menu-icon {
     font-size: 2rem;
-      color: rgba(255, 255, 255, 0.8);
+    color: rgba(255, 255, 255, 0.8);
+    cursor: pointer;
   }
 
   .nav-links-wrapper {
