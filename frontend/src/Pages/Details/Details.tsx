@@ -3,7 +3,6 @@ import ReactPlayer from "react-player/lazy";
 import { Link } from "react-router-dom";
 import { useParams } from "react-router";
 import { HiOutlineArrowNarrowRight } from "react-icons/hi";
-import { GoPerson } from "react-icons/go";
 import { v4 as uuidv4 } from "uuid";
 
 import { getMediaDetails } from "../../Helpers/clientHelpers";
