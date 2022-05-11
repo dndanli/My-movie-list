@@ -13,6 +13,7 @@ import StyledSidebar from "./Components/Sidebar/Sidebar.style";
 import StyledContentBar from "./Components/ContentBar/ContentBar.style";
 
 import StyledAbout from "./Pages/About/About.style";
+import StyledUserProfile from "./Pages/Profile/UserProfile.style";
 
 function App() {
   return (
@@ -62,6 +63,11 @@ function App() {
             <Route
               path="/about"
               element={<StyledAbout className="about-page" />}
+            ></Route>
+            {/* adjust this... */}
+            <Route
+              path="/profile"
+              element={<StyledUserProfile className="profile-page" />}
             ></Route>
           </Routes>
           <StyledContentBar className="content-bar" />
