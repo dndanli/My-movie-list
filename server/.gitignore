@@ -1,5 +1,6 @@
 # sensitive data
 .env
+.pem
 
 # dependencies
 /node_modules
