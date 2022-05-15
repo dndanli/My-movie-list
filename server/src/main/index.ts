@@ -1,5 +1,7 @@
 import express from "express";
 import cors from "cors";
+import passport from "passport";
+require("../configs/passport-config")(passport);
 
 // --- api v1 routes
 import popularRoutes from "../api/v1/routes/popular";
@@ -18,7 +20,11 @@ const app = express();
 const PORT = process.env.PORT || 8000;
 
 app.use(cors());
+app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
+
+// initialize passport object on every request.
+app.use(passport.initialize());
 
 app.use("/popular", popularRoutes);
 app.use("/trending", trendingRoutes);
