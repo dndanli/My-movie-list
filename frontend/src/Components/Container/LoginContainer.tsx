@@ -1,6 +1,9 @@
 import { Link } from "react-router-dom";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { useState } from "react";
+import { useForm } from "react-hook-form";
+import axios from "axios";
+import { validateInput } from "../../Helpers/formHelpers";
 
 type ContainerProps = {
   className: string;
@@ -8,6 +11,11 @@ type ContainerProps = {
 
 const Container = ({ className }: ContainerProps) => {
   const [inputType, setInputType] = useState<string>("password");
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
   const toggleInput = () => {
     if (inputType === "password") {
       setInputType("text");
@@ -22,20 +30,42 @@ const Container = ({ className }: ContainerProps) => {
         <h2>Log in</h2>
         <h3>Hey, welcome back.</h3>
       </div>
-      <form className="form-container">
-        <label htmlFor="email">Email</label>
+      <form
+        className="form-container"
+        onSubmit={handleSubmit((data) => {
+          if (
+            validateInput(data.username) === true &&
+            validateInput(data.password) === true
+          ) {
+            console.log("sending data");
+            console.log(data);
+            axios.post("http://localhost:8000/user/login", {
+              data: {
+                username: data?.username,
+                password: data?.password,
+              },
+            });
+          } else {
+            // console.log("")
+          }
+        })}
+      >
+        <label htmlFor="username">Username</label>
         <input
-          name="email"
+          {...register("username", { required: true })}
+          name="username"
           className="text-input"
           type="text"
-          placeholder="Email"
+          placeholder="Username"
         />
+        <p>{errors.username?.message}</p>
 
         <label htmlFor={`${inputType}`} className="input-label">
           Password
         </label>
         <div className="password-input-wrapper">
           <input
+            {...register("password", { required: true })}
             type={`${inputType}`}
             name="password"
             className="password-input"
@@ -49,6 +79,8 @@ const Container = ({ className }: ContainerProps) => {
             )}
           </div>
         </div>
+        <p>{errors.username?.message}</p>
+
         <div className="wrapper right">
           <h4>
             <Link to="/recover">
