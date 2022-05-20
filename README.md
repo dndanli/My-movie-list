@@ -1,4 +1,4 @@
-# Mobile View Prototype
+# This project is currently in developement.
 
 ### A web platform where you can keep track of your favorite movies and TV shows.
 
