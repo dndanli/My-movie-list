@@ -1,6 +1,6 @@
 # This project is currently in developement.
 
-### A web platform where you can keep track of your favorite movies and TV shows.
+### A web platform where users can review and keep track of their favorite movies and TV shows.
 
 ![mvl1](https://user-images.githubusercontent.com/73452073/169615924-7e9fe402-e85d-49f2-9dfb-da09a5712241.png)
 ![mvl2](https://user-images.githubusercontent.com/73452073/169615927-8d690574-fa0c-4930-84f0-0976664a597b.png)
