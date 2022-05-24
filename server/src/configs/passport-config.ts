@@ -9,8 +9,16 @@ console.log(PATH_TO_KEY);
 
 const PUB_KEY = fs.readFileSync(PATH_TO_KEY, "utf8");
 
+const cookieExtractor = (req: any) => {
+  let jwt = null;
+  if (req && req.cookies) {
+    jwt = req.cookies["token"];
+  }
+  return jwt;
+};
+
 const options = {
-  jwtFromRequest: PassportJwt.ExtractJwt.fromAuthHeaderAsBearerToken(),
+  jwtFromRequest: cookieExtractor,
   secretOrKey: PUB_KEY,
   algorithms: ["RS256"],
 };
@@ -19,7 +27,7 @@ const userService = new UserService();
 const userController = new UserController(userService);
 
 const strategy = new PassportJwt.Strategy(options, (payload, done) => {
-  userService
+  userController
     .findUserByUsername(payload.sub)
     .then((user) => {
       if (user) {
