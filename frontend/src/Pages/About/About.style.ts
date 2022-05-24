@@ -28,7 +28,7 @@ const StyledAbout = styled(About)`
     .icon {
       font-size: 1.5rem;
       margin-right: 1rem;
-      background-color: rgba(255, 140, 50);
+      background-color:#f093ff;
       color: #fafafa;
       padding-block: 0.3rem;
       padding-inline: 0.6rem;
