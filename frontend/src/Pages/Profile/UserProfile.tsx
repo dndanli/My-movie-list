@@ -1,13 +1,12 @@
-import { v4 as uuidv4 } from "uuid";
-
 type UserProfileProps = {
   className: string;
 };
 
 const UserProfile = ({ className }: UserProfileProps) => {
-  //   });
 
-  return <div className={className}></div>;
+  return <div className={className}>
+    protected profile
+    </div>;
 };
 
 export default UserProfile;
