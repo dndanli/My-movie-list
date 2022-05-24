@@ -11,10 +11,12 @@ import StyledSignUp from "./Pages/SignUp/SignUp.style";
 import StyledLogin from "./Pages/Login/Login.style";
 import StyledSidebar from "./Components/Sidebar/Sidebar.style";
 import StyledContentBar from "./Components/ContentBar/ContentBar.style";
+import axios from "axios";
 
 import StyledAbout from "./Pages/About/About.style";
 import StyledUserProfile from "./Pages/Profile/UserProfile.style";
 
+axios.defaults.withCredentials = true;
 function App() {
   return (
     <div className="App">
