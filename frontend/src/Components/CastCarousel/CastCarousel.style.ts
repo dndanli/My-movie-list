@@ -14,15 +14,15 @@ const StyledCastCarousel = styled(CastCarousel)`
   }
 
   .heading {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(51, 51, 51, 0.9);
     position: absolute;
     top: 1%;
-    font-size: 1rem;
+    font-size: 1.7rem;
     font-weight: 500;
   }
 
   .embla__button {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgba(51, 51, 51, 0.9);
     position: absolute;
     transition: 500ms ease-in-out;
     width: 2rem;
@@ -49,13 +49,6 @@ const StyledCastCarousel = styled(CastCarousel)`
 
   .next {
     right: 0;
-  }
-
-  .heading {
-    color: rgba(255, 255, 255, 0.9);
-    position: absolute;
-    top: 1%;
-    font-size: 1.7rem;
   }
 
   .card {

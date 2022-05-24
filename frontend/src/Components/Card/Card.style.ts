@@ -10,7 +10,7 @@ const StyledCard = styled(Card)`
     width: 10.3rem;
     min-height: 21rem;
     border-radius: 11px;
-    background-color: rgb(34, 34, 34);
+    background-color:#ffffff;
     position: relative;
     padding-bottom: 0.5rem;
   }
@@ -43,9 +43,9 @@ const StyledCard = styled(Card)`
     text-align: start;
     padding-left: 1rem;
     font-size: 1rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
     p {
+      color: rgba(51, 51, 51, 0.9);
+      font-weight: 700;
       text-overflow: ellipsis;
       overflow: hidden;
       white-space: nowrap;
@@ -60,9 +60,8 @@ const StyledCard = styled(Card)`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
-    background-color: #ff7700;
-    background-image: linear-gradient(336deg, #ff7700 0%, #eaa15c 100%);
-    color: rgba(255, 255, 255, 1);
+    background-color: #ffffff;
+    color: rgba(51, 51, 51, 0.9);
     position: absolute;
     bottom: 6.8rem;
     left: 1rem;
@@ -74,12 +73,12 @@ const StyledCard = styled(Card)`
 
   .date {
     padding-inline: 1rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(51, 51, 51, 0.9);
   }
 
   .icon {
     font-size: 9rem;
-    color: rgba(255, 255, 255, 1);
+    color: rgba(51, 51, 51, 0.2);
     padding-bottom: 6.5rem;
   }
 

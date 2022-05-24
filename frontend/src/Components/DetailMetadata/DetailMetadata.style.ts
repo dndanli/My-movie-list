@@ -7,8 +7,8 @@ const StyledDetailMetadata = styled(DetailMetadata)`
   align-items: center;
   padding: 0.5rem;
   margin-top: 1rem;
-  background-color: #ff7700;
-  background-image: linear-gradient(336deg, #ff7700 0%, #eaa15c 100%);
+  background-color: #f093fb;
+  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
   border-radius: 8px;
   width: 100%;
   max-height: 2rem;

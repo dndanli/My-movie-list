@@ -9,7 +9,8 @@ export const Wrapper = styled.div`
     font-size: 1.2rem;
     font-family: "Inter", sans-serif;
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(51, 51, 51, 0.9);
+
     li {
       a {
         cursor: pointer;
@@ -24,13 +25,14 @@ export const Wrapper = styled.div`
     display: flex;
     justify-content: center;
     align-items: center;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(51, 51, 51, 0.7);
+
     cursor: pointer;
   }
 
   .paginate-active {
     color: white;
-    background-color: rgb(255, 140, 50);
+    background-color: #f093fb;
     padding-inline: 1rem;
     text-align: center;
     border-radius: 2px;

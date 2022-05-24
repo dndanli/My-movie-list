@@ -10,7 +10,7 @@ const StyledInfoBlock = styled(InfoBlock)`
   .title {
     font-weight: 700;
     font-size: 1.2rem;
-    color: rgb(255, 140, 50);
+    color: #f093fb;
   }
 
   .value {

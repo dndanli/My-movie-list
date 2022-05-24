@@ -3,11 +3,10 @@ import SearchBar from "./SearchBar";
 
 const StyledSearchBar = styled(SearchBar)`
   width: 100%;
-  background-color: white;
   min-height: 2rem;
   padding-block: 0.5rem;
   border-radius: 15px;
-  background-color: rgba(255, 255, 255, 1);
+  background-color:#ffffff;
   display: flex;
   align-items: center;
   box-shadow: 0 0 0 0.5px #ccc;

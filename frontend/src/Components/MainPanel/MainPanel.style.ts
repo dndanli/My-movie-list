@@ -14,6 +14,7 @@ const StyledMainPanel = styled(MainPanel)`
     overflow: hidden;
     border-radius: 1rem;
   }
+
   .play-icon {
     font-size: 1.3rem;
     margin-right: 0.5rem;
@@ -25,8 +26,7 @@ const StyledMainPanel = styled(MainPanel)`
     font-weight: 500;
     position: absolute;
     color: rgb(255, 255, 255);
-    background-color: #ff7700;
-    background-image: linear-gradient(336deg, #ff7700 0%, #eaa15c 100%);
+    background-color:#f093fb;
     padding-block: 0.8rem;
     padding-inline: 1rem;
     border-radius: 1rem;
@@ -75,7 +75,7 @@ const StyledMainPanel = styled(MainPanel)`
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    z-index:2;
+    z-index: 2;
   }
 
   .panel-btn {
@@ -103,8 +103,7 @@ const StyledMainPanel = styled(MainPanel)`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
-    background-color: #ff7700;
-    background-image: linear-gradient(336deg, #ff7700 0%, #eaa15c 100%);
+    background-color: #f093fb;
     color: rgba(255, 255, 255, 1);
     position: absolute;
     top: 3%;

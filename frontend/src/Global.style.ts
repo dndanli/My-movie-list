@@ -6,7 +6,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color:rgb(22, 22, 22);  
+    background-color:rgb(245, 245, 245);  
   }
  
   ::-webkit-scrollbar {
@@ -14,11 +14,11 @@ export const GlobalStyle = createGlobalStyle`
       width: 0.5rem;
     }
   ::-webkit-scrollbar-track {
-    background-color: rgba(34, 34, 34);
+    background-color: #ffffff;
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: rgba(255, 255, 255, 0.7);
+    background-color: #f093fb;
     border-radius: 10px;
   }
 `;
@@ -65,11 +65,11 @@ export const Wrapper = styled.div`
 
   /*1700px*/
   @media only screen and (min-width: 106.25em) {
-    .sidebar{
-      left:3%;
+    .sidebar {
+      left: 3%;
     }
-    .content-bar{
-      right:2%;
+    .content-bar {
+      right: 2%;
     }
   }
 `;

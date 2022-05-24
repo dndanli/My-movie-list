@@ -5,15 +5,19 @@ const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
   font-family: "Poppins", sans-serif;
   border-right: 0.5px solid rgba(255, 255, 255, 0.2);
+  background-color: #ffffff;
   position: fixed;
   min-height: 100vh;
   top: 0;
   left: 1%;
+  margin-top: 1rem;
+  border-radius: 1.5rem;
+  padding-inline: 0.5rem;
   .logo {
     margin-right: auto;
     padding-left: 2rem;
     a {
-      color: rgb(255, 140, 50);
+      color: #f093fb;
       text-decoration: none;
     }
   }
@@ -23,7 +27,7 @@ const StyledSidebar = styled(Siderbar)`
   }
 
   .header-2 {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(51, 51, 51, 1);
     padding-inline: 2rem;
   }
 
@@ -43,11 +47,17 @@ const StyledSidebar = styled(Siderbar)`
     align-items: center;
     margin-bottom: 1rem;
     &:hover {
-      background-color: rgb(34, 34, 34);
+      background-color: #eeeeee;
+      border-radius: 1rem;
     }
 
+    &:hover {
+      .link-icon {
+        color:#f093fb;
+      }
+    }
     &:active {
-      background-color: rgb(40, 40, 40);
+      background-color: #dddddd;
     }
     padding-left: 1rem;
     padding-block: 1rem;
@@ -57,12 +67,12 @@ const StyledSidebar = styled(Siderbar)`
   .link-icon {
     font-size: 1.4rem;
     margin-right: 1rem;
-    color: rgb(255, 140, 50);
+    color: #a7a6ac;
   }
 
   .link-name {
     font-size: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgb(51, 51, 51);
   }
 `;
 

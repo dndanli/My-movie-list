@@ -1,4 +1,4 @@
-import { GoPerson } from "react-icons/go";
+import {BsFillPersonFill} from "react-icons/bs";
 import { Link } from "react-router-dom";
 
 type CastCardProps = {
@@ -25,7 +25,7 @@ const CastCard = ({ className, person }: CastCardProps) => {
               />
             </div>
           ) : (
-            <GoPerson className="person-icon" />
+            <BsFillPersonFill className="person-icon" />
           )}
           <div className="name-wrapper">
             <h3 className="name">{person.name}</h3>

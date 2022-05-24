@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { GoPerson } from "react-icons/go";
+import {BsFillPersonFill} from "react-icons/bs";
 
 type CastListItemProps = {
   className: string;
@@ -27,7 +27,7 @@ const CastListItem = ({
               alt={_name}
             />
           ) : (
-            <GoPerson className="person-icon" />
+            <BsFillPersonFill className="person-icon" />
           )}
           <div className="name-wrapper">
           <h4 className="name">{_name}</h4>

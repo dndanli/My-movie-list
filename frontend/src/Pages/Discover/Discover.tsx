@@ -64,7 +64,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[0].total_results
           }
-          color={currVisible === "movie" ? " #ff7700" : "rgb(187, 187, 187)"}
+          color={currVisible === "movie" ? " #f093fb" : "rgb(187, 187, 187)"}
           clickHandler={() => {
             setCurrVisible("movie");
           }}
@@ -77,7 +77,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[1].total_results
           }
-          color={currVisible === "tv" ? " #ff7700" : " rgb(187, 187, 187)"}
+          color={currVisible === "tv" ? " #f093fb" : " rgb(187, 187, 187)"}
           clickHandler={() => {
             setCurrVisible("tv");
           }}
@@ -90,7 +90,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[2].total_results
           }
-          color={currVisible === "people" ? "#ff7700" : "rgb(187, 187, 187)"}
+          color={currVisible === "people" ? "#f093fb" : "rgb(187, 187, 187)"}
           clickHandler={() => {
             setCurrVisible("people");
           }}

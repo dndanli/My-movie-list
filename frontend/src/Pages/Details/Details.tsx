@@ -140,7 +140,7 @@ const Details = ({ className }: DetailsProps) => {
               textDecoration: "underline",
             }}
           >
-            <p>see all reviews</p>
+            <p style={{ color: "rgba(51,51,51)", textDecoration:"underline", marginTop:"1rem"}}>See all reviews</p>
           </Link>
         </div>
       ) : null}

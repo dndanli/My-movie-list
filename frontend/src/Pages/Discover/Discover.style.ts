@@ -4,7 +4,6 @@ import Discover from "./Discover";
 const StyledDiscover = styled(Discover)`
   padding-block: 1rem;
   padding-inline: 1rem;
-  color: red;
   font-family: "Inter", sans-serif;
   min-height: 100vh;
 
@@ -30,7 +29,7 @@ const StyledDiscover = styled(Discover)`
 
   .message {
     font-size: 1.2rem;
-    color: rgba(255, 255, 255, 0.7);
+    color: rgba(51, 51, 51, 0.9);
     text-align: center;
   }
 

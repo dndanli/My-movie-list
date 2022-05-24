@@ -3,32 +3,43 @@ import styled from "styled-components";
 import Container from "./SignUpContainer";
 const StyledContainer = styled(Container)`
   font-family: "Poppins", sans-serif;
-  background-color: rgb(34, 34, 34);
+  background-color:#ffffff;
+  border: 1px solid #ccc;
   padding-inline: 1rem;
   padding-block: 1rem;
   border-radius: 0.8rem;
   max-width: 27rem;
+
+  .error-message {
+    margin-top: 0.5rem;
+    color: red;
+  }
 
   .wrapper {
     text-align: center;
     h2 {
       font-size: 2rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
+      color:rgba(51,51,51,1)
     }
     h3 {
       font-size: 1.1rem;
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.9);
+      color:rgba(51,51,51,1);
       padding-bottom: 1rem;
     }
   }
 
+  .right {
+    text-align: end;
+    margin-top: 1rem;
+  }
+
   h4 {
-    color: rgba(255, 255, 255, 0.9);
+    color:rgba(51,51,51,1);
     font-weight: 400;
     a {
-      color: rgb(255, 140, 50);
+      color:#f093fb;
     }
   }
 
@@ -63,11 +74,11 @@ const StyledContainer = styled(Container)`
     padding-block: 0.6rem;
     margin-block: 2rem;
     background-color: rgba(43, 43, 43, 1);
-    color: rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
     font-size: 1.2rem;
     border-radius: 10px;
     cursor: pointer;
-    transition: 300ms ease;
+    transition: 100ms ease;
     &:hover {
       background-color: rgba(43, 43, 43, 0.7);
     }
@@ -80,7 +91,7 @@ const StyledContainer = styled(Container)`
     font-size: 1.2rem;
     font-weight: 400;
     margin-block: 0.7rem;
-    color:rgba(255, 255, 255,1);
+    color:rgba(51,51,51,1);
   }
 
   input {
@@ -98,7 +109,7 @@ const StyledContainer = styled(Container)`
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    background-color:rgba(255, 255, 255,1);
+    background-color: rgba(255, 255, 255, 1);
   }
 
   .view {

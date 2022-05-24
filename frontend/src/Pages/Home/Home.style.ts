@@ -102,9 +102,10 @@ const StyledHome = styled(Home)`
 
   /* 1024px */
   @media only screen and (min-width: 64em) {
-    width: 70%;
+    width: 72%;
     padding-top: 1.3rem;
-    margin-left: 11rem;
+    padding-right: 0;
+    margin-left: 10rem;
     .main-panel {
       .watch-btn {
         font-size: 1.2em;
@@ -152,29 +153,27 @@ const StyledHome = styled(Home)`
     }
 
     /*1515px*/
-    @media only screen and (min-width:94.688em){
+    @media only screen and (min-width: 94.688em) {
       width: 60%;
     }
 
     /* 1575px */
     @media only screen and (min-width: 98em) {
-      padding-inline:7rem;
+      padding-inline: 7rem;
       .search-wrapper {
         display: none;
       }
     }
 
     /*1700px*/
-    @media only screen and (min-width:106.25em){
-      padding-inline:8rem;
-
+    @media only screen and (min-width: 106.25em) {
+      padding-inline: 8rem;
     }
 
     /*1700px*/
-    @media only screen and (min-width:112.5em){
-      padding-inline:10rem;
+    @media only screen and (min-width: 112.5em) {
+      padding-inline: 10rem;
     }
-
   }
 `;
 export default StyledHome;

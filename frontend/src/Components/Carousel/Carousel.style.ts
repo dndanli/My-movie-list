@@ -13,13 +13,13 @@ const StyledCarousel = styled(Carousel)`
     display: flex;
   }
   .heading {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(51, 51, 51);
     position: absolute;
     top: 1%;
     font-size: 1.8rem;
   }
   .embla__button {
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(51, 51, 51);
     position: absolute;
     transition: 500ms ease-in-out;
     width: 2rem;

@@ -43,7 +43,7 @@ const Card = ({
 
           <div className="text-content">
             <div className="title">
-              <p>{title}</p>
+              <p>{title.toUpperCase()}</p>
             </div>
 
             <div className="date">

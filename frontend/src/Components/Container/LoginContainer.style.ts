@@ -3,7 +3,8 @@ import styled from "styled-components";
 import LoginContainer from "./LoginContainer";
 const StyledLoginContainer = styled(LoginContainer)`
   font-family: "Poppins", sans-serif;
-  background-color: rgb(34, 34, 34);
+  background-color:#ffffff;
+  border: 1px solid #ccc;
   padding-inline: 1rem;
   padding-block: 1rem;
   border-radius: 0.8rem;
@@ -19,12 +20,12 @@ const StyledLoginContainer = styled(LoginContainer)`
     h2 {
       font-size: 2rem;
       font-weight: 600;
-      color: rgba(255, 255, 255, 0.9);
+      color:rgba(51,51,51,1)
     }
     h3 {
       font-size: 1.1rem;
       font-weight: 400;
-      color: rgba(255, 255, 255, 0.9);
+      color:rgba(51,51,51,1);
       padding-bottom: 1rem;
     }
   }
@@ -35,10 +36,10 @@ const StyledLoginContainer = styled(LoginContainer)`
   }
 
   h4 {
-    color: rgba(255, 255, 255, 0.9);
+    color:rgba(51,51,51,1);
     font-weight: 400;
     a {
-      color: rgb(255, 140, 50);
+      color:#f093fb;
     }
   }
 
@@ -73,7 +74,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     padding-block: 0.6rem;
     margin-block: 2rem;
     background-color: rgba(43, 43, 43, 1);
-    color: rgb(255, 255, 255);
+    color:rgb(255, 255, 255);
     font-size: 1.2rem;
     border-radius: 10px;
     cursor: pointer;
@@ -90,7 +91,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     font-size: 1.2rem;
     font-weight: 400;
     margin-block: 0.7rem;
-    color: rgba(255, 255, 255, 1);
+    color:rgba(51,51,51,1);
   }
 
   input {

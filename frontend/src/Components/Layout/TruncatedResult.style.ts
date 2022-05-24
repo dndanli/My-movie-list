@@ -14,7 +14,7 @@ const StyledTruncatedResult = styled(TruncatedResult)`
     margin-bottom: 1.5rem;
   }
 
-  .truncate-wrapper{
+  .truncate-wrapper {
     display: flex;
     justify-content: flex-start;
     width: 100%;
@@ -22,11 +22,11 @@ const StyledTruncatedResult = styled(TruncatedResult)`
     padding-bottom: 2rem;
   }
 
-  .truncate-btn{
+  .truncate-btn {
     display: flex;
     justify-content: center;
     align-items: center;
-    color:rgb(255, 140, 50);
+    color: #f093db;
     cursor: pointer;
   }
 `;

@@ -3,7 +3,7 @@ import Details from "./Details";
 
 const StyledDetails = styled(Details)`
   font-family: "Poppins", sans-serif;
-  margin-top: 1rem;
+  margin-top: 2.5rem;
   margin-bottom: 2rem;
   padding-inline: 1rem;
 
@@ -17,7 +17,10 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: rgb(51, 51, 51);
+  }
+  .overview-title-header{
+    font-size:2rem;
   }
 
   #status {
@@ -48,14 +51,14 @@ const StyledDetails = styled(Details)`
     margin-bottom: 2rem;
     font-size: 1rem;
     a {
-      color: rgb(219, 48, 86);
+      color: #f093fb;
       text-decoration: none;
     }
   }
   .cast-page-link {
     display: flex;
     align-items: center;
-    color: rgb(255, 140, 50);
+    color: rgba(51, 51, 51, 0.9);
   }
   .arrow-icon {
     margin-left: 0.5rem;
@@ -64,21 +67,23 @@ const StyledDetails = styled(Details)`
   .trailer-player {
     margin-block: 2rem;
   }
+
   .divider {
     margin-top: 1rem;
     border: 0.5px solid rgba(255, 255, 255, 0.1);
   }
+
   .overview-background-fill {
     height: 190px;
     width: 100%;
-
     background-color: rgba(255, 255, 255, 0.8);
   }
+
   .info-text {
     font-family: "Inter", sans-serif;
     font-weight: 400;
     font-size: 1.3rem;
-    color: orange;
+    color: rgb(51,51,51);
     margin-top: 0.5rem;
   }
 

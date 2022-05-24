@@ -2,7 +2,7 @@ import styled from "styled-components";
 import ReviewSection from "./ReviewPanel";
 
 const StyledReviewPanel = styled(ReviewSection)`
-  background-color: rgb(34, 34, 34);
+  background-color: rgb(230, 230, 230);
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
   padding: 1rem;
@@ -15,7 +15,7 @@ const StyledReviewPanel = styled(ReviewSection)`
     justify-content: center;
     align-items: center;
     max-height: 1.5rem;
-    background-color: rgba(255, 140, 50, 0.9);
+    background-color: #f093fb;
     border-radius: 4px;
     padding-inline: 0.5rem;
     padding-block: 0.2rem;
@@ -29,7 +29,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .read-all {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(51, 51, 51, 0.8);
     text-decoration: underline;
   }
 
@@ -45,9 +45,11 @@ const StyledReviewPanel = styled(ReviewSection)`
     flex-direction: column;
     justify-content: center;
   }
+
   .profile-img-wrapper {
     width: 4rem;
   }
+
   .user {
     width: 100%;
     height: 4rem;
@@ -56,7 +58,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .user-icon {
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(51, 51, 51, 0.8);
     width: 100%;
     height: 4rem;
     object-fit: cover;
@@ -69,7 +71,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   .content {
     padding-bottom: 0.5rem;
     min-height: 8rem;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(51, 51, 51, 0.9);
 
     p {
       display: -webkit-box;
@@ -82,17 +84,19 @@ const StyledReviewPanel = styled(ReviewSection)`
 
   .author-name {
     font-weight: 500;
-    color: rgba(255, 255, 255, 0.8);
+    font-size:1.2rem;
+    color: rgba(51, 51, 51);
   }
 
   .author-username {
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.8);
+    color: rgba(51, 51, 51);
   }
 
   .posted {
     margin-top: 1rem;
-    color: rgba(255, 255, 255, 0.8);
+
+    color: rgba(51, 51, 51, 0.8);
   }
 
   .tmdb-user {

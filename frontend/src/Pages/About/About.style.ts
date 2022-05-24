@@ -5,7 +5,7 @@ const StyledAbout = styled(About)`
   padding-block: 1rem;
   padding-inline: 1rem;
   font-family: "Poppins", sans-serif;
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(51, 51, 51, 0.9);
   display: flex;
   flex-direction: column;
   .header-1 {
@@ -29,6 +29,7 @@ const StyledAbout = styled(About)`
       font-size: 1.5rem;
       margin-right: 1rem;
       background-color: rgba(255, 140, 50);
+      color: #fafafa;
       padding-block: 0.3rem;
       padding-inline: 0.6rem;
       height: 2rem;
