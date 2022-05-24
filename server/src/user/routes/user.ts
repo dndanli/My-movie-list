@@ -1,9 +1,8 @@
-import express, { response } from "express";
+import express from "express";
 import passport from "passport";
 import { UserController } from "../controllers/userController";
 import { UserService } from "../services/userService";
 import { issueJwt, verifyPassword } from "../utils/utils";
-
 const router = express.Router();
 
 // route starts with user
@@ -16,25 +15,21 @@ router.post("/register", async (request, reponse) => {
     email: request.body.data.email,
     password: request.body.data.password,
   };
-  console.log(newUserObj);
   const transaction = await userController.registerUser(newUserObj);
-  console.log(`transaction: ${transaction}`);
   if (transaction !== undefined) {
-    const jwt = issueJwt(transaction?.rows[0].username);
+    const tokenObject = issueJwt(transaction?.rows[0].username);
+
     reponse.json({
       success: true,
       user: transaction?.rows[0].username,
-      token: jwt.token,
-      expiresIn: jwt.expires,
+      token: tokenObject.token,
+      expiresIn: tokenObject.expires,
     });
   }
-  // add response in case registration fails.
-  reponse.end();
+  //TODO:Todo: add response in case registration fails.
 });
 
 router.post("/login", async (request, response) => {
-  // add validation
-
   // find users by username in database
   const clientUserCredentials = {
     username: request.body.data.username,
@@ -58,11 +53,19 @@ router.post("/login", async (request, response) => {
 
       if (match) {
         const tokenObject = issueJwt(clientUserCredentials);
+
+        //TODO: set cookie that will expire in 1 day.
+        response.cookie("token", tokenObject.token, {
+          maxAge: 24 * 60 * 60,
+          httpOnly: true,
+        });
+
         response.status(200).json({
           sucess: true,
-          token: tokenObject,
-          expiresIn: tokenObject.expires,
+          token: tokenObject.token,
         });
+
+        response.end();
       } else {
         response.status(401).json({
           sucess: false,
@@ -79,7 +82,7 @@ router.post("/login", async (request, response) => {
 });
 
 router.get(
-  "/protected",
+  "/profile",
   passport.authenticate("jwt", { session: false }),
   async (request, response) => {
     response.status(200).json({ sucess: true, message: "authorized" });
