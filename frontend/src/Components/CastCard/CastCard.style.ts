@@ -26,7 +26,7 @@ const StyledCastCard = styled(CastCard)`
   }
   .person-icon {
     color: rgba(51, 51, 51, 0.3);
-    margin-top: 1.5rem;
+    margin-top: 1rem;
     min-height: 192px;
     min-width: 128px;
   }
