@@ -3,7 +3,7 @@ import axios from "axios";
 export async function getPopularMedia(mediaType: string) {
   try {
     const response = await axios.get(
-      `http://localhost:8000/popular/${mediaType}`
+      `/popular/${mediaType}`
     );
     return response.data;
   } catch (err) {
@@ -14,7 +14,7 @@ export async function getPopularMedia(mediaType: string) {
 export async function getTrending(mediaType: string) {
   try {
     const response = await axios.get(
-      `http://localhost:8000/trending/${mediaType}`
+      `/trending/${mediaType}`
     );
     return response.data;
   } catch (err) {
@@ -25,7 +25,7 @@ export async function getTrending(mediaType: string) {
 export async function getTrailer() {
   try {
     const response = await axios.get(
-      `http://localhost:8000/getIdForTrailer/trailer`
+      `/getIdForTrailer/trailer`
     );
     return response.data;
   } catch (err) {
@@ -35,7 +35,7 @@ export async function getTrailer() {
 
 export function postIdForTrailer(id: number) {
   axios
-    .post(`http://localhost:8000/getIdForTrailer`, { id: id })
+    .post(`/getIdForTrailer`, { id: id })
     .catch((e) => {
       console.error(e);
     });
@@ -43,7 +43,7 @@ export function postIdForTrailer(id: number) {
 
 export function postMovieIdToDetail(movieId: number) {
   axios
-    .post(`http://localhost:8000/detail/getMovieId`, { id: movieId })
+    .post(`/detail/getMovieId`, { id: movieId })
     .catch((e) => {
       console.error(e);
     });
@@ -52,7 +52,7 @@ export function postMovieIdToDetail(movieId: number) {
 export async function getMediaDetails(mediaType: any, movieId: any) {
   try {
     const response = await axios.get(
-      `http://localhost:8000/detail/getDetails/${mediaType}/${movieId}`
+      `/detail/getDetails/${mediaType}/${movieId}`
     );
     return response.data;
   } catch (err) {
@@ -62,7 +62,7 @@ export async function getMediaDetails(mediaType: any, movieId: any) {
 
 export async function getUpcoming() {
   try {
-    const response = await axios.get(`http://localhost:8000/upcoming`);
+    const response = await axios.get(`/upcoming`);
     return response.data;
   } catch (err) {
     console.error(err);
@@ -72,7 +72,7 @@ export async function getUpcoming() {
 export async function getSearchQueryResponse(clientQuery: any) {
   try {
     const response = await axios.post(
-      `http://localhost:8000/search/${clientQuery}`
+      `/search/${clientQuery}`
     );
     return response.data;
   } catch (err) {
@@ -87,7 +87,7 @@ export async function getSearchQueryPageResponse(
 ) {
   try {
     const response = await axios.post(
-      `http://localhost:8000/search/${pageNumber}/${clientQuery}/${queryType}`
+      `/search/${pageNumber}/${clientQuery}/${queryType}`
     );
     return response.data;
   } catch (err) {
@@ -97,7 +97,7 @@ export async function getSearchQueryPageResponse(
 export async function getPersonResponse(personId: any) {
   try {
     const response = await axios.get(
-      `http://localhost:8000/person/${personId}`
+      `/person/${personId}`
     );
     return response.data;
   } catch (err) {
@@ -107,7 +107,7 @@ export async function getPersonResponse(personId: any) {
 
 export async function getTopRatedMovies() {
   try {
-    const response = await axios.get(`http://localhost:8000/topRated`);
+    const response = await axios.get(`/topRated`);
     return response.data;
   } catch (err) {
     console.error(err);
