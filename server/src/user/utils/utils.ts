@@ -40,7 +40,7 @@ export function issueJwt(user: any) {
   });
 
   return {
-    token: "Bearer " + signedToken,
+    token: signedToken,
     expires: expiration,
   };
 }
