@@ -23,7 +23,6 @@ class UserService {
 
   async findPasswordByUsername(username: string) {
     const client = await pool.connect();
-    console.log(`finding password for${username}`);
     try {
       const textQuery = `
           SELECT password FROM users WHERE username = $1
