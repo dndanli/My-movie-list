@@ -11,6 +11,8 @@ type ContainerProps = {
 
 const Container = ({ className }: ContainerProps) => {
   const [inputType, setInputType] = useState<string>("password");
+  const [error, setError] = useState(null);
+
   const {
     register,
     handleSubmit,
@@ -37,23 +39,29 @@ const Container = ({ className }: ContainerProps) => {
             validateInput(data.username) === true &&
             validateInput(data.password) === true
           ) {
-            axios.post("http://localhost:8000/user/login", {
-              data: {
-                username: data?.username,
-                password: data?.password,
-              },
-            });
+            axios
+              .post("http://localhost:8000/user/login", {
+                data: {
+                  username: data?.username,
+                  password: data?.password,
+                },
+              })
+              .catch((err) => {
+                setError(err.response.data.message);
+              });
           }
         })}
       >
         <label htmlFor="username">Username</label>
+
         <input
           {...register("username", { required: true })}
           name="username"
-          className="text-input"
+          className={error ? "text-input input-error" : "text-input"}
           type="text"
           placeholder="Username"
         />
+        {error ? <p className="error-message">{error}</p> : null}
         <p>{errors.username?.message}</p>
 
         <label htmlFor={`${inputType}`} className="input-label">
