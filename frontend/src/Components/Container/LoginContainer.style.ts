@@ -9,6 +9,10 @@ const StyledLoginContainer = styled(LoginContainer)`
   border-radius: 0.8rem;
   max-width: 27rem;
 
+  .error-message {
+    margin-top: 0.5rem;
+    color: red;
+  }
 
   .wrapper {
     text-align: center;
@@ -25,7 +29,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     }
   }
 
-  .right{
+  .right {
     text-align: end;
     margin-top: 1rem;
   }
@@ -86,7 +90,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     font-size: 1.2rem;
     font-weight: 400;
     margin-block: 0.7rem;
-    color:rgba(255, 255, 255,1);
+    color: rgba(255, 255, 255, 1);
   }
 
   input {
@@ -104,7 +108,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     display: flex;
     align-items: center;
     border: 1px solid #ccc;
-    background-color:rgba(255, 255, 255,1);
+    background-color: rgba(255, 255, 255, 1);
   }
 
   .view {
