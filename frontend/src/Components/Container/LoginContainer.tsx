@@ -37,16 +37,12 @@ const Container = ({ className }: ContainerProps) => {
             validateInput(data.username) === true &&
             validateInput(data.password) === true
           ) {
-            console.log("sending data");
-            console.log(data);
             axios.post("http://localhost:8000/user/login", {
               data: {
                 username: data?.username,
                 password: data?.password,
               },
             });
-          } else {
-            // console.log("")
           }
         })}
       >
