@@ -22,7 +22,7 @@ const StyledNavbar = styled(Navbar)`
   .logo {
     margin-right: auto;
     a {
-      color: rgb(255, 140, 50);
+      color:#f093ff;
       text-decoration: none;
     }
   }
