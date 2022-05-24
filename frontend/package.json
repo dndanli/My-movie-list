@@ -2,6 +2,7 @@
   "name": "my-movie-list",
   "version": "0.1.0",
   "private": true,
+  "proxy": "http://localhost:8000",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.3",
     "@testing-library/react": "^12.1.4",
@@ -24,6 +25,7 @@
     "react-router-dom": "^6.3.0",
     "react-scripts": "5.0.0",
     "styled-components": "^5.3.5",
+    "universal-cookie": "^4.0.4",
     "uuid": "^8.3.2",
     "web-vitals": "^2.1.4"
   },
