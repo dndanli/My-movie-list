@@ -41,8 +41,10 @@ const Container = ({ className }: ContainerProps) => {
             validateInput(data.password) === true &&
             validateInput(data.email) === true
           ) {
+            axios.defaults.withCredentials = true;
             axios
               .post(`http://localhost:8000/user/register`, {
+                withCredentials: true,
                 data: {
                   username: data?.username,
                   email: data?.email,
@@ -54,7 +56,6 @@ const Container = ({ className }: ContainerProps) => {
               });
             console.log(data);
           } else {
-            // notify user here
             console.log("data invalid");
           }
         })}
