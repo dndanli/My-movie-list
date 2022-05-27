@@ -1,4 +1,4 @@
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import { HiEye, HiEyeOff } from "react-icons/hi";
 import { useState } from "react";
 import { useForm } from "react-hook-form";
@@ -10,6 +10,7 @@ type ContainerProps = {
 };
 
 const Container = ({ className }: ContainerProps) => {
+  let navigate = useNavigate();
   const [inputType, setInputType] = useState<string>("password");
   const [error, setError] = useState(null);
 
@@ -45,6 +46,12 @@ const Container = ({ className }: ContainerProps) => {
                   username: data?.username,
                   password: data?.password,
                 },
+              })
+              .then((res) => {
+                console.log(res.data.success);
+                if (res.data.sucess === true) {
+                  navigate("/profile");
+                }
               })
               .catch((err) => {
                 setError(err.response.data.message);
