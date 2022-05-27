@@ -5,7 +5,6 @@ import { UserService } from "../user/services/userService";
 import { UserController } from "../user/controllers/userController";
 
 const PATH_TO_KEY = path.join(__dirname, "../user/utils/rsa_pub.pem");
-console.log(PATH_TO_KEY);
 
 const PUB_KEY = fs.readFileSync(PATH_TO_KEY, "utf8");
 
@@ -31,7 +30,7 @@ const strategy = new PassportJwt.Strategy(options, (payload, done) => {
     .findUserByUsername(payload.sub)
     .then((user) => {
       if (user) {
-        return done(null, user);
+        return done(null, user.rows[0].username);
       } else {
         return done(null, false);
       }
