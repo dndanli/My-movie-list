@@ -46,6 +46,7 @@ const StyledSidebar = styled(Siderbar)`
     display: flex;
     align-items: center;
     margin-bottom: 1rem;
+    cursor: pointer;
     &:hover {
       background-color: #eeeeee;
       border-radius: 1rem;
@@ -53,7 +54,7 @@ const StyledSidebar = styled(Siderbar)`
 
     &:hover {
       .link-icon {
-        color:#f093fb;
+        color: #f093fb;
       }
     }
     &:active {
