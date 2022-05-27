@@ -53,10 +53,11 @@ router.post("/login", async (request, response) => {
 
       if (match) {
         const tokenObject = issueJwt(clientUserCredentials);
+        const timestamp: number = new Date().getTime();
+        const exp: number = timestamp + 60 * 60 * 24 * 1000 * 1;
 
-        //TODO: set cookie that will expire in 1 day.
         response.cookie("token", tokenObject.token, {
-          maxAge: 24 * 60 * 60,
+          maxAge: exp,
           httpOnly: true,
         });
 
@@ -64,8 +65,6 @@ router.post("/login", async (request, response) => {
           sucess: true,
           token: tokenObject.token,
         });
-
-        response.end();
       } else {
         response.status(401).json({
           sucess: false,
@@ -81,11 +80,29 @@ router.post("/login", async (request, response) => {
   response.end();
 });
 
+router.post("/logout", (req, res) => {
+  if (req && req.cookies) {
+    console.log("clearing");
+    res.clearCookie("token").status(200).json({
+      sucess: true,
+    });
+  } else {
+    res.status(401).json({
+      sucess: false,
+    });
+  }
+});
+
+// use faillureRedirect for now
 router.get(
   "/profile",
   passport.authenticate("jwt", { session: false }),
   async (request, response) => {
-    response.status(200).json({ sucess: true, message: "authorized" });
+    response.status(200).json({
+      sucess: true,
+      message: "authorized",
+      user: request.user,
+    });
   }
 );
 
