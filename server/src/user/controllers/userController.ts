@@ -15,6 +15,10 @@ class UserController {
     return this.userService.findUserByUsername(username);
   }
 
+  async findUserByEmail(email: string) {
+    return this.userService.findUserByEmail(email);
+  }
+
   async findPasswordByUsername(username: string) {
     return this.userService.findPasswordByUsername(username);
   }
