@@ -1,9 +1,9 @@
 import axios from "axios";
 
 export class UserService {
-  async getUserObject(onError: any) {
+  async getUserObject(authenticatedUrl: string, onError: any) {
     try {
-      const userObj = await axios.get("/user/profile");
+      const userObj = await axios.get(authenticatedUrl);
       return userObj;
     } catch (err) {
       onError("/login");
