@@ -1,6 +1,8 @@
+import axios from "axios";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import { GlobalStyle, Wrapper } from "./Global.style";
+
 import StyledNavbar from "./Components/Navbar/Navbar.style";
 import StyledHome from "./Pages/Home/Home.style";
 import StyledCast from "./Pages/Cast/Cast.style";
@@ -11,10 +13,9 @@ import StyledSignUp from "./Pages/SignUp/SignUp.style";
 import StyledLogin from "./Pages/Login/Login.style";
 import StyledSidebar from "./Components/Sidebar/Sidebar.style";
 import StyledContentBar from "./Components/ContentBar/ContentBar.style";
-import axios from "axios";
-
 import StyledAbout from "./Pages/About/About.style";
 import StyledUserProfile from "./Pages/Profile/UserProfile.style";
+import StyledLists from "./Pages/Lists/Lits.style";
 
 axios.defaults.withCredentials = true;
 function App() {
@@ -66,10 +67,16 @@ function App() {
               path="/about"
               element={<StyledAbout className="about-page" />}
             ></Route>
+
             {/* adjust this... */}
             <Route
               path="/profile"
               element={<StyledUserProfile className="profile-page" />}
+            ></Route>
+
+            <Route
+              path="/profile/lists"
+              element={<StyledLists className="user-lists" />}
             ></Route>
           </Routes>
           <StyledContentBar className="content-bar" />
