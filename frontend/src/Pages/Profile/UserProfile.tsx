@@ -15,14 +15,16 @@ const UserProfile = ({ className }: UserProfileProps) => {
   useEffect(() => {
     const userService = new UserService();
     const fetch = async () => {
-      const userObj: any = await userService.getUserObject(navigate);
+      const userObj: any = await userService.getUserObject(
+        "/user/profile",
+        navigate
+      );
       if (userObj.data.user !== undefined) {
         setUser(userObj?.data.user);
       } else {
         setUser("");
       }
     };
-
     fetch();
   }, [navigate]);
   return (
@@ -33,19 +35,19 @@ const UserProfile = ({ className }: UserProfileProps) => {
       <h1>Welcome {user} </h1>
 
       <div className="profile-content">
-          <StyledDashBoardCard
-            className="dashboard-card"
-            icon={<MdFeaturedPlayList />}
-            name="Lists"
-            link="user/profile"
-            />
+        <StyledDashBoardCard
+          className="dashboard-card"
+          icon={<MdFeaturedPlayList />}
+          name="Lists"
+          link="/profile/lists"
+        />
 
-          <StyledDashBoardCard
-            className="dashboard-card"
-            icon={<MdOutlineRateReview />}
-            name="Reviews"
-            link="/user/reviews"
-          />
+        <StyledDashBoardCard
+          className="dashboard-card"
+          icon={<MdOutlineRateReview />}
+          name="Reviews"
+          link="/profile/reviews"
+        />
       </div>
     </div>
   );
