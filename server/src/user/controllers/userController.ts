@@ -23,8 +23,8 @@ class UserController {
     return this.userService.findPasswordByUsername(username);
   }
 
-  async checkIfUserHasList(username:string){
-    return this.userService.checkIfUserHasList(username);
+  async checkIfUserHasList(username:string, listType:string){
+    return this.userService.checkIfUserHasList(username, listType);
   }
 
   async getUserId(username:string){
