@@ -132,32 +132,40 @@ router.post(
       notes: request.body.notes,
     };
 
-    const userHasList = await userController.checkIfUserHasList(listObj.user);
+    const userHasList = await userController.checkIfUserHasList(listObj.user, listObj.listStatus);
+    const userId = await userController.getUserId(listObj.user);
     if (!userHasList) {
-      const userId = await userController.getUserId(listObj.user);
       const successObj = await userController.createNewList({
         status: listObj.listStatus,
         userId: userId,
       });
 
-      if(successObj.sucess){
-          const listId = await userController.getListId(userId, listObj.listStatus);
-          console.log(listId);
-          
-          userController.createNewItem({
-            apiId:listObj.apiId,  
-            listId:listId,
-            mediaType: listObj.mediaType,
-            title: listObj.title,
-            rating:listObj.score,
-            notes: listObj.notes,
-          });
+      if (successObj.sucess) {
+        const listId = await userController.getListId(
+          userId,
+          listObj.listStatus
+        );
+        userController.createNewItem({
+          apiId: listObj.apiId,
+          listId: listId,
+          mediaType: listObj.mediaType,
+          title: listObj.title,
+          rating: listObj.score,
+          notes: listObj.notes,
+        });
       }
     } else {
-      console.log("list is already created");
+      const listId = await userController.getListId(userId, listObj.listStatus);
+      console.log("from else: ",listId);
+      userController.createNewItem({
+        apiId: listObj.apiId,
+        listId: listId,
+        mediaType: listObj.mediaType,
+        title: listObj.title,
+        rating: listObj.score,
+        notes: listObj.notes,
+      });
     }
-
-    console.log(listObj);
     response.status(200).json({
       sucess: true,
       message: "authorized",
