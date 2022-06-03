@@ -7,7 +7,7 @@ const StyledTruncatedResult = styled(TruncatedResult)`
     padding-block: 1.2rem;
     display: grid;
     grid-column-gap: 3%;
-    grid-row-gap: 1rem;
+    grid-row-gap: 2rem;
     grid-template-columns: repeat(5, 0fr);
     width: 90%;
     overflow-x: auto;
