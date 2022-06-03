@@ -48,6 +48,99 @@ class UserService {
     }
   }
 
+  async getUserId(username: string) {
+    const client = await pool.connect();
+    try {
+      const textQuery = `SELECT id FROM users WHERE username = $1`;
+      const res = await client.query(textQuery, [username]);
+      return res.rows[0].id;
+    } catch (error) {
+      console.log(`there was an error ${error}`);
+    } finally {
+      client.release();
+    }
+  }
+
+  async checkIfUserHasList(username: string) {
+    const client = await pool.connect();
+    try {
+      const userId = await this.getUserId(username);
+
+      const textQuery = `SELECT * FROM list WHERE user_Id = $1`;
+
+      const res = await client.query(textQuery, [userId]);
+      if (res.rows.length === 0) {
+        return false;
+      }
+      return true;
+    } catch (error) {
+      console.log(`there was an error ${error}`);
+    } finally {
+      client.release();
+    }
+  }
+  async createNewList(listDetails: any) {
+    const client = await pool.connect();
+    try {
+      await client.query("BEGIN");
+      const textQuery = `INSERT INTO list (list_type, user_id, private)
+      VALUES ($1, $2, $3)`;
+      await client.query(textQuery, [
+        listDetails.status,
+        listDetails.userId,
+        true,
+      ]);
+      await client.query("COMMIT");
+      return { sucess: true };
+    } catch (error) {
+      console.log(`there was an error ${error}`);
+      await client.query("ROLLBACK");
+      return { sucess: false };
+    } finally {
+      client.release();
+    }
+  }
+  async getListId(userId: number, listType:string) {
+    const client = await pool.connect();
+    try {
+      const textQuery = `SELECT id FROM list WHERE user_id = $1 AND list_type = $2`;
+      const res = await client.query(textQuery, [userId, listType]);
+      return res.rows[0].id;
+    } catch (error) {
+      console.log(`there was an error ${error}`);
+      await client.query("ROLLBACK");
+    } finally {
+      client.release();
+    }
+  }
+  async createNewItem(itemObj: any) {
+    const client = await pool.connect();
+    try {
+      await client.query("BEGIN");
+      const textQuery = `INSERT INTO item (api_id, list_id, media_type, title, rating, notes)
+      VALUES ($1, $2, $3, $4, $5, $6)`;
+
+      await client.query(textQuery, [
+        itemObj.apiId,
+        itemObj.listId,
+        itemObj.mediaType,
+        itemObj.title,
+        itemObj.rating,
+        itemObj.notes,
+      ]);
+      
+
+      await client.query("COMMIT");
+      return { sucess: true };
+    } catch (error) {
+      console.log(`there was an error ${error}`);
+      await client.query("ROLLBACK");
+      return { sucess: false };
+    } finally {
+      client.release();
+    }
+  }
+
   async registerUser(user: any) {
     const client = await pool.connect();
     try {
