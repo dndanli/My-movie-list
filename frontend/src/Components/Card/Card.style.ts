@@ -3,12 +3,12 @@ import Card from "./Card";
 
 const StyledCard = styled(Card)`
   font-family: "Poppins", sans-serif;
+  transition:500ms ease;
   .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 10.3rem;
-    min-height: 21rem;
     border-radius: 11px;
     background-color:#ffffff;
     position: relative;
@@ -21,7 +21,7 @@ const StyledCard = styled(Card)`
 
   .image {
     width: 100%;
-    height: 220px;
+    height: 240px;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
@@ -39,7 +39,7 @@ const StyledCard = styled(Card)`
   }
 
   .title {
-    margin-block: 1.5rem;
+    margin-block: 1rem;
     text-align: start;
     padding-left: 1rem;
     font-size: 1rem;
@@ -63,8 +63,26 @@ const StyledCard = styled(Card)`
     background-color: #ffffff;
     color: rgba(51, 51, 51, 0.9);
     position: absolute;
-    bottom: 6.8rem;
+    bottom: 3.3rem;
     left: 1rem;
+  }
+  
+  .add-wrapper{
+    transform: scale(0);
+    display: flex;
+    background-color: rgba(51, 51, 51, 0.9);
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    bottom: 3.5rem;
+    right: 1rem;
+    border-radius: 100%;
+    cursor: pointer;
+    .add{
+      color: #ffffff;
+      font-size: 1.8rem;
+    }
   }
 
   .star-icon {
@@ -82,11 +100,13 @@ const StyledCard = styled(Card)`
     padding-bottom: 6.5rem;
   }
 
-  transition: 0.5s ease;
-
   &:hover {
     transform: scale(1.05);
     transition: 0.5s ease;
+      .add-wrapper{
+        transform: scale(1.07);
+        transition: 0.3s ease;
+      }
   }
 `;
 
