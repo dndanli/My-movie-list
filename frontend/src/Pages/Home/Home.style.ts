@@ -10,6 +10,21 @@ const StyledHome = styled(Home)`
     justify-content: center;
   }
 
+  .popup-wrapper{
+    position: fixed;
+    z-index: 3;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;  
+  }
+
+
   .content-wrapper {
     min-height: 25rem;
     display: flex;
