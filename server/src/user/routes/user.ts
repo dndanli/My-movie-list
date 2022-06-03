@@ -106,4 +106,64 @@ router.get(
   }
 );
 
+router.get(
+  "/lists",
+  passport.authenticate("jwt", { session: false }),
+  async (request, response) => {
+    response.status(200).json({
+      sucess: true,
+      message: "authorized",
+      user: request.user,
+    });
+  }
+);
+
+router.post(
+  "/addList",
+  passport.authenticate("jwt", { session: false }),
+  async (request, response) => {
+    const listObj = {
+      user: request.body.user,
+      apiId: request.body.apiId,
+      title: request.body.title,
+      listStatus: request.body.listStatus,
+      mediaType: request.body.mediaType,
+      score: request.body.score,
+      notes: request.body.notes,
+    };
+
+    const userHasList = await userController.checkIfUserHasList(listObj.user);
+    if (!userHasList) {
+      const userId = await userController.getUserId(listObj.user);
+      const successObj = await userController.createNewList({
+        status: listObj.listStatus,
+        userId: userId,
+      });
+
+      if(successObj.sucess){
+          const listId = await userController.getListId(userId, listObj.listStatus);
+          console.log(listId);
+          
+          userController.createNewItem({
+            apiId:listObj.apiId,  
+            listId:listId,
+            mediaType: listObj.mediaType,
+            title: listObj.title,
+            rating:listObj.score,
+            notes: listObj.notes,
+          });
+      }
+    } else {
+      console.log("list is already created");
+    }
+
+    console.log(listObj);
+    response.status(200).json({
+      sucess: true,
+      message: "authorized",
+      user: request.user,
+    });
+  }
+);
+
 export default router;
