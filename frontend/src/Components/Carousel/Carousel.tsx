@@ -8,6 +8,7 @@ type CarouselProps = {
   multiPages: boolean;
   slides: any[];
   heading: string;
+  childToParent:any; 
 };
 
 const Carousel = ({
@@ -15,6 +16,7 @@ const Carousel = ({
   slides,
   multiPages,
   heading,
+  childToParent
 }: CarouselProps) => {
   const [emblaRef, emblaApi] = useEmblaCarousel({
     dragFree: true,
@@ -46,10 +48,11 @@ const Carousel = ({
                     imagePath={data.poster_path}
                     title={data.title}
                     rating={data.vote_average}
-                    date={data.release_date}
                     cardId={data.id}
                     mediaType={"movie"}
                     key={data.id}
+                    childToParent={childToParent}
+                    bannerPath={data.backdrop_path}
                   />
                 );
               });
@@ -61,10 +64,11 @@ const Carousel = ({
                   imagePath={slide.poster_path}
                   title={slide.title}
                   rating={slide.vote_average}
-                  date={slide.release_date}
                   cardId={slide.id}
                   mediaType={"movie"}
                   key={slide.id}
+                  childToParent={childToParent}
+                  bannerPath={slide.backdrop_path}
                 />
               );
             })}
