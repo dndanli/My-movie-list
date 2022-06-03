@@ -5,6 +5,20 @@ const StyledPerson = styled(Person)`
   min-height: 100vh;
   font-family: "Poppins", sans-serif;
 
+  .popup-wrapper{
+    position: fixed;
+    z-index: 3;
+    left:50%;
+    top:50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(51, 51, 51, 0.5);
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    padding-top: 5rem;  
+  }
+
   .profile-wrapper {
     width: 12rem;
     height: 12rem;
