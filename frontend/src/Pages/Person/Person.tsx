@@ -4,6 +4,8 @@ import StyledInfoBlock from "../../Components/InfoBlock/InfoBlock.style";
 import { getPersonResponse } from "../../Helpers/clientHelpers";
 
 import StyledTruncatedResult from "../../Components/Layout/TruncatedResult.style";
+import StyledListPopup from "../../Components/ListPopup/StyledListPopup";
+import { getPersonGender } from "../../Helpers/getPersonGender";
 
 type PersonProps = {
   className: string;
@@ -11,57 +13,26 @@ type PersonProps = {
 const Person = ({ className }: PersonProps) => {
   const { id } = useParams();
   const [personResponseData, setPersonResponseData] = useState<any>({});
-  const [movieCreditsData, setMovieCreditsData] = useState<any>([]);
-  const [tvCreditsData, setTvCreditsData] = useState<any>([]);
+  const [currentAdded, setCurrentAdded] = useState<any>();
 
-  const [movieCreditsDataCrew, setMovieCreditsDataCrew] = useState<any>([]);
-  const [tvCreditsDataCrew, setTvCreditsDataCrew] = useState<any>([]);
+  const  childToParent = (cardData:any)=>{
+    document.body.style.overflow = "hidden"
+    setCurrentAdded(cardData);
+  }
 
   useEffect(() => {
     const fetch = async () => {
       const personResponse = await getPersonResponse(id);
       setPersonResponseData(personResponse);
-
-      if (personResponse.tv_credits.cast) {
-        setTvCreditsData(personResponse.tv_credits.cast);
-      }
-      if (personResponse.movie_credits.cast) {
-        setMovieCreditsData(personResponse.movie_credits.cast);
-      }
-
-      if (personResponse.tv_credits.crew) {
-        setTvCreditsDataCrew(personResponse.tv_credits.crew);
-      }
-
-      if (personResponse.movie_credits.crew) {
-        setMovieCreditsDataCrew(personResponse.movie_credits.crew);
-      }
     };
     fetch();
   }, [id]);
 
-  const getGender = (value: number): string => {
-    let gender: string = "";
-    switch (value) {
-      case 1: {
-        gender = "Female";
-        break;
-      }
-      case 2: {
-        gender = "Male";
-        break;
-      }
-      case 3: {
-        gender = "Non-Binary";
-        break;
-      }
-      default: {
-        gender = "Not specified";
-        break;
-      }
-    }
-    return gender;
-  };
+  const togglePopup = () =>{
+    document.body.style.overflow = ""
+    setCurrentAdded(undefined);
+  }
+
   return (
     <div className={className}>
       <div className="info-wrapper">
@@ -87,7 +58,7 @@ const Person = ({ className }: PersonProps) => {
             <StyledInfoBlock
               className="info-block"
               title="Gender"
-              value={getGender(personResponseData.gender)}
+              value={getPersonGender(personResponseData.gender)}
             />
           ) : null}
           {personResponseData.birthday ? (
@@ -111,40 +82,67 @@ const Person = ({ className }: PersonProps) => {
         <p className="biography-text">{personResponseData.biography}</p>
       </section>
 
-      {movieCreditsData !== undefined && tvCreditsData !== undefined ? (
+      {personResponseData.movie_credits !== undefined ? (
         <h2 className="header" style={{ paddingInline: "1rem" }}>
-          Movies and Tv Shows
+          Movies
         </h2>
       ) : null}
-      {movieCreditsData.length > 0 ? (
+
+      {personResponseData?.movie_credits?.cast.length > 0 ? (
         <StyledTruncatedResult
           className="truncated-result"
-          dataToBeDisplayed={movieCreditsData}
+          dataToBeDisplayed={personResponseData?.movie_credits?.cast}
           mediaType={"movie"}
-        />
-      ) : null}
-      {tvCreditsData.length > 0 ? (
-        <StyledTruncatedResult
-          className="truncated-result"
-          dataToBeDisplayed={tvCreditsData}
-          mediaType={"tv"}
+          childToParent={childToParent}
         />
       ) : null}
 
-      {movieCreditsDataCrew.length > 0 ? (
-        <StyledTruncatedResult
-          className="truncated-result"
-          dataToBeDisplayed={movieCreditsDataCrew}
-          mediaType={"movie"}
-        />
+      {personResponseData.tv_credits !== undefined ? (
+        <h2 className="header" style={{ paddingInline: "1rem" }}>
+          Tv Shows
+        </h2>
       ) : null}
-      {tvCreditsDataCrew.length > 0 ? (
+      {personResponseData?.tv_credits?.cast.length > 0 ? (
         <StyledTruncatedResult
           className="truncated-result"
-          dataToBeDisplayed={tvCreditsDataCrew}
+          dataToBeDisplayed={personResponseData?.tv_credits?.cast}
           mediaType={"tv"}
+          childToParent={childToParent}
         />
       ) : null}
+
+      {personResponseData?.movie_credits?.crew.length > 0 || personResponseData.tv_credits?.crew.length > 0 ? (
+        <h2 className="header" style={{ paddingInline: "1rem" }}>
+          Crew in
+        </h2>
+      ) : null}
+
+      {personResponseData?.movie_credits?.crew.length > 0 ? (
+        <StyledTruncatedResult
+          className="truncated-result"
+          dataToBeDisplayed={personResponseData?.movie_credits?.crew}
+          mediaType={"movie"}
+          childToParent={childToParent}
+        />
+      ) : null}
+      {personResponseData?.tv_credits?.crew.length > 0 ? (
+        <StyledTruncatedResult
+          className="truncated-result"
+          dataToBeDisplayed={personResponseData?.movie_credits?.crew}
+          mediaType={"tv"}
+          childToParent={childToParent}
+        />
+      ) : null}
+
+        {currentAdded ? (          
+          <div className="popup-wrapper">
+            <StyledListPopup
+              className="styled-list-popup"
+              cardData={currentAdded}
+              togglePopup={togglePopup}
+            />
+          </div>
+        ) : null}
     </div>
   );
 };
