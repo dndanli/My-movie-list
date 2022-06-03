@@ -61,14 +61,13 @@ class UserService {
     }
   }
 
-  async checkIfUserHasList(username: string) {
+  async checkIfUserHasList(username: string, listType:string) {
     const client = await pool.connect();
     try {
       const userId = await this.getUserId(username);
+      const textQuery = `SELECT * FROM list WHERE user_Id = $1 AND list_type = $2`;
 
-      const textQuery = `SELECT * FROM list WHERE user_Id = $1`;
-
-      const res = await client.query(textQuery, [userId]);
+      const res = await client.query(textQuery, [userId, listType]);
       if (res.rows.length === 0) {
         return false;
       }
@@ -119,7 +118,6 @@ class UserService {
       await client.query("BEGIN");
       const textQuery = `INSERT INTO item (api_id, list_id, media_type, title, rating, notes)
       VALUES ($1, $2, $3, $4, $5, $6)`;
-
       await client.query(textQuery, [
         itemObj.apiId,
         itemObj.listId,
@@ -133,7 +131,7 @@ class UserService {
       await client.query("COMMIT");
       return { sucess: true };
     } catch (error) {
-      console.log(`there was an error ${error}`);
+      console.log(`there was an error: ${error}`);
       await client.query("ROLLBACK");
       return { sucess: false };
     } finally {
