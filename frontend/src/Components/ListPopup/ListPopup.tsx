@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { statuses } from "./statuses";
 import { IoIosClose } from "react-icons/io";
-import { validateInput } from "../../Helpers/formHelpers";
 
 type ListPopupProps = {
   className: string;
@@ -45,20 +44,19 @@ const ListPopup = ({ className, cardData, togglePopup }: ListPopupProps) => {
     formState: { errors },
   } = useForm();
   const onSubmit = async (data: any) => {
-    console.log(data);
-    if(user !== undefined){
-      if(data?.score === ""){
-          data.score = undefined;
+    if (user !== undefined) {
+      if (data?.score === "") {
+        data.score = undefined;
       }
-      axios.post("http://localhost:8000/user/addList", {
-       user: user,
-       apiId: cardId,
-       title:title,
-       listStatus: data?.status,
-       mediaType: mediaType,
-       score: data?.score,
-       notes: data?.notes,
-    });
+      axios.post("http://localhost:8000/user/list/addList", {
+        user: user,
+        apiId: cardId,
+        title: title,
+        listStatus: data?.status,
+        mediaType: mediaType,
+        score: data?.score,
+        notes: data?.notes,
+      });
     }
   };
   return (
@@ -76,10 +74,10 @@ const ListPopup = ({ className, cardData, togglePopup }: ListPopupProps) => {
           </div>
           <h3 className="title">{title}</h3>
         </div>
-        <form  onSubmit={handleSubmit(onSubmit)}>
+        <form onSubmit={handleSubmit(onSubmit)}>
           <p>Status</p>
           <input
-          {...register("status", {required: true})}
+            {...register("status", { required: true })}
             type="text"
             name="status"
             readOnly={true}
@@ -87,8 +85,7 @@ const ListPopup = ({ className, cardData, togglePopup }: ListPopupProps) => {
             value={status}
             onClick={() => {
               setDropdown(!dropdown);
-            }
-            }
+            }}
           />
           {dropdown ? (
             <div className="status-container">
@@ -128,7 +125,7 @@ const ListPopup = ({ className, cardData, togglePopup }: ListPopupProps) => {
           ></textarea>
 
           <div>
-            <input type="submit" value="Save"/> 
+            <input type="submit" value="Save" />
           </div>
         </form>
       </div>
