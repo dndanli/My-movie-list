@@ -18,6 +18,8 @@ import topRatedRoutes from "../api/v1/routes/topRated";
 // --- user feature routes
 import userRoutes from "../user/routes/user";
 
+import listRoutes from "../list/routes/list";
+
 const app = express();
 const PORT = process.env.PORT || 8000;
 
@@ -45,6 +47,7 @@ app.use("/person", personRoutes);
 app.use("/topRated", topRatedRoutes);
 
 app.use("/user", userRoutes);
+app.use("/user/list", listRoutes);
 
 app.use(express.static(path.join(__dirname, "../../../frontend", "build")));
 app.use(express.static("public"));
