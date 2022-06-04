@@ -1,4 +1,6 @@
 import "dotenv/config";
+import { Pool } from "pg";
+
 
 export const credentials = {
   user: process.env.DB_USER,
@@ -7,3 +9,5 @@ export const credentials = {
   password: process.env.DB_PASSWORD,
   port: parseInt(process.env.DB_PORT!)|| 5432,
 };
+
+export const pool = new Pool(credentials);
