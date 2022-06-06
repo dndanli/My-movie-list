@@ -76,27 +76,6 @@ const StyledDiscover = styled(Discover)`
   @media only screen and (min-width: 64em) {
     .discover-page {
       width: 80%;
-
-      .profile {
-        max-width: 150px;
-        max-height: 150px;
-      }
-      .person-icon {
-        min-width: 100px;
-        min-height: 150px;
-      }
-
-      .box {
-        .image {
-          max-width: 160px;
-          max-height: 160px;
-        }
-
-        .box-icon {
-          min-width: 110px;
-          min-height: 150px;
-        }
-      }
     }
   }
 
