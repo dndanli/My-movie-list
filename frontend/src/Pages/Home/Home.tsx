@@ -34,14 +34,14 @@ const Home = ({ className }: Homeprops) => {
   }, []);
 
   const childToParent = (cardData: any) => {
-    document.body.style.overflow = "hidden"
-    setCurrentAdded(cardData);   
+    document.body.style.overflow = "hidden";
+    setCurrentAdded(cardData);
   };
 
-  const togglePopup = () =>{
-    document.body.style.overflow = ""
-    setCurrentAdded(undefined);   
-  }
+  const togglePopup = () => {
+    document.body.style.overflow = "";
+    setCurrentAdded(undefined);
+  };
 
   return (
     <div className={className}>
@@ -57,7 +57,7 @@ const Home = ({ className }: Homeprops) => {
           heading={"Popular"}
           childToParent={childToParent}
         />
-        {currentAdded !== undefined? (          
+        {currentAdded !== undefined ? (
           <div className="popup-wrapper">
             <StyledListPopup
               className="styled-list-popup"
