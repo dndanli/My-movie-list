@@ -1,9 +1,10 @@
-import StyledBox from "../Box/Box.style";
 import StyledPersonProfileBox from "../PersonProfileBox/PersonProfileBox.style";
 import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import { Wrapper } from "../Layout/DiscoverResults.style";
+import {BrowseResultWrapper, Wrapper } from "../Layout/DiscoverResults.style";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
+import { useState } from "react";
+import StyledCard from "../Card/Card.style";
 
 type DiscoverResultsProps = {
   className: string;
@@ -20,24 +21,33 @@ const DiscoverResults = ({
   totalPages,
   query,
 }: DiscoverResultsProps) => {
+  const [currentAdded, setCurrentAdded] = useState<any>();
   const navigate = useNavigate();
 
   const handlePageClick = (selected: any) => {
     navigate(`/discover?page=${selected.selected + 1}&query=${query}`);
   };
+
+  const childToParent = (cardData: any) => {
+    document.body.style.overflow = "hidden";
+    setCurrentAdded(cardData);
+  };
+
   return (
     <div className={className}>
+    <BrowseResultWrapper>
       {displayData?.map((data: any) => {
         return mediaType === "movie" || mediaType === "tv" ? (
-          <StyledBox
-            className="box"
+          <StyledCard
+            className="card"
             imagePath={data.poster_path}
             title={data.name || data.title}
             rating={data.vote_average}
-            boxId={data.id}
-            key={data.id}
-            overview={data.overview}
+            cardId={data.id}
             mediaType={mediaType}
+            key={data.id}
+            childToParent={childToParent}
+            bannerPath={data.backdrop_path}
           />
         ) : (
           <StyledPersonProfileBox
@@ -50,6 +60,8 @@ const DiscoverResults = ({
           />
         );
       })}
+    </BrowseResultWrapper>
+
       {displayData?.length! > 0 ? (
         <Wrapper>
           <ReactPaginate
