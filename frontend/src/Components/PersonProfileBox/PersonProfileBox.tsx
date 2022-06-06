@@ -1,5 +1,5 @@
-import {BsFillPersonFill} from "react-icons/bs";
 import { Link } from "react-router-dom";
+import {MdPerson} from "react-icons/md";
 
 type PersonProfileBoxProps = {
   className: string;
@@ -26,7 +26,7 @@ const PersonProfileBox = ({
               alt={personName}
             />
           ) : (
-            <BsFillPersonFill className="person-icon" />
+            <MdPerson className="person-icon" />
           )}
           <div className="profile-info-wrapper">
             <h2 className="name">{personName}</h2>
