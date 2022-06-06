@@ -2,23 +2,27 @@ import styled from "styled-components";
 import PersonProfileBox from "./PersonProfileBox";
 
 const StyledPersonProfileBox = styled(PersonProfileBox)`
+  --fs-small:14px;
+
+  --profile-height:200px;
+  max-width: 11rem;
+
   .wrapper {
     background-color:#ffffff;
-    display: flex;
     border-radius: 8px;
   }
 
   .profile {
-    object-fit: contain;
-    max-width: 130px;
-    max-height: 130px;
+    width: 100%;
+    max-height: var(--profile-height);
+    border-top-right-radius: 8px;
     border-top-left-radius: 8px;
-    border-bottom-left-radius: 8px;
   }
+
   .person-icon {
+    width: 100%;
     color: rgba(51, 51, 51, 0.2);
-    margin-top: 1.5rem;
-    min-width: 90px;
+    font-size:var(--profile-height);
     min-height: 130px;
     margin-left: 0;
   }
@@ -31,7 +35,8 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    padding-left: 1rem;
+    padding-left: 0.5rem;
+    padding-bottom: 0.5rem;
   }
 
   a {
@@ -39,14 +44,20 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
   }
 
   .name {
-    font-size: 1.2rem;
+    font-size: var(--fs-small);
     font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
   }
 
   .knownFor {
     color: rgba(51, 51, 51, 0.8);
-    font-size: 1rem;
+    font-size: var(--fs-small);
     font-weight: 500;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space:nowrap;
   }
 `;
 
