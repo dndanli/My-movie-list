@@ -49,6 +49,10 @@ const StyledCarousel = styled(Carousel)`
   }
 
   .card {
+    .wrapper{
+
+    width: 11rem;
+    }
     margin-right: 1.5rem;
   }
 `;
