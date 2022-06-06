@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Home from "./Home";
 const StyledHome = styled(Home)`
   padding-inline: 1rem;
@@ -36,18 +37,6 @@ const StyledHome = styled(Home)`
     }
   }
 
-  #popular-heading {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.8);
-    margin-block: 0.5rem;
-  }
-  #upcoming-heading {
-    font-size: 1.7rem;
-    font-weight: 700;
-    color: rgba(255, 255, 255, 0.9);
-    margin-block: 1rem;
-  }
   .hero {
     display: flex;
     flex-direction: column;

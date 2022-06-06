@@ -1,14 +1,14 @@
 import styled from "styled-components";
 import ContentBar from "./ContentBar";
+import { theme } from "../../Theme/theme";
 
 const StyledContentBar = styled(ContentBar)`
   max-width: 17rem;
-  border-left: 0.5px solid rgba(255, 255, 255, 0.2);
+  border-left: 0.5px solid ${theme.colorWhiteLighter};
   min-height: 100vh;
   position: fixed;
   top: 0;
   right: 0;
-
   padding-inline: 1.2rem;
   font-family: "Inter", sans-serif;
 
@@ -21,7 +21,7 @@ const StyledContentBar = styled(ContentBar)`
   }
 
   .header-2 {
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
     font-weight: 700;
     font-size: 1.8rem;
     font-family: "Inter", sans-serif;

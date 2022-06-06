@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import PersonProfileBox from "./PersonProfileBox";
 
 const StyledPersonProfileBox = styled(PersonProfileBox)`
@@ -8,7 +9,7 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
   max-width: 11rem;
 
   .wrapper {
-    background-color:#ffffff;
+    background-color:${theme.colorGreyDarker};
     border-radius: 8px;
   }
 
@@ -21,7 +22,7 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
 
   .person-icon {
     width: 100%;
-    color: rgba(51, 51, 51, 0.2);
+    color: ${theme.colorWhiteLighter};
     font-size:var(--profile-height);
     min-height: 130px;
     margin-left: 0;
@@ -30,8 +31,7 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
   .profile-info-wrapper {
     font-family: "Poppins", sans-serif;
     font-weight: 700;
-    color: rgba(51, 51, 51, 0.9);
-
+    color: ${theme.colorWhite};
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -52,7 +52,7 @@ const StyledPersonProfileBox = styled(PersonProfileBox)`
   }
 
   .knownFor {
-    color: rgba(51, 51, 51, 0.8);
+    color: ${theme.colorWhite};
     font-size: var(--fs-small);
     font-weight: 500;
     text-overflow: ellipsis;

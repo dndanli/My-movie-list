@@ -1,16 +1,19 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import ListPopup from "./ListPopup";
 
 
 const StyledListPopup = styled(ListPopup)`
-  background-color: #fff;
+  background-color: ${theme.colorDark};
   padding-inline: 3.2rem;
   padding-top: 1rem;
   padding-bottom: 2rem;
   border-radius: 1rem;
-  max-width: 40rem;
-  max-height: 45rem;
-  
+  width: 40rem;
+  max-height: 50rem;
+  .title{
+    color: ${theme.colorWhite};
+  } 
   .close-wrapper{
     width: 100%;
     display: flex;
@@ -19,11 +22,12 @@ const StyledListPopup = styled(ListPopup)`
     .close-icon{
       font-size: 2rem;
       cursor: pointer;
-      margin-bottom:1rem
+      margin-bottom:1rem;
+      color:${theme.colorWhite};
     }
   }
   p {
-    color: rgba(56, 56, 56, 0.9);
+    color: ${theme.colorWhite};
   }
   .status-container {
     position: absolute;
@@ -66,15 +70,21 @@ const StyledListPopup = styled(ListPopup)`
       max-height: 25rem;
       border-radius: 1rem;
     }
+    .background{
+      width: 100%;
+        height: 25rem;
+        background: red;
+      }
   }
   input[type="submit"] {
-    background-color: #f093ff;
+    background-color: ${theme.colorBlue};
     color: #ffffff;
     border-radius: 4.5px;
     padding-block: 0.5rem;
     padding-inline: 1rem;
     font-size: 1rem;
     cursor: pointer;
+    margin-top: 1rem;
   }
 
   textarea {

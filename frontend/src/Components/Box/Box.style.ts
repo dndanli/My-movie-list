@@ -1,15 +1,16 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Box from "./Box";
 
 const StyledBox = styled(Box)`
   width: 99.5%;
   border-radius: 8px;
+
   .wrapper {
     display: flex;
     border-radius: 11px;
-    background-color:#ffffff;
+    background-color: ${theme.colorGreyDarker};
   }
-
   a {
     text-decoration: none;
   }
@@ -23,8 +24,7 @@ const StyledBox = styled(Box)`
   .box-icon {
     min-width: 110px;
     min-height: 150px;
-
-    color: rgba(51, 51, 51, 0.2);
+    color: ${theme.colorGrey};
   }
   .main-info-wrapper {
     padding-inline: 1rem;
@@ -40,7 +40,7 @@ const StyledBox = styled(Box)`
     font-family: "Poppins", sans-serif;
     font-size: 15px;
     font-weight: 700;
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
   }
 
   .overview-wrapper {
@@ -51,13 +51,11 @@ const StyledBox = styled(Box)`
     font-weight: 500;
     text-overflow: ellipsis;
     overflow: hidden;
-
     display: -webkit-box;
     -webkit-line-clamp: 2;
     -webkit-box-orient: vertical;
     white-space: normal;
-    color: rgba(51, 51, 51, 0.9);
-
+    color: ${theme.colorWhite};
     margin-top: 1rem;
   }
 
@@ -67,7 +65,7 @@ const StyledBox = styled(Box)`
     display: flex;
     align-items: center;
     border-radius: 15px;
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
   }
 `;
 

@@ -1,20 +1,21 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import CastListItem from "./CastListItem";
 
 const StyledCastListItem = styled(CastListItem)`
   .list-item {
     border-radius: 6px;
-    background-color:#ffffff;
+    background-color:${theme.colorGreyDarker};
     margin-bottom: 1rem;
     display: flex;
   }
   a {
     text-decoration: none;
     .name {
-      color: rgba(51, 51, 51, 0.9);
+      color: rgba(255, 255, 255, 0.9);
     }
     .role {
-      color: rgba(51, 51, 51, 0.8);
+      color: rgba(255, 255, 255, 0.8);
     }
   }
 
@@ -29,12 +30,13 @@ const StyledCastListItem = styled(CastListItem)`
   .person-icon {
     min-width: 100px;
     min-height: 120px;
-    color: rgba(51, 51, 51, 0.5);
+    color: rgba(255, 255, 255, 0.9);
   }
 
   .name-wrapper {
     padding-inline: 0.7rem;
   }
+
   .name {
     font-family: "Poppins", sans-serif;
     font-weight: 500;

@@ -11,6 +11,7 @@ import {
 } from "../../Helpers/clientHelpers";
 import { Response } from "../../Interfaces/Response";
 import { PageResponse } from "../../Interfaces/PageResponse";
+import { theme } from "../../Theme/theme";
 
 type DiscoverProps = {
   className: string;
@@ -64,7 +65,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[0].total_results
           }
-          color={currVisible === "movie" ? " #f093fb" : "rgb(187, 187, 187)"}
+          color={currVisible === "movie" ? theme.colorAccentPrimary : theme.colorGrey}
           clickHandler={() => {
             setCurrVisible("movie");
           }}
@@ -77,7 +78,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[1].total_results
           }
-          color={currVisible === "tv" ? " #f093fb" : " rgb(187, 187, 187)"}
+          color={currVisible === "tv" ? theme.colorAccentPrimary  : theme.colorGrey}
           clickHandler={() => {
             setCurrVisible("tv");
           }}
@@ -90,7 +91,7 @@ const Discover = ({ className }: DiscoverProps) => {
               ? responsePageData?.total_results
               : responseData?.[2].total_results
           }
-          color={currVisible === "people" ? "#f093fb" : "rgb(187, 187, 187)"}
+          color={currVisible === "people" ? theme.colorAccentPrimary : theme.colorGrey}
           clickHandler={() => {
             setCurrVisible("people");
           }}

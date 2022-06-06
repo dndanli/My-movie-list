@@ -1,23 +1,23 @@
 import styled from "styled-components";
 import Siderbar from "./Sidebar";
+import { theme } from "../../Theme/theme";
 
 const StyledSidebar = styled(Siderbar)`
   min-width: 13rem;
   font-family: "Poppins", sans-serif;
-  border-right: 0.5px solid rgba(255, 255, 255, 0.2);
-  background-color: #ffffff;
+  background-color: ${theme.colorGreyDarker};
+  margin-top: 1rem;
+  border-radius:1rem;
   position: fixed;
   min-height: 100vh;
   top: 0;
   left: 1%;
-  margin-top: 1rem;
-  border-radius: 1.5rem;
   padding-inline: 0.5rem;
   .logo {
     margin-right: auto;
     padding-left: 2rem;
     a {
-      color: #f093fb;
+      color: ${theme.colorAccentPrimary};
       text-decoration: none;
     }
   }
@@ -27,7 +27,7 @@ const StyledSidebar = styled(Siderbar)`
   }
 
   .header-2 {
-    color: rgba(51, 51, 51, 1);
+    color: ${theme.colorWhite};
     padding-inline: 2rem;
   }
 
@@ -54,7 +54,10 @@ const StyledSidebar = styled(Siderbar)`
 
     &:hover {
       .link-icon {
-        color: #f093fb;
+        color: ${theme.colorBlue};
+      }
+      .link-name {
+        color: ${theme.colorBlack};
       }
     }
     &:active {
@@ -68,12 +71,12 @@ const StyledSidebar = styled(Siderbar)`
   .link-icon {
     font-size: 1.4rem;
     margin-right: 1rem;
-    color: #a7a6ac;
+    color: ${theme.colorGrey};
   }
 
   .link-name {
     font-size: 1rem;
-    color: rgb(51, 51, 51);
+    color: ${theme.colorGrey};
   }
 `;
 

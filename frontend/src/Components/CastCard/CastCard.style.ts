@@ -1,18 +1,19 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import CastCard from "./CastCard";
 
 const StyledCastCard = styled(CastCard)`
   width: 8rem;
-  background-color: #ffffff;
+  background-color: ${theme.colorGreyDarker};
   border-radius: 8px;
   padding-bottom: 1rem;
   a {
     text-decoration: none;
     .name {
-      color: rgba(51, 51, 51, 0.9);
+      color: ${theme.colorWhite};
     }
     .character-name {
-      color: rgba(51, 51, 51, 0.8);
+      color: rgba(255, 255, 255, 0.7);
     }
   }
   .image-wrapper {

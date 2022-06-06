@@ -1,10 +1,11 @@
 import StyledPersonProfileBox from "../PersonProfileBox/PersonProfileBox.style";
 import { useNavigate } from "react-router-dom";
 import ReactPaginate from "react-paginate";
-import {BrowseResultWrapper, Wrapper } from "../Layout/DiscoverResults.style";
+import { BrowseResultWrapper, Wrapper } from "../Layout/DiscoverResults.style";
 import { BiLeftArrow, BiRightArrow } from "react-icons/bi";
 import { useState } from "react";
 import StyledCard from "../Card/Card.style";
+import StyledListPopup from "../ListPopup/StyledListPopup";
 
 type DiscoverResultsProps = {
   className: string;
@@ -28,6 +29,11 @@ const DiscoverResults = ({
     navigate(`/discover?page=${selected.selected + 1}&query=${query}`);
   };
 
+  const togglePopup = () => {
+    document.body.style.overflow = "";
+    setCurrentAdded(undefined);
+  };
+
   const childToParent = (cardData: any) => {
     document.body.style.overflow = "hidden";
     setCurrentAdded(cardData);
@@ -35,35 +41,43 @@ const DiscoverResults = ({
 
   return (
     <div className={className}>
-    <BrowseResultWrapper>
-      {displayData?.map((data: any) => {
-        return mediaType === "movie" || mediaType === "tv" ? (
-          <StyledCard
-            className="card"
-            imagePath={data.poster_path}
-            title={data.name || data.title}
-            rating={data.vote_average}
-            cardId={data.id}
-            mediaType={mediaType}
-            key={data.id}
-            childToParent={childToParent}
-            bannerPath={data.backdrop_path}
-          />
-        ) : (
-          <StyledPersonProfileBox
-            className="person-profile"
-            personName={data.name}
-            personId={data.id}
-            profileImgPath={data.profile_path}
-            knownFor={data.known_for_department}
-            key={data.id}
-          />
-        );
-      })}
-    </BrowseResultWrapper>
-
+      <BrowseResultWrapper>
+        {displayData?.map((data: any) => {
+          return mediaType === "movie" || mediaType === "tv" ? (
+            <StyledCard
+              className="card"
+              imagePath={data.poster_path}
+              title={data.name || data.title}
+              rating={data.vote_average}
+              cardId={data.id}
+              mediaType={mediaType}
+              key={data.id}
+              childToParent={childToParent}
+              bannerPath={data.backdrop_path}
+            />
+          ) : (
+            <StyledPersonProfileBox
+              className="person-profile"
+              personName={data.name}
+              personId={data.id}
+              profileImgPath={data.profile_path}
+              knownFor={data.known_for_department}
+              key={data.id}
+            />
+          );
+        })}
+      </BrowseResultWrapper>
       {displayData?.length! > 0 ? (
         <Wrapper>
+          {currentAdded !== undefined ? (
+            <div className="popup-wrapper">
+              <StyledListPopup
+                className="styled-list-popup"
+                cardData={currentAdded}
+                togglePopup={togglePopup}
+              />
+            </div>
+          ) : null}
           <ReactPaginate
             previousLabel={<BiLeftArrow />}
             nextLabel={<BiRightArrow />}

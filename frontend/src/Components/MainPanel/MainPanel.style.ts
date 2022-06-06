@@ -1,7 +1,9 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import MainPanel from "./MainPanel";
 
 const StyledMainPanel = styled(MainPanel)`
+  --panel-color:#595bff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -26,7 +28,7 @@ const StyledMainPanel = styled(MainPanel)`
     font-weight: 500;
     position: absolute;
     color: rgb(255, 255, 255);
-    background-color:#f093fb;
+    background-color: ${theme.colorRed};
     padding-block: 0.8rem;
     padding-inline: 1rem;
     border-radius: 1rem;
@@ -103,7 +105,7 @@ const StyledMainPanel = styled(MainPanel)`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
-    background-color: #f093fb;
+    background-color: ${theme.colorAccentPrimary};
     color: rgba(255, 255, 255, 1);
     position: absolute;
     top: 3%;

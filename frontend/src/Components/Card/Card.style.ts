@@ -1,15 +1,17 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Card from "./Card";
 
 const StyledCard = styled(Card)`
   font-family: "Poppins", sans-serif;
   transition:500ms ease;
+  background-color: ${theme.colorGreyDarker};
+  border-radius:8px;
   .wrapper {
     display: flex;
     flex-direction: column;
     align-items: center;
     border-radius: 11px;
-    background-color:#ffffff;
     position: relative;
     padding-bottom: 0.5rem;
   }
@@ -21,8 +23,8 @@ const StyledCard = styled(Card)`
   .image {
     width: 100%;
     height:15rem;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-top-left-radius:8px;
+    border-top-right-radius:8px;
   }
 
   .background {
@@ -37,12 +39,12 @@ const StyledCard = styled(Card)`
   }
 
   .title {
-    margin-block: 1rem;
+    margin-block: 1.5rem;
     text-align: start;
     padding-left: 1rem;
     font-size: 14px;
     p {
-      color: rgba(51, 51, 51, 0.9);
+      color: ${theme.colorWhite};
       font-weight: 700;
       text-overflow: ellipsis;
       overflow: hidden;
@@ -58,10 +60,10 @@ const StyledCard = styled(Card)`
     justify-content: space-evenly;
     align-items: center;
     border-radius: 15px;
-    background-color: #ffffff;
-    color: rgba(51, 51, 51, 0.9);
+    background-color: ${theme.colorAccentPrimary};
+    color: ${theme.colorWhite};
     position: absolute;
-    bottom: 17%;
+    bottom: 21%;
     left: 1rem;
   }
   
@@ -73,7 +75,7 @@ const StyledCard = styled(Card)`
     justify-content: center;
     align-items: center;
     position: absolute;
-    bottom: 3.5rem;
+    bottom: 22%;
     right: 1rem;
     border-radius: 100%;
     cursor: pointer;
@@ -94,7 +96,7 @@ const StyledCard = styled(Card)`
 
   .icon {
     font-size: 9rem;
-    color: rgba(51, 51, 51, 0.2);
+    color: ${theme.colorWhite};
     padding-bottom: 6rem;
   }
 

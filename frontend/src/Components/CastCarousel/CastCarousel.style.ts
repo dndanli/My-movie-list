@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import CastCarousel from "./CastCarousel";
 
 const StyledCastCarousel = styled(CastCarousel)`
@@ -14,7 +15,7 @@ const StyledCastCarousel = styled(CastCarousel)`
   }
 
   .heading {
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
     position: absolute;
     top: 1%;
     font-size: 1.7rem;
@@ -22,7 +23,7 @@ const StyledCastCarousel = styled(CastCarousel)`
   }
 
   .embla__button {
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
     position: absolute;
     transition: 500ms ease-in-out;
     width: 2rem;

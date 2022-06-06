@@ -18,12 +18,16 @@ const DetailBackground = ({
           alt=""
         />
       </div>
-
+      {
+      backdropPath !== null ?
       <img
         className="overview-background"
         src={`https://image.tmdb.org/t/p/original/${backdropPath}`}
         alt=""
-      />
+        />:
+        <div className="overview-background-fill"></div>
+      }
+
     </div>
   );
 };

@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Discover from "./Discover";
 
 const StyledDiscover = styled(Discover)`
@@ -29,7 +30,7 @@ const StyledDiscover = styled(Discover)`
 
   .message {
     font-size: 1.2rem;
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
     text-align: center;
   }
 

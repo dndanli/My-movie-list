@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import DetailMetadata from "./DetailMetadata";
 
 const StyledDetailMetadata = styled(DetailMetadata)`
@@ -7,8 +8,7 @@ const StyledDetailMetadata = styled(DetailMetadata)`
   align-items: center;
   padding: 0.5rem;
   margin-top: 1rem;
-  background-color: #f093fb;
-  background-image: linear-gradient(120deg, #f093fb 0%, #f5576c 100%);
+  background-color: ${theme.colorRed};
   border-radius: 8px;
   width: 100%;
   max-height: 2rem;

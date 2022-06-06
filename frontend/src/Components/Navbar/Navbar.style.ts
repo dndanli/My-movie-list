@@ -1,4 +1,5 @@
 import styled, { keyframes } from "styled-components";
+import { theme } from "../../Theme/theme";
 import Navbar from "./Navbar";
 
 const animation = keyframes`
@@ -22,7 +23,7 @@ const StyledNavbar = styled(Navbar)`
   .logo {
     margin-right: auto;
     a {
-      color:#f093ff;
+      color:${theme.colorBlue};
       text-decoration: none;
     }
   }

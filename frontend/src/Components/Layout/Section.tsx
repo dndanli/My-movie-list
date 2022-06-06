@@ -61,17 +61,18 @@ const Section = ({ className }: SectionProps) => {
       </div>
       {videoPlaying ? (
         <div className="player-wrapper">
+        <div className="close">
           <IoIosClose
-            className="close"
             onClick={() => {
               setVideoPlaying(false);
               setTrailerUrl(null);
             }}
           />
+          </div>
           <ReactPlayer
             controls
-            width="340px"
-            height="280px"
+            width="100%"
+            height="100%"
             url={trailerUrl}
             stopOnUnmount={true}
             className="react-player"

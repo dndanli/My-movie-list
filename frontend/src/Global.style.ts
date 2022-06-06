@@ -1,4 +1,5 @@
 import styled, { createGlobalStyle } from "styled-components";
+import {theme} from "./Theme/theme";
 
 export const GlobalStyle = createGlobalStyle`
   * {
@@ -6,7 +7,7 @@ export const GlobalStyle = createGlobalStyle`
     padding: 0;
   }
   body{
-    background-color:rgb(245, 245, 245);  
+    background-color:${theme.colorDark};
   }
  
   ::-webkit-scrollbar {
@@ -14,11 +15,11 @@ export const GlobalStyle = createGlobalStyle`
       width: 0.5rem;
     }
   ::-webkit-scrollbar-track {
-    background-color: #ffffff;
+    background-color: ${theme.colorWhite};
   }
 
   ::-webkit-scrollbar-thumb {
-    background-color: #f093fb;
+    background-color: ${theme.colorBlack};
     border-radius: 10px;
   }
 `;

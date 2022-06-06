@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 
 import Container from "./SignUpContainer";
 const StyledContainer = styled(Container)`
@@ -39,7 +40,7 @@ const StyledContainer = styled(Container)`
     color:rgba(51,51,51,1);
     font-weight: 400;
     a {
-      color:#f093fb;
+      color:${theme.colorBlue};
     }
   }
 

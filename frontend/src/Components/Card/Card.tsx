@@ -32,7 +32,7 @@ const Card = ({
           {imagePath !== null ? (
             <img
               className="image"
-              src={`http://image.tmdb.org/t/p/w500/${imagePath}`}
+              src={`https://image.tmdb.org/t/p/w500/${imagePath}`}
               alt={title}
             />
           ) : (
@@ -45,7 +45,7 @@ const Card = ({
 
           <div className="text-content">
             <div className="title">
-              <p>{title.toUpperCase()}</p>
+              <p>{title}</p>
             </div>
           </div>
         </div>

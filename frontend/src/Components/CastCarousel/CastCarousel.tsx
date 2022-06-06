@@ -50,8 +50,12 @@ const CastCarousel = ({
         })}
       </div>
       <h2 className="heading">{heading}</h2>
-      <PrevButton className="embla__button prev" onClick={scrollPrev} />
-      <NextButton className="embla__button next" onClick={scrollNext} />
+      {slides?.length > 3 ? (
+        <>
+          <PrevButton className="embla__button prev" onClick={scrollPrev} />
+          <NextButton className="embla__button next" onClick={scrollNext} />
+        </>
+      ) : null}
     </div>
   );
 };

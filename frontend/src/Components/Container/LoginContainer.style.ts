@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 
 import LoginContainer from "./LoginContainer";
 const StyledLoginContainer = styled(LoginContainer)`
@@ -12,7 +13,7 @@ const StyledLoginContainer = styled(LoginContainer)`
 
   .error-message {
     margin-top: 0.5rem;
-    color: red;
+    color: ${theme.colorRed};
   }
 
   .wrapper {
@@ -39,7 +40,7 @@ const StyledLoginContainer = styled(LoginContainer)`
     color:rgba(51,51,51,1);
     font-weight: 400;
     a {
-      color:#f093fb;
+      color:${theme.colorBlue};
     }
   }
 

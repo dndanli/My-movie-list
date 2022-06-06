@@ -75,8 +75,8 @@ const Details = ({ className }: DetailsProps) => {
       </div>
 
       <div className="block">
-        {detailData?.overview !== undefined ? (
-          <StyledTextPanel className="text-panel" text={detailData.overview} />
+        {detailData?.overview !== "" ? (
+          <StyledTextPanel className="text-panel" text={detailData?.overview} />
         ) : (
           <div className="no-info-to-show">
             <h2 className="info-text">No overview to show...</h2>
@@ -140,32 +140,34 @@ const Details = ({ className }: DetailsProps) => {
               textDecoration: "underline",
             }}
           >
-            <p style={{ color: "rgba(51,51,51)", textDecoration:"underline", marginTop:"1rem"}}>See all reviews</p>
+            <p className="see-more">See all reviews</p>
           </Link>
         </div>
       ) : null}
 
-      <h2 id="trailers">Trailers</h2>
-      <hr className="divider" />
-      {trailers.length > 0 ? (
-        <div className="trailers-wrapper">
-          {trailers.map((data: any) => {
-            if (data.type !== "Trailer") {
-              return null;
-            }
-            return (
-              <div className="trailer-player" key={uuidv4()}>
-                <ReactPlayer
-                  className="react-player"
-                  controls
-                  width="90%"
-                  height="300px"
-                  url={`https://www.youtube.com/watch?v=${data.key}`}
-                />
-              </div>
-            );
-          })}
-        </div>
+      {trailers?.length > 0 ? (
+        <>
+          <h2 id="trailers">Trailers</h2>
+          <hr className="divider" />
+          <div className="trailers-wrapper">
+            {trailers.map((data: any) => {
+              if (data.type !== "Trailer") {
+                return null;
+              }
+              return (
+                <div className="trailer-player" key={uuidv4()}>
+                  <ReactPlayer
+                    className="react-player"
+                    controls
+                    width="90%"
+                    height="300px"
+                    url={`https://www.youtube.com/watch?v=${data.key}`}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </>
       ) : null}
     </div>
   );

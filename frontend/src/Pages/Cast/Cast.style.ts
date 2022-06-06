@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Cast from "./Cast";
 
 const StyledCast = styled(Cast)`
@@ -10,7 +11,7 @@ const StyledCast = styled(Cast)`
     font-family: "Inter", sans-serif;
     font-size: 1.7rem;
     font-weight: 500;
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
     margin-block: 0.5rem;
   }
 

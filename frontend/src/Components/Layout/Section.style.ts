@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Section from "./Section";
 
 const StyledSection = styled(Section)`
@@ -21,29 +22,44 @@ const StyledSection = styled(Section)`
   }
 
   .player-wrapper {
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
+    position: relative;
+    padding-top: 56.25%;
+  }
+
+  .react-player {
+    margin-top: 1rem;
+    position: absolute;
+    top: 0;
+    left: 0;
     background-color: black;
     text-align: end;
   }
+
   .close {
-    color: rgba(255, 255, 255, 0.7);
-    margin-right: 0.5rem;
-    font-weight: 700;
-    font-size: 2.4rem;
+    display: flex;
+    justify-content: center;
+    font-size: 2rem;
+    position: absolute;
+    top: 2%;
+    right: -1rem;
+    border-radius: 6px;
+    z-index: 2;
+    background-color: ${theme.colorBlue};
+    color: ${theme.colorWhite};
+    cursor: pointer;
+    transition: 200ms ease;
     &:hover {
-      cursor: pointer;
+      background-color: ${theme.colorWhite};
+      color: ${theme.colorBlue};
     }
   }
+
   #trailers-heading {
     font-family: "Poppins", sans-serif;
     font-size: 1.7rem;
     font-weight: 700;
     margin-block: 1rem;
-    color: rgb(51, 51, 51);
+    color: ${theme.colorWhite};
   }
 `;
 

@@ -67,10 +67,16 @@ const ListPopup = ({ className, cardData, togglePopup }: ListPopupProps) => {
         </div>
         <div className="banner">
           <div className="banner">
+          {
+            bannerPath ?
             <img
               src={`https://image.tmdb.org/t/p/original/${bannerPath}`}
               alt={title}
-            />
+              />:
+
+              <div className="background">
+              </div>
+          }
           </div>
           <h3 className="title">{title}</h3>
         </div>

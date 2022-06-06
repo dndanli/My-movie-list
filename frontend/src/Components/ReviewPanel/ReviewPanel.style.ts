@@ -1,8 +1,9 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import ReviewSection from "./ReviewPanel";
 
 const StyledReviewPanel = styled(ReviewSection)`
-  background-color: rgb(230, 230, 230);
+  background-color: ${theme.colorGreyDarker};
   border-radius: 8px;
   font-family: "Poppins", sans-serif;
   padding: 1rem;
@@ -15,11 +16,11 @@ const StyledReviewPanel = styled(ReviewSection)`
     justify-content: center;
     align-items: center;
     max-height: 1.5rem;
-    background-color: #f093fb;
+    background-color: ${theme.colorRed};
     border-radius: 4px;
     padding-inline: 0.5rem;
     padding-block: 0.2rem;
-    color: rgba(255, 255, 255, 0.9);
+    color: ${theme.colorWhite};
     margin-bottom: 0.5rem;
 
     .star-icon {
@@ -29,7 +30,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .read-all {
-    color: rgba(51, 51, 51, 0.8);
+    color: ${theme.colorWhite};
     text-decoration: underline;
   }
 
@@ -58,7 +59,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   }
 
   .user-icon {
-    color: rgba(51, 51, 51, 0.8);
+    color:${theme.colorWhite};
     width: 100%;
     height: 4rem;
     object-fit: cover;
@@ -71,8 +72,7 @@ const StyledReviewPanel = styled(ReviewSection)`
   .content {
     padding-bottom: 0.5rem;
     min-height: 8rem;
-    color: rgba(51, 51, 51, 0.9);
-
+    color: rgba(255, 255, 255, 0.8);
     p {
       display: -webkit-box;
       -webkit-line-clamp: 5;
@@ -85,18 +85,17 @@ const StyledReviewPanel = styled(ReviewSection)`
   .author-name {
     font-weight: 500;
     font-size:1.2rem;
-    color: rgba(51, 51, 51);
+    color: ${theme.colorWhite};
   }
 
   .author-username {
     font-weight: 400;
-    color: rgba(51, 51, 51);
+    color: ${theme.colorWhite};
   }
 
   .posted {
     margin-top: 1rem;
-
-    color: rgba(51, 51, 51, 0.8);
+    color: ${theme.colorWhite};
   }
 
   .tmdb-user {
@@ -111,6 +110,6 @@ const StyledReviewPanel = styled(ReviewSection)`
     background-color: #01b4e4;
     color: rgba(255, 255, 255, 0.9);
   }
-`;
+`
 
 export default StyledReviewPanel;

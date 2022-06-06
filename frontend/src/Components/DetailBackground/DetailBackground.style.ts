@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import DetailBackground from "./DetailBackground";
 
 const StyledDetailBackground = styled(DetailBackground)`
@@ -28,12 +29,20 @@ const StyledDetailBackground = styled(DetailBackground)`
     border-radius: 10px;
   }
 
-  .overview-background {
+  .overview-background{
     border-radius: 6px;
     width: 100%;
     max-height: 20rem;
     object-fit: cover;
     border-radius: 1rem;
+  }
+  .overview-background-fill {
+    border-radius: 6px;
+    max-height: 20rem;
+    object-fit: cover;
+    border-radius: 1rem;
+    background-color: ${theme.colorWhiteLighter};
+    min-height: 20rem;
   }
 `;
 

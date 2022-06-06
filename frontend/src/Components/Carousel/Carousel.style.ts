@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Carousel from "./Carousel";
 
 const StyledCarousel = styled(Carousel)`
@@ -12,14 +13,15 @@ const StyledCarousel = styled(Carousel)`
   .embla__container {
     display: flex;
   }
+
   .heading {
-    color: rgb(51, 51, 51);
+    color: ${theme.colorWhite};
     position: absolute;
     top: 1%;
     font-size: 1.8rem;
   }
   .embla__button {
-    color: rgb(51, 51, 51);
+    color: ${theme.colorWhite};
     position: absolute;
     transition: 500ms ease-in-out;
     width: 2rem;
@@ -33,7 +35,7 @@ const StyledCarousel = styled(Carousel)`
     justify-content: center;
     align-items: center;
 
-    border: solid 1px #ccc;
+    border: solid 1px ${theme.colorWhite};
 
     &:hover {
       cursor: pointer;
@@ -49,9 +51,8 @@ const StyledCarousel = styled(Carousel)`
   }
 
   .card {
-    .wrapper{
-
-    width: 11rem;
+    .wrapper {
+      width: 11rem;
     }
     margin-right: 1.5rem;
   }

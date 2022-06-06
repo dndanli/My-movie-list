@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 
 import InfoBlock from "./InfoBlock";
 
@@ -10,7 +11,7 @@ const StyledInfoBlock = styled(InfoBlock)`
   .title {
     font-weight: 700;
     font-size: 1.2rem;
-    color: #f093fb;
+    color: ${theme.colorGrey};
   }
 
   .value {

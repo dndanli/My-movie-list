@@ -1,4 +1,5 @@
 import styled from "styled-components";
+import { theme } from "../../Theme/theme";
 import Details from "./Details";
 
 const StyledDetails = styled(Details)`
@@ -6,6 +7,18 @@ const StyledDetails = styled(Details)`
   margin-top: 2.5rem;
   margin-bottom: 2rem;
   padding-inline: 1rem;
+
+  .no-info-to-show{
+    margin-top: 1rem;
+  }  
+
+  .info-text {
+    font-family: "Inter", sans-serif;
+    font-weight: 400;
+    font-size: 1.3rem;
+    color: ${theme.colorWhite};
+    margin-top: 0.5rem;
+  }
 
   .overview-title-header,
   .cast-info,
@@ -17,7 +30,7 @@ const StyledDetails = styled(Details)`
     margin-top: 1rem;
     font-weight: 500;
     font-size: 1.5rem;
-    color: rgb(51, 51, 51);
+    color: ${theme.colorWhite};
   }
   .overview-title-header{
     font-size:2rem;
@@ -27,7 +40,7 @@ const StyledDetails = styled(Details)`
     margin-top: 0.5rem;
     font-size: 1.2rem;
     font-weight: 400;
-    color: rgba(255, 255, 255, 0.7);
+    color: ${theme.colorWhite};
   }
 
   .cast-info {
@@ -50,15 +63,16 @@ const StyledDetails = styled(Details)`
     margin-top: 0.5rem;
     margin-bottom: 2rem;
     font-size: 1rem;
+    color: ${theme.colorWhite};
     a {
-      color: #f093fb;
+      color: ${theme.colorWhite};
       text-decoration: none;
     }
   }
   .cast-page-link {
     display: flex;
     align-items: center;
-    color: rgba(51, 51, 51, 0.9);
+    color: ${theme.colorWhite};
   }
   .arrow-icon {
     margin-left: 0.5rem;
@@ -79,13 +93,6 @@ const StyledDetails = styled(Details)`
     background-color: rgba(255, 255, 255, 0.8);
   }
 
-  .info-text {
-    font-family: "Inter", sans-serif;
-    font-weight: 400;
-    font-size: 1.3rem;
-    color: rgb(51,51,51);
-    margin-top: 0.5rem;
-  }
 
   .metadata-wrapper {
     display: flex;
