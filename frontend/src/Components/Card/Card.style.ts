@@ -8,7 +8,6 @@ const StyledCard = styled(Card)`
     display: flex;
     flex-direction: column;
     align-items: center;
-    width: 10.3rem;
     border-radius: 11px;
     background-color:#ffffff;
     position: relative;
@@ -21,14 +20,13 @@ const StyledCard = styled(Card)`
 
   .image {
     width: 100%;
-    height: 240px;
+    height:15rem;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
   }
 
   .background {
-    width: 150px;
-    height: 226px;
+    width: 100%;
     border-radius: 10px;
   }
 
@@ -42,7 +40,7 @@ const StyledCard = styled(Card)`
     margin-block: 1rem;
     text-align: start;
     padding-left: 1rem;
-    font-size: 1rem;
+    font-size: 14px;
     p {
       color: rgba(51, 51, 51, 0.9);
       font-weight: 700;
@@ -63,7 +61,7 @@ const StyledCard = styled(Card)`
     background-color: #ffffff;
     color: rgba(51, 51, 51, 0.9);
     position: absolute;
-    bottom: 3.3rem;
+    bottom: 17%;
     left: 1rem;
   }
   
@@ -97,7 +95,7 @@ const StyledCard = styled(Card)`
   .icon {
     font-size: 9rem;
     color: rgba(51, 51, 51, 0.2);
-    padding-bottom: 6.5rem;
+    padding-bottom: 6rem;
   }
 
   &:hover {
@@ -107,6 +105,13 @@ const StyledCard = styled(Card)`
         transform: scale(1.07);
         transition: 0.3s ease;
       }
+  }
+
+  //700px
+  @media (min-width:43.75em){
+    .title{
+      font-size: 1rem;
+    }
   }
 `;
 
